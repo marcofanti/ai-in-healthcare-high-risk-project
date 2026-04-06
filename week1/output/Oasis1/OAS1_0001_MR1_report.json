@@ -1,0 +1,232 @@
+{
+  "dataset": "OASIS-1 Cross-Sectional MRI",
+  "subject": "OAS1_0001_MR1",
+  "modality": "T1-weighted MPRAGE (3D structural brain MRI)",
+  "format": "Analyze 7.5 (.hdr/.img)",
+  "domain": "Radiology / Neuroscience",
+  "clinical_context": "436-subject cross-sectional brain MRI study (Washington University). CDR 0=normal, 0.5=very mild dementia, 1=mild, 2=moderate. OAS1_0001_MR1: Female, 74y, CDR=0, MMSE=29 \u2014 cognitively normal.",
+  "subject_metadata": {
+    "SESSION ID": "OAS1_0001_MR1",
+    "AGE": "74",
+    "M/F": "Female",
+    "HAND": "Right",
+    "EDUC": "2",
+    "SES": "3",
+    "CDR": "0",
+    "MMSE": "29",
+    "eTIV": "1344.00",
+    "ASF": "1.31",
+    "nWBV": "0.743"
+  },
+  "raw_volume": {
+    "header": {
+      "format": "Spm2AnalyzeImage",
+      "data_shape": [
+        256,
+        256,
+        128,
+        1
+      ],
+      "voxel_size_mm": [
+        1.0,
+        1.0,
+        1.25,
+        0.0
+      ],
+      "data_dtype": ">i2",
+      "slope_intercept": [
+        1.0,
+        0.0
+      ],
+      "affine": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          127.5
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -127.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.25,
+          -79.375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "header_str": "<class 'nibabel.spm2analyze.Spm2AnalyzeHeader'> object, endian='>'\nsizeof_hdr     : 348\ndata_type      : b''\ndb_name        : b''\nextents        : 16384\nsession_error  : 0\nregular        : b'r'\nhkey_un0       : b''\ndim            : [  4 256 256 128   1   0   0   0]\nvox_units      : b''\ncal_units      : b''\nunused1        : 0\ndatatype       : int16\nbitpix         : 16\ndim_un0        : 0\npixdim         : [0.   1.   1.   1.25 0.   0.   0.   0.  ]\nvox_offset     : 0.0\nscl_slope      : nan\nscl_inter      : 0.0\nfunused3       : 0.0\ncal_max        : 0.0\ncal_min        : 0.0\ncompressed     : 0\nverified       : 0\nglmax          : 4095\nglmin          : 0\ndescrip        : b'                                                                               '\naux_file       : b'                       '\norient         : b'\\x02'\norigin         : [8224 8224 8224 8224 8192]\ngenerated      : b'         '\nscannum        : b'         '\npatient_id     : b'         '\nexp_date       : b'         '\nexp_time       : b'         '\nhist_un0       : b'  '\nviews          : 0\nvols_added     : 0\nstart_field    : 0\nfield_skip     : 0\nomax           : 0\nomin           : 0\nsmax           : 0\nsmin           : 0"
+    },
+    "stats": {
+      "shape": [
+        256,
+        256,
+        128,
+        1
+      ],
+      "voxel_count": 8388608,
+      "nonzero_voxels": 3175651,
+      "min": 0.0,
+      "max": 4095.0,
+      "mean": 305.5909,
+      "std": 570.6585,
+      "brain_mean": 807.2306,
+      "brain_std": 674.7456
+    }
+  },
+  "processed_volume": {
+    "header": {
+      "format": "Spm2AnalyzeImage",
+      "data_shape": [
+        176,
+        208,
+        176,
+        1
+      ],
+      "voxel_size_mm": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "data_dtype": ">i2",
+      "slope_intercept": [
+        1.0,
+        0.0
+      ],
+      "affine": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          87.5
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -103.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -87.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "header_str": "<class 'nibabel.spm2analyze.Spm2AnalyzeHeader'> object, endian='>'\nsizeof_hdr     : 348\ndata_type      : b''\ndb_name        : b''\nextents        : 16384\nsession_error  : 0\nregular        : b'r'\nhkey_un0       : b''\ndim            : [  4 176 208 176   1   0   0   0]\nvox_units      : b''\ncal_units      : b''\nunused1        : 0\ndatatype       : int16\nbitpix         : 16\ndim_un0        : 0\npixdim         : [0. 1. 1. 1. 0. 0. 0. 0.]\nvox_offset     : 0.0\nscl_slope      : nan\nscl_inter      : 0.0\nfunused3       : 0.0\ncal_max        : 0.0\ncal_min        : 0.0\ncompressed     : 0\nverified       : 0\nglmax          : 3091\nglmin          : 0\ndescrip        : b'                                                                               '\naux_file       : b'                       '\norient         : b''\norigin         : [8224 8224 8224 8224 8192]\ngenerated      : b'         '\nscannum        : b'         '\npatient_id     : b'         '\nexp_date       : b'         '\nexp_time       : b'         '\nhist_un0       : b'  '\nviews          : 0\nvols_added     : 0\nstart_field    : 0\nfield_skip     : 0\nomax           : 0\nomin           : 0\nsmax           : 0\nsmin           : 0"
+    },
+    "stats": {
+      "shape": [
+        176,
+        208,
+        176,
+        1
+      ],
+      "voxel_count": 6443008,
+      "nonzero_voxels": 1667264,
+      "min": 0.0,
+      "max": 3126.0,
+      "mean": 229.6815,
+      "std": 429.5652,
+      "brain_mean": 887.5858,
+      "brain_std": 359.3614
+    }
+  },
+  "sdk_nifti_wrapper": {
+    "error": "Cannot handle this data type: (1, 1, 1), |u1"
+  },
+  "fsl_segmentation": {
+    "voxel_size_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "voxel_vol_mm3": 1.0,
+    "tissue_volumes": {
+      "Background": {
+        "voxels": 4775744,
+        "volume_cm3": 4775.744
+      },
+      "CSF": {
+        "voxels": 423603,
+        "volume_cm3": 423.603
+      },
+      "Gray Matter": {
+        "voxels": 742507,
+        "volume_cm3": 742.507
+      },
+      "White Matter": {
+        "voxels": 501154,
+        "volume_cm3": 501.154
+      }
+    },
+    "fseg_txt": {
+      "FAST": "-",
+      "Image:": "OAS1_0001_MR1_mpr_n4_anon_111_t88_masked_gfc.img",
+      "T1-weighted": "image",
+      "Imagesize": ":",
+      "Pixelsize": ":",
+      "Parameter": "estimation",
+      "Initial": "Parameter",
+      "starting": "with",
+      "splite": "node",
+      "mean/stddev/prior": "for",
+      "1167.63": "/",
+      "Total": "number",
+      "869.614": "118.348",
+      "1302.2": "121.875",
+      "413.946": "142.031",
+      "Main": "iteration,",
+      "Lowpass": "Filtering",
+      "Mean": "inverse",
+      "estimated": "parameters:",
+      "402.132": "167.268",
+      "884.049": "135.168",
+      "1299.03": "91.5009",
+      "400.278": "167.756",
+      "883.07": "135.247",
+      "1292.37": "86.5936",
+      "398.115": "167.168",
+      "878.317": "134.238",
+      "1282.93": "85.6549",
+      "395.077": "165.911",
+      "871.479": "132.732",
+      "1271.68": "85.9329",
+      "391.594": "164.391",
+      "864.075": "131.432",
+      "1259.99": "86.1253",
+      "390.581": "164.912",
+      "862.651": "129.834",
+      "1246.7": "82.0722",
+      "387.955": "164.232",
+      "857.438": "128.62",
+      "1235.25": "81.1842",
+      "384.521": "162.773",
+      "851.126": "127.838",
+      "1225.56": "80.447",
+      "The": "final",
+      "Tissue": "2:",
+      "Segmentation": "done",
+      "Calculation": "time",
+      "Write": "segmentation",
+      "Class:": "CSF",
+      "Volumes:": "428136.9"
+    }
+  }
+}

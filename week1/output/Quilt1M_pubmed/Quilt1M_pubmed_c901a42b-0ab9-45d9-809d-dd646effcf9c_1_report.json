@@ -1,0 +1,99 @@
+{
+  "dataset": "Quilt1M",
+  "subset": "pubmed",
+  "image": "c901a42b-0ab9-45d9-809d-dd646effcf9c_1.jpg",
+  "modality": "Optical microscopy (H&E histopathology)",
+  "domain": "Pathology",
+  "clinical_context": "1M+ image-text pairs for histopathology. This sample comes from the 'pubmed' source: PubMed open-access figure images with academic captions.",
+  "pil": {
+    "format": "JPEG",
+    "mode": "RGB",
+    "size_wh": [
+      281,
+      222
+    ],
+    "info_tags": {
+      "jfif": "257",
+      "jfif_version": "(1, 1)",
+      "jfif_unit": "0",
+      "jfif_density": "(1, 1)"
+    }
+  },
+  "sdk": {
+    "wrapper_class": "SimpleImageWrapper",
+    "dimensions_wh": [
+      281,
+      222
+    ],
+    "level_count": 1,
+    "properties": {
+      "vendor": "SimpleImageWrapper",
+      "level_count": "1",
+      "dimensions": "281x222",
+      "format": "JPEG",
+      "mode": "RGB"
+    },
+    "region_shape": [
+      222,
+      281,
+      3
+    ]
+  },
+  "pixel_stats": {
+    "shape": [
+      222,
+      281,
+      3
+    ],
+    "dtype": "uint8",
+    "min": 0.0,
+    "max": 255.0,
+    "mean": 247.4016,
+    "std": 23.1011,
+    "median": 254.0,
+    "percentile_5": 203.0,
+    "percentile_95": 255.0,
+    "histogram_counts": [
+      90,
+      27,
+      835,
+      164,
+      694,
+      910,
+      3193,
+      3475,
+      3721,
+      174037
+    ],
+    "histogram_edges": [
+      0.0,
+      25.5,
+      51.0,
+      76.5,
+      102.0,
+      127.5,
+      153.0,
+      178.5,
+      204.0,
+      229.5,
+      255.0
+    ]
+  },
+  "channel_stats": {
+    "R": {
+      "mean": 248.0594,
+      "std": 21.9976
+    },
+    "G": {
+      "mean": 246.2497,
+      "std": 26.5934
+    },
+    "B": {
+      "mean": 247.8956,
+      "std": 20.1958
+    }
+  },
+  "csv_metadata": {
+    "error": "pandas not installed"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "dataset": "Quilt1M",
+  "subset": "laion",
+  "image": "00004000040081.jpg",
+  "modality": "Optical microscopy (H&E histopathology)",
+  "domain": "Pathology",
+  "clinical_context": "1M+ image-text pairs for histopathology. This sample comes from the 'laion' source: LAION web-scraped histopathology images.",
+  "pil": {
+    "format": "JPEG",
+    "mode": "RGB",
+    "size_wh": [
+      400,
+      300
+    ],
+    "info_tags": {
+      "jfif": "257",
+      "jfif_version": "(1, 1)",
+      "jfif_unit": "0",
+      "jfif_density": "(1, 1)"
+    }
+  },
+  "sdk": {
+    "wrapper_class": "SimpleImageWrapper",
+    "dimensions_wh": [
+      400,
+      300
+    ],
+    "level_count": 1,
+    "properties": {
+      "vendor": "SimpleImageWrapper",
+      "level_count": "1",
+      "dimensions": "400x300",
+      "format": "JPEG",
+      "mode": "RGB"
+    },
+    "region_shape": [
+      300,
+      400,
+      3
+    ]
+  },
+  "pixel_stats": {
+    "shape": [
+      300,
+      400,
+      3
+    ],
+    "dtype": "uint8",
+    "min": 0.0,
+    "max": 255.0,
+    "mean": 209.9473,
+    "std": 53.3636,
+    "median": 230.0,
+    "percentile_5": 103.0,
+    "percentile_95": 255.0,
+    "histogram_counts": [
+      1282,
+      2114,
+      4113,
+      9743,
+      18135,
+      23846,
+      31924,
+      41524,
+      46004,
+      181315
+    ],
+    "histogram_edges": [
+      0.0,
+      25.5,
+      51.0,
+      76.5,
+      102.0,
+      127.5,
+      153.0,
+      178.5,
+      204.0,
+      229.5,
+      255.0
+    ]
+  },
+  "channel_stats": {
+    "R": {
+      "mean": 196.392,
+      "std": 60.8395
+    },
+    "G": {
+      "mean": 204.7224,
+      "std": 54.5412
+    },
+    "B": {
+      "mean": 228.7277,
+      "std": 36.0984
+    }
+  },
+  "csv_metadata": {
+    "error": "pandas not installed"
+  }
+}

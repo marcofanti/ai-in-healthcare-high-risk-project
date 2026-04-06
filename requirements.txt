@@ -1,0 +1,13 @@
+streamlit
+langgraph
+langchain
+langchain-openai
+nibabel
+python-dotenv
+pillow
+spectral
+pydicom
+SimpleITK
+pandas
+matplotlib
+-e /Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/TissueLab-SDK

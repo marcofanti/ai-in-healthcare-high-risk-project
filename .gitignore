@@ -107,3 +107,12 @@ cython_debug/
 # AI Tooling
 claude.md
 gemini.md
+.claude/
+.gemini/
+
+# Package managers / uv
+uv.lock
+.python-version
+
+# Dataset paths
+week1/data/

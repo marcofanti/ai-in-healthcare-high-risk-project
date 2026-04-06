@@ -1,0 +1,615 @@
+{
+  "dataset": "Spinal-Multiple-Myeloma-SEG",
+  "patient": "Myel_001",
+  "modality": "NIfTI Segmentation Masks (Spectral CT derived)",
+  "domain": "Radiology / Oncology",
+  "clinical_context": "Expert-refined nnU-Net v2 segmentations. Spine mask labels = vertebra IDs (C1\u2013L5 etc.). Lesion mask labels = Multiple Myeloma lesion foci. Source CT: Philips IQon DECT, spine + lesion annotations for 67 patients.",
+  "spine_mask": {
+    "header": {
+      "label": "Spine mask",
+      "nifti_class": "Nifti1Image",
+      "shape": [
+        512,
+        512,
+        1095
+      ],
+      "voxel_size_mm": [
+        0.9766,
+        0.9766,
+        0.6005
+      ],
+      "voxel_vol_mm3": 0.5727,
+      "data_dtype": "uint16",
+      "affine": [
+        [
+          -0.9765625,
+          0.0,
+          0.0,
+          253.4454345703125
+        ],
+        [
+          0.0,
+          -0.9765625,
+          0.0,
+          104.14535522460938
+        ],
+        [
+          0.0,
+          0.0,
+          0.6005366444587708,
+          -1212.5904541015625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "qform_code": 1,
+      "sform_code": 1,
+      "description": "b''"
+    },
+    "label_analysis": {
+      "unique_labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "n_foreground_labels": 24,
+      "foreground_voxels": 1757659,
+      "total_voxels": 287047680,
+      "foreground_pct": 0.6123,
+      "per_label": {
+        "0": {
+          "voxels": 285290021,
+          "vol_mm3": 163385595.03,
+          "vol_cm3": 163385.595
+        },
+        "1": {
+          "voxels": 31722,
+          "vol_mm3": 18167.19,
+          "vol_cm3": 18.1672
+        },
+        "2": {
+          "voxels": 41466,
+          "vol_mm3": 23747.58,
+          "vol_cm3": 23.7476
+        },
+        "3": {
+          "voxels": 26723,
+          "vol_mm3": 15304.26,
+          "vol_cm3": 15.3043
+        },
+        "4": {
+          "voxels": 25302,
+          "vol_mm3": 14490.46,
+          "vol_cm3": 14.4905
+        },
+        "5": {
+          "voxels": 26563,
+          "vol_mm3": 15212.63,
+          "vol_cm3": 15.2126
+        },
+        "6": {
+          "voxels": 33262,
+          "vol_mm3": 19049.15,
+          "vol_cm3": 19.0492
+        },
+        "7": {
+          "voxels": 41005,
+          "vol_mm3": 23483.56,
+          "vol_cm3": 23.4836
+        },
+        "8": {
+          "voxels": 50079,
+          "vol_mm3": 28680.24,
+          "vol_cm3": 28.6802
+        },
+        "9": {
+          "voxels": 51696,
+          "vol_mm3": 29606.3,
+          "vol_cm3": 29.6063
+        },
+        "10": {
+          "voxels": 51053,
+          "vol_mm3": 29238.05,
+          "vol_cm3": 29.238
+        },
+        "11": {
+          "voxels": 55624,
+          "vol_mm3": 31855.86,
+          "vol_cm3": 31.8559
+        },
+        "12": {
+          "voxels": 61825,
+          "vol_mm3": 35407.18,
+          "vol_cm3": 35.4072
+        },
+        "13": {
+          "voxels": 63433,
+          "vol_mm3": 36328.08,
+          "vol_cm3": 36.3281
+        },
+        "14": {
+          "voxels": 70707,
+          "vol_mm3": 40493.9,
+          "vol_cm3": 40.4939
+        },
+        "15": {
+          "voxels": 78440,
+          "vol_mm3": 44922.59,
+          "vol_cm3": 44.9226
+        },
+        "16": {
+          "voxels": 86941,
+          "vol_mm3": 49791.11,
+          "vol_cm3": 49.7911
+        },
+        "17": {
+          "voxels": 92367,
+          "vol_mm3": 52898.58,
+          "vol_cm3": 52.8986
+        },
+        "18": {
+          "voxels": 100706,
+          "vol_mm3": 57674.33,
+          "vol_cm3": 57.6743
+        },
+        "19": {
+          "voxels": 94939,
+          "vol_mm3": 54371.57,
+          "vol_cm3": 54.3716
+        },
+        "20": {
+          "voxels": 100579,
+          "vol_mm3": 57601.59,
+          "vol_cm3": 57.6016
+        },
+        "21": {
+          "voxels": 141332,
+          "vol_mm3": 80940.84,
+          "vol_cm3": 80.9408
+        },
+        "22": {
+          "voxels": 144015,
+          "vol_mm3": 82477.39,
+          "vol_cm3": 82.4774
+        },
+        "23": {
+          "voxels": 142852,
+          "vol_mm3": 81811.34,
+          "vol_cm3": 81.8113
+        },
+        "24": {
+          "voxels": 145028,
+          "vol_mm3": 83057.54,
+          "vol_cm3": 83.0575
+        }
+      }
+    }
+  },
+  "sdk_nifti_wrapper_spine": {
+    "wrapper_class": "NiftiImageWrapper",
+    "dimensions_wh": [
+      512,
+      512
+    ],
+    "level_count": 4,
+    "level_dimensions": [
+      [
+        512,
+        512
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        64,
+        64
+      ]
+    ],
+    "region_shape": [
+      512,
+      512,
+      3
+    ],
+    "properties": {
+      "vendor": "NiftiImageWrapper",
+      "level_count": "4",
+      "dimensions": "512x512",
+      "format": "NIfTI",
+      "shape": "(512, 512, 1095)",
+      "header": "<class 'nibabel.nifti1.Nifti1Header'> object, endian='<'\nsizeof_hdr      : 348\ndata_type       : b''\ndb_name         : b''\nextents         : 0\nsession_error   : 0\nregular         : b'r'\ndim_info        : 0\ndim             : [   3  512  512 1095    1    1    1    1]\nintent_p1       : 0.0\nintent_p2       : 0.0\nintent_p3       : 0.0\nintent_code     : none\ndatatype        : uint16\nbitpix          : 16\nslice_start     : 0\npixdim          : [1.         0.9765625  0.9765625  0.60053664 0.         0.\n 0.         0.        ]\nvox_offset      : 0.0\nscl_slope       : nan\nscl_inter       : nan\nslice_end       : 0\nslice_code      : unknown\nxyzt_units      : 2\ncal_max         : 0.0\ncal_min         : 0.0\nslice_duration  : 0.0\ntoffset         : 0.0\nglmax           : 0\nglmin           : 0\ndescrip         : b''\naux_file        : b''\nqform_code      : scanner\nsform_code      : scanner\nquatern_b       : 0.0\nquatern_c       : 0.0\nquatern_d       : 1.0\nqoffset_x       : 253.4454345703125\nqoffset_y       : 104.14535522460938\nqoffset_z       : -1212.5904541015625\nsrow_x          : [ -0.9765625   0.          0.        253.44543  ]\nsrow_y          : [  0.         -0.9765625   0.        104.145355 ]\nsrow_z          : [ 0.0000000e+00  0.0000000e+00  6.0053664e-01 -1.2125905e+03]\nintent_name     : b''\nmagic           : b'n+1'",
+      "global_min": "0.0",
+      "global_max": "24.0"
+    }
+  },
+  "lesion_mask": {
+    "header": {
+      "label": "Lesion mask",
+      "nifti_class": "Nifti1Image",
+      "shape": [
+        512,
+        512,
+        1095
+      ],
+      "voxel_size_mm": [
+        0.9766,
+        0.9766,
+        0.6005
+      ],
+      "voxel_vol_mm3": 0.5727,
+      "data_dtype": "uint16",
+      "affine": [
+        [
+          -0.9765625,
+          0.0,
+          0.0,
+          253.4454345703125
+        ],
+        [
+          0.0,
+          -0.9765625,
+          0.0,
+          104.14535522460938
+        ],
+        [
+          0.0,
+          0.0,
+          0.6005366444587708,
+          -1212.5904541015625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "qform_code": 1,
+      "sform_code": 1,
+      "description": "b''"
+    },
+    "label_analysis": {
+      "unique_labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "n_foreground_labels": 42,
+      "foreground_voxels": 6618,
+      "total_voxels": 287047680,
+      "foreground_pct": 0.0023,
+      "per_label": {
+        "0": {
+          "voxels": 287041062,
+          "vol_mm3": 164388416.21,
+          "vol_cm3": 164388.4162
+        },
+        "1": {
+          "voxels": 65,
+          "vol_mm3": 37.23,
+          "vol_cm3": 0.0372
+        },
+        "2": {
+          "voxels": 99,
+          "vol_mm3": 56.7,
+          "vol_cm3": 0.0567
+        },
+        "3": {
+          "voxels": 39,
+          "vol_mm3": 22.34,
+          "vol_cm3": 0.0223
+        },
+        "4": {
+          "voxels": 274,
+          "vol_mm3": 156.92,
+          "vol_cm3": 0.1569
+        },
+        "5": {
+          "voxels": 769,
+          "vol_mm3": 440.41,
+          "vol_cm3": 0.4404
+        },
+        "6": {
+          "voxels": 84,
+          "vol_mm3": 48.11,
+          "vol_cm3": 0.0481
+        },
+        "7": {
+          "voxels": 160,
+          "vol_mm3": 91.63,
+          "vol_cm3": 0.0916
+        },
+        "8": {
+          "voxels": 105,
+          "vol_mm3": 60.13,
+          "vol_cm3": 0.0601
+        },
+        "9": {
+          "voxels": 125,
+          "vol_mm3": 71.59,
+          "vol_cm3": 0.0716
+        },
+        "10": {
+          "voxels": 151,
+          "vol_mm3": 86.48,
+          "vol_cm3": 0.0865
+        },
+        "11": {
+          "voxels": 200,
+          "vol_mm3": 114.54,
+          "vol_cm3": 0.1145
+        },
+        "12": {
+          "voxels": 168,
+          "vol_mm3": 96.21,
+          "vol_cm3": 0.0962
+        },
+        "13": {
+          "voxels": 91,
+          "vol_mm3": 52.12,
+          "vol_cm3": 0.0521
+        },
+        "14": {
+          "voxels": 250,
+          "vol_mm3": 143.17,
+          "vol_cm3": 0.1432
+        },
+        "15": {
+          "voxels": 303,
+          "vol_mm3": 173.53,
+          "vol_cm3": 0.1735
+        },
+        "16": {
+          "voxels": 216,
+          "vol_mm3": 123.7,
+          "vol_cm3": 0.1237
+        },
+        "17": {
+          "voxels": 249,
+          "vol_mm3": 142.6,
+          "vol_cm3": 0.1426
+        },
+        "18": {
+          "voxels": 178,
+          "vol_mm3": 101.94,
+          "vol_cm3": 0.1019
+        },
+        "19": {
+          "voxels": 338,
+          "vol_mm3": 193.57,
+          "vol_cm3": 0.1936
+        },
+        "20": {
+          "voxels": 104,
+          "vol_mm3": 59.56,
+          "vol_cm3": 0.0596
+        },
+        "21": {
+          "voxels": 312,
+          "vol_mm3": 178.68,
+          "vol_cm3": 0.1787
+        },
+        "22": {
+          "voxels": 104,
+          "vol_mm3": 59.56,
+          "vol_cm3": 0.0596
+        },
+        "23": {
+          "voxels": 156,
+          "vol_mm3": 89.34,
+          "vol_cm3": 0.0893
+        },
+        "24": {
+          "voxels": 66,
+          "vol_mm3": 37.8,
+          "vol_cm3": 0.0378
+        },
+        "25": {
+          "voxels": 59,
+          "vol_mm3": 33.79,
+          "vol_cm3": 0.0338
+        },
+        "26": {
+          "voxels": 52,
+          "vol_mm3": 29.78,
+          "vol_cm3": 0.0298
+        },
+        "27": {
+          "voxels": 227,
+          "vol_mm3": 130.0,
+          "vol_cm3": 0.13
+        },
+        "28": {
+          "voxels": 91,
+          "vol_mm3": 52.12,
+          "vol_cm3": 0.0521
+        },
+        "29": {
+          "voxels": 66,
+          "vol_mm3": 37.8,
+          "vol_cm3": 0.0378
+        },
+        "30": {
+          "voxels": 87,
+          "vol_mm3": 49.82,
+          "vol_cm3": 0.0498
+        },
+        "31": {
+          "voxels": 63,
+          "vol_mm3": 36.08,
+          "vol_cm3": 0.0361
+        },
+        "32": {
+          "voxels": 95,
+          "vol_mm3": 54.41,
+          "vol_cm3": 0.0544
+        },
+        "33": {
+          "voxels": 38,
+          "vol_mm3": 21.76,
+          "vol_cm3": 0.0218
+        },
+        "34": {
+          "voxels": 78,
+          "vol_mm3": 44.67,
+          "vol_cm3": 0.0447
+        },
+        "35": {
+          "voxels": 130,
+          "vol_mm3": 74.45,
+          "vol_cm3": 0.0745
+        },
+        "36": {
+          "voxels": 161,
+          "vol_mm3": 92.2,
+          "vol_cm3": 0.0922
+        },
+        "37": {
+          "voxels": 109,
+          "vol_mm3": 62.42,
+          "vol_cm3": 0.0624
+        },
+        "38": {
+          "voxels": 132,
+          "vol_mm3": 75.6,
+          "vol_cm3": 0.0756
+        },
+        "39": {
+          "voxels": 109,
+          "vol_mm3": 62.42,
+          "vol_cm3": 0.0624
+        },
+        "40": {
+          "voxels": 290,
+          "vol_mm3": 166.08,
+          "vol_cm3": 0.1661
+        },
+        "41": {
+          "voxels": 92,
+          "vol_mm3": 52.69,
+          "vol_cm3": 0.0527
+        },
+        "42": {
+          "voxels": 133,
+          "vol_mm3": 76.17,
+          "vol_cm3": 0.0762
+        }
+      }
+    }
+  },
+  "sdk_nifti_wrapper_lesion": {
+    "wrapper_class": "NiftiImageWrapper",
+    "dimensions_wh": [
+      512,
+      512
+    ],
+    "level_count": 4,
+    "level_dimensions": [
+      [
+        512,
+        512
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        64,
+        64
+      ]
+    ],
+    "region_shape": [
+      512,
+      512,
+      3
+    ],
+    "properties": {
+      "vendor": "NiftiImageWrapper",
+      "level_count": "4",
+      "dimensions": "512x512",
+      "format": "NIfTI",
+      "shape": "(512, 512, 1095)",
+      "header": "<class 'nibabel.nifti1.Nifti1Header'> object, endian='<'\nsizeof_hdr      : 348\ndata_type       : b''\ndb_name         : b''\nextents         : 0\nsession_error   : 0\nregular         : b'r'\ndim_info        : 0\ndim             : [   3  512  512 1095    1    1    1    1]\nintent_p1       : 0.0\nintent_p2       : 0.0\nintent_p3       : 0.0\nintent_code     : none\ndatatype        : uint16\nbitpix          : 16\nslice_start     : 0\npixdim          : [1.         0.9765625  0.9765625  0.60053664 0.         0.\n 0.         0.        ]\nvox_offset      : 0.0\nscl_slope       : nan\nscl_inter       : nan\nslice_end       : 0\nslice_code      : unknown\nxyzt_units      : 2\ncal_max         : 0.0\ncal_min         : 0.0\nslice_duration  : 0.0\ntoffset         : 0.0\nglmax           : 0\nglmin           : 0\ndescrip         : b''\naux_file        : b''\nqform_code      : scanner\nsform_code      : scanner\nquatern_b       : 0.0\nquatern_c       : 0.0\nquatern_d       : 1.0\nqoffset_x       : 253.4454345703125\nqoffset_y       : 104.14535522460938\nqoffset_z       : -1212.5904541015625\nsrow_x          : [ -0.9765625   0.          0.        253.44543  ]\nsrow_y          : [  0.         -0.9765625   0.        104.145355 ]\nsrow_z          : [ 0.0000000e+00  0.0000000e+00  6.0053664e-01 -1.2125905e+03]\nintent_name     : b''\nmagic           : b'n+1'",
+      "global_min": "0.0",
+      "global_max": "42.0"
+    }
+  },
+  "coregistration": {
+    "same_shape": true,
+    "same_affine": true
+  }
+}

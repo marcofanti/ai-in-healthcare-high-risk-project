@@ -1,0 +1,311 @@
+{
+  "dataset": "IQ-OTH/NCCD Lung Cancer Dataset",
+  "modality": "CT (Chest)",
+  "domain": "Radiology",
+  "format": "JPEG",
+  "classes": [
+    "Benign",
+    "Malignant",
+    "Normal"
+  ],
+  "clinical_context": "2D CT chest slices labelled by Iraqi oncologists/radiologists. Benign=120 images/15 patients, Malignant=561/40, Normal=416/55. Original DICOM from SOMATOM Siemens; converted to JPEG at 1mm slice thickness.",
+  "samples": [
+    {
+      "label": "Benign",
+      "file": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/ai-in-healthcare-high-risk-project/week1/data/IQ-OTH_NCCD/Benign/Benign_case_1.jpg",
+      "pil": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_wh": [
+          512,
+          512
+        ],
+        "info_tags": {
+          "jfif": "257",
+          "jfif_version": "(1, 1)",
+          "dpi": "(120, 120)",
+          "jfif_unit": "1",
+          "jfif_density": "(120, 120)"
+        }
+      },
+      "sdk": {
+        "wrapper_class": "SimpleImageWrapper",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "level_count": 1,
+        "level_dimensions": [
+          [
+            512,
+            512
+          ]
+        ],
+        "properties": {
+          "vendor": "SimpleImageWrapper",
+          "level_count": "1",
+          "dimensions": "512x512",
+          "format": "JPEG",
+          "mode": "RGB"
+        },
+        "region_shape": [
+          512,
+          512,
+          3
+        ]
+      },
+      "pixel_stats": {
+        "shape": [
+          512,
+          512,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 37.0,
+        "max": 255.0,
+        "mean": 96.8933,
+        "std": 76.2767,
+        "median": 48.0,
+        "percentile_5": 38.0,
+        "percentile_95": 232.0,
+        "histogram_counts": [
+          472656,
+          37797,
+          29202,
+          13551,
+          7794,
+          5769,
+          20301,
+          84048,
+          78864,
+          36450
+        ],
+        "histogram_edges": [
+          37.0,
+          58.8,
+          80.6,
+          102.4,
+          124.2,
+          146.0,
+          167.8,
+          189.6,
+          211.4,
+          233.2,
+          255.0
+        ]
+      },
+      "channel_stats": {
+        "R": {
+          "mean": 96.8933,
+          "std": 76.2767
+        },
+        "G": {
+          "mean": 96.8933,
+          "std": 76.2767
+        },
+        "B": {
+          "mean": 96.8933,
+          "std": 76.2767
+        }
+      }
+    },
+    {
+      "label": "Malignant",
+      "file": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/ai-in-healthcare-high-risk-project/week1/data/IQ-OTH_NCCD/Malignant/Malignant_case_1.jpg",
+      "pil": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_wh": [
+          512,
+          512
+        ],
+        "info_tags": {
+          "jfif": "257",
+          "jfif_version": "(1, 1)",
+          "dpi": "(120, 120)",
+          "jfif_unit": "1",
+          "jfif_density": "(120, 120)"
+        }
+      },
+      "sdk": {
+        "wrapper_class": "SimpleImageWrapper",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "level_count": 1,
+        "level_dimensions": [
+          [
+            512,
+            512
+          ]
+        ],
+        "properties": {
+          "vendor": "SimpleImageWrapper",
+          "level_count": "1",
+          "dimensions": "512x512",
+          "format": "JPEG",
+          "mode": "RGB"
+        },
+        "region_shape": [
+          512,
+          512,
+          3
+        ]
+      },
+      "pixel_stats": {
+        "shape": [
+          512,
+          512,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 37.0,
+        "max": 255.0,
+        "mean": 87.1196,
+        "std": 72.0104,
+        "median": 43.0,
+        "percentile_5": 38.0,
+        "percentile_95": 231.0,
+        "histogram_counts": [
+          494850,
+          58587,
+          29790,
+          13872,
+          8934,
+          8058,
+          6546,
+          63792,
+          70386,
+          31617
+        ],
+        "histogram_edges": [
+          37.0,
+          58.8,
+          80.6,
+          102.4,
+          124.2,
+          146.0,
+          167.8,
+          189.6,
+          211.4,
+          233.2,
+          255.0
+        ]
+      },
+      "channel_stats": {
+        "R": {
+          "mean": 87.1196,
+          "std": 72.0104
+        },
+        "G": {
+          "mean": 87.1196,
+          "std": 72.0104
+        },
+        "B": {
+          "mean": 87.1196,
+          "std": 72.0104
+        }
+      }
+    },
+    {
+      "label": "Normal",
+      "file": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/ai-in-healthcare-high-risk-project/week1/data/IQ-OTH_NCCD/Normal/Normal_case_1.jpg",
+      "pil": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_wh": [
+          512,
+          512
+        ],
+        "info_tags": {
+          "jfif": "257",
+          "jfif_version": "(1, 1)",
+          "dpi": "(120, 120)",
+          "jfif_unit": "1",
+          "jfif_density": "(120, 120)"
+        }
+      },
+      "sdk": {
+        "wrapper_class": "SimpleImageWrapper",
+        "dimensions_wh": [
+          512,
+          512
+        ],
+        "level_count": 1,
+        "level_dimensions": [
+          [
+            512,
+            512
+          ]
+        ],
+        "properties": {
+          "vendor": "SimpleImageWrapper",
+          "level_count": "1",
+          "dimensions": "512x512",
+          "format": "JPEG",
+          "mode": "RGB"
+        },
+        "region_shape": [
+          512,
+          512,
+          3
+        ]
+      },
+      "pixel_stats": {
+        "shape": [
+          512,
+          512,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 37.0,
+        "max": 255.0,
+        "mean": 99.6465,
+        "std": 77.2927,
+        "median": 50.0,
+        "percentile_5": 38.0,
+        "percentile_95": 233.0,
+        "histogram_counts": [
+          451536,
+          55266,
+          29049,
+          9399,
+          4875,
+          4275,
+          18642,
+          86433,
+          89148,
+          37809
+        ],
+        "histogram_edges": [
+          37.0,
+          58.8,
+          80.6,
+          102.4,
+          124.2,
+          146.0,
+          167.8,
+          189.6,
+          211.4,
+          233.2,
+          255.0
+        ]
+      },
+      "channel_stats": {
+        "R": {
+          "mean": 99.6465,
+          "std": 77.2927
+        },
+        "G": {
+          "mean": 99.6465,
+          "std": 77.2927
+        },
+        "B": {
+          "mean": 99.6465,
+          "std": 77.2927
+        }
+      }
+    }
+  ]
+}

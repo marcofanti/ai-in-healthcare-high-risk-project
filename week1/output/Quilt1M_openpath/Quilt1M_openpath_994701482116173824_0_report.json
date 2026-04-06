@@ -1,0 +1,102 @@
+{
+  "dataset": "Quilt1M",
+  "subset": "openpath",
+  "image": "994701482116173824_0.jpg",
+  "modality": "Optical microscopy (H&E histopathology)",
+  "domain": "Pathology",
+  "clinical_context": "1M+ image-text pairs for histopathology. This sample comes from the 'openpath' source: Twitter/social media pathology posts (OpenPath).",
+  "pil": {
+    "format": "JPEG",
+    "mode": "RGB",
+    "size_wh": [
+      360,
+      225
+    ],
+    "info_tags": {
+      "jfif": "257",
+      "jfif_version": "(1, 1)",
+      "jfif_unit": "0",
+      "jfif_density": "(1, 1)",
+      "progressive": "1",
+      "progression": "1",
+      "icc_profile": "b'\\x00\\x00\\x0cHLino\\x02\\x10\\x00\\x00mntrRGB XYZ \\x07\\xce\\x00\\x02\\x00\\t\\x00\\x06\\x001\\x00\\x00acspMSFT\\x"
+    }
+  },
+  "sdk": {
+    "wrapper_class": "SimpleImageWrapper",
+    "dimensions_wh": [
+      360,
+      225
+    ],
+    "level_count": 1,
+    "properties": {
+      "vendor": "SimpleImageWrapper",
+      "level_count": "1",
+      "dimensions": "360x225",
+      "format": "JPEG",
+      "mode": "RGB"
+    },
+    "region_shape": [
+      225,
+      360,
+      3
+    ]
+  },
+  "pixel_stats": {
+    "shape": [
+      225,
+      360,
+      3
+    ],
+    "dtype": "uint8",
+    "min": 0.0,
+    "max": 255.0,
+    "mean": 190.8388,
+    "std": 38.5667,
+    "median": 193.0,
+    "percentile_5": 124.0,
+    "percentile_95": 243.0,
+    "histogram_counts": [
+      106,
+      558,
+      924,
+      2866,
+      9672,
+      24194,
+      48935,
+      59666,
+      46880,
+      49199
+    ],
+    "histogram_edges": [
+      0.0,
+      25.5,
+      51.0,
+      76.5,
+      102.0,
+      127.5,
+      153.0,
+      178.5,
+      204.0,
+      229.5,
+      255.0
+    ]
+  },
+  "channel_stats": {
+    "R": {
+      "mean": 199.241,
+      "std": 33.3758
+    },
+    "G": {
+      "mean": 170.871,
+      "std": 41.8513
+    },
+    "B": {
+      "mean": 202.4043,
+      "std": 31.5219
+    }
+  },
+  "csv_metadata": {
+    "error": "pandas not installed"
+  }
+}
