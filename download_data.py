@@ -12,6 +12,11 @@ def main():
     FOLDER_ID = "17Zk6Zs_rGqOgV0pcL2MTQ4e_ArZ_zqpC"
     OUTPUT_DIR = "week1/data"
 
+    # Minimal check to see if the directory is already heavily populated natively  
+    if os.path.exists(OUTPUT_DIR) and len(os.listdir(OUTPUT_DIR)) > 3:
+        print(f"Data directory '{OUTPUT_DIR}' is already heavily populated! Skipping redundant Google Drive download.")
+        sys.exit(0)
+
     print(f"Downloading massive dataset folder from Google Drive (ID: {FOLDER_ID})...")
     
     # Ensure the target base directory exists natively
