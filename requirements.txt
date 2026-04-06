@@ -11,3 +11,4 @@ SimpleITK
 pandas
 matplotlib
 -e /Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/TissueLab-SDK
+gdown
