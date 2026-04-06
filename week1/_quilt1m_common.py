@@ -29,8 +29,8 @@ try:
 except ImportError:
     HAS_SDK = False
 
-CSV_PATH = Path("/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/Quilt1M/quilt_1M_lookup.csv")
-
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+CSV_PATH = PROJECT_ROOT / "week1" / "data" / "quilt_1M_lookup.csv"
 
 # ---------------------------------------------------------------------------
 # Metadata lookup
