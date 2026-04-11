@@ -94,6 +94,20 @@
     }
   },
   "csv_metadata": {
-    "error": "pandas not installed"
+    "Unnamed: 0": 33,
+    "caption": "The immunocytochemistry of IDH1 in MG63 and U2OS. IDH1 is specifically detected in the cytoplasm of both osteosarcoma cell lines MG63 and U2OS.(A) Expression of IDH1 in U2OS, \u00d7 200; (B) Expression of IDH1 in MG63,\u00d7 200; (C) Expression of IDH1 in U2OS,\u00d7 400; (D) Expression of IDH1 in MG63,\u00d7 400.",
+    "image_path": "c901a42b-0ab9-45d9-809d-dd646effcf9c_1.jpg",
+    "subset": "pubmed",
+    "split": "train",
+    "pathology": null,
+    "roi_text": null,
+    "noisy_text": null,
+    "corrected_text": null,
+    "med_umls_ids": null,
+    "magnification": null,
+    "height": null,
+    "width": null,
+    "not_histology": 0,
+    "single_wsi": 1
   }
 }

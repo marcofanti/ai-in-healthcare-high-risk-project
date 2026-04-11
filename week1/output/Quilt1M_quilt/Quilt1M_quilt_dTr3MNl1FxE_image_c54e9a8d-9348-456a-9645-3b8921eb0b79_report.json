@@ -94,6 +94,20 @@
     }
   },
   "csv_metadata": {
-    "error": "pandas not installed"
+    "Unnamed: 0": 2,
+    "caption": "Nephrogenic systemic fibrosis is a fibrotic disorder with deep involvement that goes down to the fascia.",
+    "image_path": "dTr3MNl1FxE_image_c54e9a8d-9348-456a-9645-3b8921eb0b79.jpg",
+    "subset": "quilt",
+    "split": "train",
+    "pathology": "['Dermatopathology', 'Soft tissue', 'Breast']",
+    "roi_text": "[]",
+    "noisy_text": " some eosinophils in there as well. So just remember that. And again, maybe at some point in the future that may be some kind of therapeutic intervention, but you almost always see plasma cells when you get these sclerosing disorders. So I would recommend knowing those. I would also know some of the other conditions that you can get sclerosis in that are not really classically related to morphia, scleroderma form change that you see with some cases of chronic PCT, graft versus host disease, toxic oil, L-tryptophan deficiency, and then the differential diagnosis of nephrogenic systemic fibrosis, even though we don't see that many cases anymore of that today, because gadolinium isn't really being used as much as it used to be. That's not really a sclerotic disorder. It's a fibrotic disorder, but it also gives you very thick, deep involvement that goes all the way down to the fascia and even",
+    "corrected_text": " some eosinophils in there as well. So just remember that. And again, maybe at some point in the future that may be some kind of therapeutic intervention, but you almost always see plasma cells when you get these sclerotic disorders. So I would recommend knowing those. I would also know some of the other conditions that you can get sclerosis in that are not really classically related to morphia, scleroderma form change that you see with some cases of chronic PCT, graft versus host disease, toxic oil, L-tryptophan deficiency, and then the differential diagnosis of nephrogenic systemic fibrosis, even though we don't see that many cases anymore of that today, because gadolinium isn't really being used as much as it used to be. That's not really a sclerotic disorder. It's a fibrotic disorder, but it also gives you very thick, deep involvement that goes all the way down to the fascia and even",
+    "med_umls_ids": "[[{'entity': 'Presence', 'concept_id': 'C0150312', 'confidence': 1.0}, {'entity': 'eosinophils', 'concept_id': 'C0014467', 'confidence': 1.0}, {'entity': 'plasma cells', 'concept_id': 'C0032112', 'confidence': 1.0}, {'entity': 'sclerotic disorders', 'concept_id': 'C0036412', 'confidence': 0.837680995464325}], [{'entity': 'Sclerosis', 'concept_id': 'C0036429', 'confidence': 1.0}, {'entity': 'conditions', 'concept_id': 'C0012634', 'confidence': 0.8556983470916748}, {'entity': 'morphia', 'concept_id': 'C0026549', 'confidence': 1.0}, {'entity': 'scleroderma', 'concept_id': 'C0011644', 'confidence': 1.0}, {'entity': 'chronic PCT', 'concept_id': 'C0205191', 'confidence': 0.6530080437660217}, {'entity': 'graft', 'concept_id': 'C0181074', 'confidence': 1.0}, {'entity': 'host disease', 'concept_id': 'C0162698', 'confidence': 0.7973175644874573}, {'entity': 'toxic oil', 'concept_id': 'C0409998', 'confidence': 0.7697754502296448}, {'entity': 'L-tryptophan deficiency', 'concept_id': 'C4317126', 'confidence': 0.7804175615310669}, {'entity': 'nephrogenic', 'concept_id': 'C1320468', 'confidence': 0.8878021836280823}], [{'entity': 'Nephrogenic', 'concept_id': 'C1320468', 'confidence': 0.8878021836280823}, {'entity': 'systemic fibrosis', 'concept_id': 'C0263669', 'confidence': 0.8302077054977417}, {'entity': 'fibrotic disorder', 'concept_id': 'C0406570', 'confidence': 0.8541455268859863}, {'entity': 'deep involvement', 'concept_id': 'C1314939', 'confidence': 0.8176997900009155}, {'entity': 'fascia', 'concept_id': 'C0015641', 'confidence': 1.0}]]",
+    "magnification": 0.0,
+    "height": 1040.0,
+    "width": 1920.0,
+    "not_histology": 0,
+    "single_wsi": 0
   }
 }

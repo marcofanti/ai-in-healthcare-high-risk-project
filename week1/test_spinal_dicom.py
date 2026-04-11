@@ -27,6 +27,18 @@ from pathlib import Path
 
 import numpy as np
 
+
+class _NumpyEncoder(json.JSONEncoder):
+    """Serialize numpy scalars and arrays to plain Python types."""
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super().default(obj)
+
 try:
     import pydicom
     HAS_PYDICOM = True
@@ -78,7 +90,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Full-series path (for SimpleITK — if the full copy exists)
 FULL_SERIES_DIR = Path(
-    "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets"
+    "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets"
     "/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG"
     f"/Myel_001/01-06-2015-8006-NA-94443/20781.000000-MonoE 80keVHU-77135"
 )
@@ -391,7 +403,7 @@ def main() -> None:
     # -- Save report --------------------------------------------------------
     report_path = OUTPUT_DIR / f"{PATIENT_ID}_DICOM_report.json"
     with open(report_path, "w") as f:
-        json.dump(report, f, indent=2)
+        json.dump(report, f, indent=2, cls=_NumpyEncoder)
     print(f"\n[REPORT] Saved → {report_path}")
     print("\n[DONE]")
 

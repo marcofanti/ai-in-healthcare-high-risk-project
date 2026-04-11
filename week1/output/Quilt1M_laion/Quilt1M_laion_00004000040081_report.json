@@ -94,6 +94,20 @@
     }
   },
   "csv_metadata": {
-    "error": "pandas not installed"
+    "Unnamed: 0": 17,
+    "caption": "Cytosolic Sulfotransferase 1A1 /SULT1A1 Antibody",
+    "image_path": "00004000040081.jpg",
+    "subset": "laion",
+    "split": "train",
+    "pathology": null,
+    "roi_text": null,
+    "noisy_text": null,
+    "corrected_text": null,
+    "med_umls_ids": null,
+    "magnification": null,
+    "height": null,
+    "width": null,
+    "not_histology": 0,
+    "single_wsi": 1
   }
 }

@@ -10,5 +10,17 @@ pydicom
 SimpleITK
 pandas
 matplotlib
--e /Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/TissueLab-SDK
+# CheXagent-2-3b dependencies (from model README)
+torch
+torchvision
+transformers==4.40.0  # CheXagent-2-3b remote code asserts this exact version
+accelerate
+tensorflow-macos      # tokenizer dynamic import check requires tf to be present
+opencv-python
+albumentations
+einops
+sentencepiece
+protobuf>=3.20.0,<4.0.0  # protobuf 4.x removed MessageFactory.GetPrototype used by tensorflow-macos
+-e /Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/TissueLab-SDK
 gdown
+conch @ git+https://github.com/mahmoodlab/CONCH.git

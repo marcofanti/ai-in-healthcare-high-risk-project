@@ -97,6 +97,20 @@
     }
   },
   "csv_metadata": {
-    "error": "pandas not installed"
+    "Unnamed: 0": 0,
+    "caption": "Peritoneum, Day 4 These two biopsies (1 & 2) were taken from the same patient. What is your DailyDx of each of these peritoneal biopsies? What other finding is most likely to be present in this patient? Answers & quick facts tomorrow! UMichPath SurgPath",
+    "image_path": "994701482116173824_0.jpg",
+    "subset": "openpath",
+    "split": "train",
+    "pathology": null,
+    "roi_text": null,
+    "noisy_text": null,
+    "corrected_text": null,
+    "med_umls_ids": null,
+    "magnification": null,
+    "height": null,
+    "width": null,
+    "not_histology": 0,
+    "single_wsi": 1
   }
 }
