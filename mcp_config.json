@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "medhugging": {
+      "type": "stdio",
+      "command": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/ai-in-healthcare-high-risk-project/.venv/bin/python",
+      "args": [
+        "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/ai-in-healthcare-high-risk-project/mcp_server.py"
+      ],
+      "env": {
+        "HF_TOKEN": "${HF_TOKEN}"
+      }
+    }
+  }
+}
