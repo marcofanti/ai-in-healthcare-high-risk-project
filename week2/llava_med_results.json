@@ -1,0 +1,92 @@
+[
+  {
+    "sample": "IQ-OTH_Benign",
+    "dataset": "IQ-OTH/NCCD",
+    "loader": "image",
+    "findings": "",
+    "ddx": "Atelectasis: The image reveals a collapse of the right lower lobe, which is a characteristic finding in atelectasis.\n3. Pleural effusion: The image shows a pleural effusion, which is an abnormal accumulation of fluid in the pleural space surrounding the lungs.\n\nThese conditions can be distinguished by their specific imaging features, such as the appearance of the lung tissue, the presence of fluid or air in the pleural space, and the extent of the affected area.",
+    "time_s": 70.12,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "IQ-OTH_Malignant",
+    "dataset": "IQ-OTH/NCCD",
+    "loader": "image",
+    "findings": "",
+    "ddx": "Atelectasis: The image reveals a collapse of the right lower lobe, which is a characteristic finding in atelectasis.\n3. Pleural effusion: The image shows a pleural effusion, which is an abnormal accumulation of fluid in the pleural space surrounding the lungs.\n\nThese conditions can be distinguished by their specific imaging features, such as the appearance of the lung tissue, the presence of fluid or air in the pleural space, and the extent of the affected area.",
+    "time_s": 13.12,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "IQ-OTH_Normal",
+    "dataset": "IQ-OTH/NCCD",
+    "loader": "image",
+    "findings": "",
+    "ddx": ": The image reveals bilateral ground-glass opacities, which can be seen in pulmonary edema.\n3. Acute respiratory distress syndrome (ARDS): The image shows bilateral diffuse ground-glass opacities, which is a characteristic finding in ARDS.\n\nThese imaging features can help healthcare professionals narrow down the possible diagnoses and guide further evaluation and treatment.",
+    "time_s": 11.21,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "Spinal_DICOM_Myel001",
+    "dataset": "Spinal_DICOM",
+    "loader": "dicom",
+    "findings": "",
+    "ddx": "defined, homogenous, and expansile mass with a sclerotic margin.\n\n2. Osteoma - This is the second most likely diagnosis, as the image shows a well-defined, homogenous, and expansile mass with a sclerotic margin.\n\n3. Osteoid osteoma - This is the third most likely diagnosis, as the image shows a well-defined, homogenous, and expansile mass with a sclerotic margin.\n\nIt's important to note that further diagnostic tests and clinical correlation are needed to confirm the diagnosis and determine the appropriate course of treatment.",
+    "time_s": 16.2,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "Quilt1M_pubmed",
+    "dataset": "Quilt1M",
+    "loader": "image",
+    "findings": "activity is also normal, indicating that the cells are dividing at a typical rate. The stromal changes are described as mild, which means that there are some alterations in the supportive tissue surrounding the cells, but they are not severe. There are no features suggesting malignancy in this tissue section.",
+    "ddx": "with a central stellate scar.\n2. Fibroma - The image shows a large, well-defined, and heterogeneous mass with a central stellate scar.\n3. Leiomyoma - The image shows a large, well-defined, and heterogeneous mass with a central stellate scar.\n\nThese conditions are characterized by the presence of a central stellate scar, which is a key supporting imaging feature in this case.",
+    "time_s": 16.98,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "Quilt1M_quilt",
+    "dataset": "Quilt1M",
+    "loader": "image",
+    "findings": "appear relatively normal. Mitotic activity is low, indicating that the cells are not dividing rapidly. Stromal changes are minimal, meaning that the supportive tissue surrounding the glandular structures is not significantly altered. There are no features suggesting malignancy in this particular image.",
+    "ddx": ", and a high nuclear grade.\n\n2. Squamous cell carcinoma (SCC): The key supporting imaging features from this image include the presence of a nodular component and perineural invasion.\n\n3. Adenocarcinoma: The key supporting imaging features from this image include the presence of a nodular component and perineural invasion.\n\nIt's important to note that a definitive diagnosis would require further evaluation, including additional imaging studies and possibly a biopsy, to confirm the presence of cancer and determine the specific type of cancer involved.",
+    "time_s": 18.46,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "Quilt1M_openpath",
+    "dataset": "Quilt1M",
+    "loader": "image",
+    "findings": "described as bland, which means the nuclei do not appear to be highly abnormal or atypical. The mitotic activity is described as low, indicating that the cells are not dividing rapidly. The stromal changes are described as mild, suggesting that the supportive tissue surrounding the cells is not significantly altered. There are no features in the image that suggest malignancy.",
+    "ddx": "ins, and a high nuclear grade.\n\n2. Phyllodes tumor - The key supporting imaging features from this image include the presence of a mass, irregular margins, and a high nuclear grade.\n\n3. Fibroadenoma - The key supporting imaging features from this image include the presence of a mass, irregular margins, and a high nuclear grade.\n\nIt's important to note that further diagnostic tests and clinical correlation are needed to confirm the diagnosis and determine the appropriate course of treatment.",
+    "time_s": 19.73,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "Quilt1M_laion",
+    "dataset": "Quilt1M",
+    "loader": "image",
+    "findings": "activity, which is the rate at which cells are dividing, is also normal. The stromal changes, which are alterations in the supportive tissue surrounding the cells, are also normal. There are no features in the image that suggest malignancy, such as abnormal cell growth, irregular nuclear morphology, or increased mitotic activity.",
+    "ddx": "cyst: The image shows a cystic lesion, which could be an ovarian cyst.\n3. Ovarian tumor: The image shows a solid lesion, which could be an ovarian tumor.\n\nIt's important to note that further diagnostic tests and clinical correlation are needed to confirm the diagnosis and determine the appropriate course of treatment.",
+    "time_s": 17.0,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "PKG_HSI_GB_P1",
+    "dataset": "PKG_HistologyHSI_GB",
+    "loader": "hsi",
+    "findings": "issues, is also visible in the image. Vascular proliferation, which is the growth of blood vessels, is another feature observed in the tissue.\n\nThe image also shows features consistent with high-grade glioma or glioblastoma, which are aggressive and malignant brain tumors. These features may include the presence of mitotic figures (cells undergoing cell division), areas of necrosis, and a high degree of nuclear atypia. It is important to note that a definitive diagnosis would require further analysis and correlation with clinical findings.",
+    "ddx": "phoma.\n2. Infection: The presence of a large lymph node with a central area of necrosis could also be indicative of an infection, such as tuberculosis.\n3. Metastasis: The image shows a large lymph node with a central area of necrosis, which could be a sign of metastasis, where cancer cells have spread from their primary site to the lymph node.\n\nIt's important to note that further diagnostic tests and clinical correlation are needed to confirm the diagnosis and determine the appropriate course of treatment.",
+    "time_s": 24.75,
+    "model_load_s": 23.13
+  },
+  {
+    "sample": "OASIS1_OAS1_0001_MR1",
+    "dataset": "OASIS-1",
+    "loader": "nifti",
+    "findings": "ical disorders.\n\nThe ventricular size is also normal in this image. The ventricles are fluid-filled spaces within the brain that produce and circulate cerebrospinal fluid.\n\nThe white matter signal appears to be normal, which means that the white matter, which is composed of nerve fibers, does not show any significant abnormalities or changes in signal intensity.\n\nThere are no focal abnormalities in this particular image. However, it is important to consider the patient's clinical history and symptoms, as well as consult a healthcare professional for a thorough evaluation and proper diagnosis of any underlying conditions.",
+    "ddx": "of swelling in the brain caused by the leakage of fluid from blood vessels into the brain tissue.\n\n2. Acute ischemic stroke - This condition is characterized by a sudden interruption of blood flow to a part of the brain, which can lead to brain tissue damage or death.\n\n3. Intracerebral hemorrhage - This condition involves bleeding within the brain tissue, which can cause damage to the surrounding brain tissue and lead to neurological deficits.\n\nThe key supporting imaging features from this image include the presence of vasogenic edema, which is a characteristic finding in PRES, and the absence of a hyperdense area, which is a typical feature of an acute ischemic stroke.",
+    "time_s": 28.23,
+    "model_load_s": 23.13
+  }
+]

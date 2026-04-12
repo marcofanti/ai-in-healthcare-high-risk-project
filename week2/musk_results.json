@@ -1,0 +1,56 @@
+{
+  "model_load_s": 13.04,
+  "total_inference_s": 5.64,
+  "results": [
+    {
+      "sample": "Quilt1M \u2014 PubMed",
+      "top1": "Ophthalmic",
+      "top1_pct": 54.76,
+      "top2": "Gastrointestinal",
+      "top2_pct": 16.85,
+      "similarity": 0.474,
+      "time_s": 2.14,
+      "model_load_s": 13.04
+    },
+    {
+      "sample": "Quilt1M \u2014 YouTube (quilt)",
+      "top1": "Renal",
+      "top1_pct": 29.39,
+      "top2": "Pulmonary",
+      "top2_pct": 18.93,
+      "similarity": 0.3804,
+      "time_s": 0.35,
+      "model_load_s": 13.04
+    },
+    {
+      "sample": "Quilt1M \u2014 OpenPath (Twitter)",
+      "top1": "Genitourinary",
+      "top1_pct": 69.32,
+      "top2": "Pulmonary",
+      "top2_pct": 14.48,
+      "similarity": 0.4614,
+      "time_s": 0.35,
+      "model_load_s": 13.04
+    },
+    {
+      "sample": "Quilt1M \u2014 LAION",
+      "top1": "Ophthalmic",
+      "top1_pct": 82.18,
+      "top2": "Hematopathology",
+      "top2_pct": 5.3,
+      "similarity": 0.4446,
+      "time_s": 0.3,
+      "model_load_s": 13.04
+    },
+    {
+      "sample": "PKG HistologyHSI-GB \u2014 P1",
+      "top1": "brain metastasis",
+      "top1_pct": 42.37,
+      "top2": "meningioma",
+      "top2_pct": 34.02,
+      "similarity": null,
+      "time_s": 2.5,
+      "model_load_s": 13.04
+    }
+  ]
+}

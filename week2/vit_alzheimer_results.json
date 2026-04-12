@@ -1,0 +1,128 @@
+{
+  "model_load_s": 1.15,
+  "oasis_total_s": 2.13,
+  "oasis_mean_per_slice_s": 0.104,
+  "ood_total_s": 1.41,
+  "results": [
+    {
+      "name": "OASIS-1 (mean of 12 slices)",
+      "in_domain": true,
+      "pred": "VeryMildDemented",
+      "entropy": 0.5874378681182861,
+      "entropy_pct_max": 42.4,
+      "time_s": NaN,
+      "MildDemented": 0.08134949207305908,
+      "ModerateDemented": 0.05263695493340492,
+      "NonDemented": 0.06251347064971924,
+      "VeryMildDemented": 0.8035001158714294
+    },
+    {
+      "name": "IQ-OTH Benign",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 0.5509480237960815,
+      "entropy_pct_max": 39.7,
+      "time_s": 0.013,
+      "MildDemented": 0.06233696639537811,
+      "ModerateDemented": 0.04918244481086731,
+      "NonDemented": 0.028113139793276787,
+      "VeryMildDemented": 0.860367476940155
+    },
+    {
+      "name": "IQ-OTH Malignant",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 0.43222883343696594,
+      "entropy_pct_max": 31.2,
+      "time_s": 0.01,
+      "MildDemented": 0.04712624475359917,
+      "ModerateDemented": 0.03131824731826782,
+      "NonDemented": 0.02216172218322754,
+      "VeryMildDemented": 0.8993937969207764
+    },
+    {
+      "name": "IQ-OTH Normal",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 0.2950907051563263,
+      "entropy_pct_max": 21.3,
+      "time_s": 0.011,
+      "MildDemented": 0.024360204115509987,
+      "ModerateDemented": 0.027488283812999725,
+      "NonDemented": 0.009968667291104794,
+      "VeryMildDemented": 0.9381828308105469
+    },
+    {
+      "name": "Spinal DICOM Myel001",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 1.1588659286499023,
+      "entropy_pct_max": 83.6,
+      "time_s": 0.01,
+      "MildDemented": 0.09048112481832504,
+      "ModerateDemented": 0.08627115935087204,
+      "NonDemented": 0.3950929641723633,
+      "VeryMildDemented": 0.42815473675727844
+    },
+    {
+      "name": "Quilt1M pubmed",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 0.9766905903816223,
+      "entropy_pct_max": 70.5,
+      "time_s": 0.008,
+      "MildDemented": 0.15069922804832458,
+      "ModerateDemented": 0.08164383471012115,
+      "NonDemented": 0.0932757630944252,
+      "VeryMildDemented": 0.6743811964988708
+    },
+    {
+      "name": "Quilt1M quilt",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 0.7698115110397339,
+      "entropy_pct_max": 55.5,
+      "time_s": 0.031,
+      "MildDemented": 0.04916151612997055,
+      "ModerateDemented": 0.04952115938067436,
+      "NonDemented": 0.1341835856437683,
+      "VeryMildDemented": 0.7671337127685547
+    },
+    {
+      "name": "Quilt1M openpath",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 1.2215211391448975,
+      "entropy_pct_max": 88.1,
+      "time_s": 0.097,
+      "MildDemented": 0.14416827261447906,
+      "ModerateDemented": 0.10491322726011276,
+      "NonDemented": 0.2703123986721039,
+      "VeryMildDemented": 0.4806060194969177
+    },
+    {
+      "name": "Quilt1M laion",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 0.5279147624969482,
+      "entropy_pct_max": 38.1,
+      "time_s": 0.019,
+      "MildDemented": 0.047456372529268265,
+      "ModerateDemented": 0.0612623430788517,
+      "NonDemented": 0.02377258613705635,
+      "VeryMildDemented": 0.8675086498260498
+    },
+    {
+      "name": "PKG HSI GB P1",
+      "in_domain": false,
+      "pred": "VeryMildDemented",
+      "entropy": 1.2351117134094238,
+      "entropy_pct_max": 89.1,
+      "time_s": 0.021,
+      "MildDemented": 0.16035790741443634,
+      "ModerateDemented": 0.14673151075839996,
+      "NonDemented": 0.1887628436088562,
+      "VeryMildDemented": 0.5041478276252747
+    }
+  ]
+}

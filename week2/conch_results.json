@@ -1,0 +1,56 @@
+{
+  "model_load_s": 2.92,
+  "total_inference_s": 2.74,
+  "results": [
+    {
+      "sample": "Quilt1M \u2014 PubMed",
+      "top1_label": "Breast",
+      "top1_prob_pct": 80.71,
+      "top2_label": "Soft tissue",
+      "top2_prob_pct": 19.28,
+      "caption_similarity": 0.3888,
+      "time_s": 1.53,
+      "model_load_s": 2.92
+    },
+    {
+      "sample": "Quilt1M \u2014 YouTube (quilt)",
+      "top1_label": "Breast",
+      "top1_prob_pct": 100.0,
+      "top2_label": "Genitourinary",
+      "top2_prob_pct": 0.0,
+      "caption_similarity": 0.5168,
+      "time_s": 0.22,
+      "model_load_s": 2.92
+    },
+    {
+      "sample": "Quilt1M \u2014 OpenPath (Twitter)",
+      "top1_label": "Breast",
+      "top1_prob_pct": 74.51,
+      "top2_label": "Gynecologic",
+      "top2_prob_pct": 25.49,
+      "caption_similarity": 0.4123,
+      "time_s": 0.19,
+      "model_load_s": 2.92
+    },
+    {
+      "sample": "Quilt1M \u2014 LAION",
+      "top1_label": "Endocrine",
+      "top1_prob_pct": 96.44,
+      "top2_label": "Gynecologic",
+      "top2_prob_pct": 3.56,
+      "caption_similarity": 0.4146,
+      "time_s": 0.24,
+      "model_load_s": 2.92
+    },
+    {
+      "sample": "PKG HistologyHSI-GB \u2014 P1 (RGB thumbnail)",
+      "top1_label": "Neuropathology",
+      "top1_prob_pct": 94.01,
+      "top2_label": "Pulmonary",
+      "top2_prob_pct": 3.71,
+      "caption_similarity": null,
+      "time_s": 0.39,
+      "model_load_s": 2.92
+    }
+  ]
+}
