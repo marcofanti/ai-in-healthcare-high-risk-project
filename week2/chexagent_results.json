@@ -1,0 +1,24 @@
+{
+  "model_load_s": 19.67,
+  "total_inference_s": 6.39,
+  "results": [
+    {
+      "sample": "IQ-OTH_NCCD (Benign)",
+      "response": "<|ref|> Lung Opacity <|/ref|> <|box|> (40,26),(46,37) <|/box|> <|ref|> Other lesion <|/ref|> <|box|> (43,25),(53,44) <|/box|> <|ref|> Consolidation <|/ref|> <|box|> (47,30),(54,41) <|/box|> <|ref|> Enlarged PA <|/ref|> <|box|> (50,34),(59,45) <|/box|>",
+      "time_s": 4.02,
+      "model_load_s": 19.67
+    },
+    {
+      "sample": "IQ-OTH_NCCD (Malignant)",
+      "response": "<|ref|> Spiculated mass <|/ref|> <|box|> (52,30),(70,50) <|/box|>",
+      "time_s": 0.86,
+      "model_load_s": 19.67
+    },
+    {
+      "sample": "Spinal_DICOM (Myel_001)",
+      "response": "<|ref|> Vertebra plana <|/ref|> <|box|> (40,30),(48,38) <|/box|> <|ref|>  Vertebroplasty <|/ref|> <|box|> (44,34),(50,39) <|/box|>",
+      "time_s": 1.5,
+      "model_load_s": 19.67
+    }
+  ]
+}
