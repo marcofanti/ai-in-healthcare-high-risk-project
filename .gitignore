@@ -25,6 +25,13 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+/delete
+/docs/superpowers
+/data
+/utils
+verify*.py
+/PDFs
+/images
 
 # PyInstaller
 *.manifest
