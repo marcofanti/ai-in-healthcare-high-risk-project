@@ -9,14 +9,30 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
-from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 from agent.state import AgentState
 from tools.tool_model_executor import run_model
 
-# Initialize the LLM (Gemini 3.1 Pro via LangChain)
-# Note: Ensure GOOGLE_API_KEY is set in your environment
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
+# Initialize the LLM (Gemini or Ollama via LangChain)
+llm_provider = os.getenv("LLM_PROVIDER", "google").lower()
+
+if llm_provider == "ollama":
+    from langchain_ollama import ChatOllama
+    model_name = os.getenv("OLLAMA_MODEL", "llama3")
+    base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+    llm = ChatOllama(model=model_name, base_url=base_url)
+else:
+    from langchain_google_genai import ChatGoogleGenerativeAI
+    # Ensure GOOGLE_API_KEY is defined (Gemini SDK uses GOOGLE_API_KEY)
+    if not os.getenv("GOOGLE_API_KEY") and os.getenv("GEMINI_API_KEY"):
+        os.environ["GOOGLE_API_KEY"] = os.environ["GEMINI_API_KEY"]
+    
+    model_name = os.getenv("GOOGLE_MODEL_NAME", "gemini-1.5-flash")
+    llm = ChatGoogleGenerativeAI(model=model_name)
 
 def reviewer_node(state: AgentState) -> Dict:
     """
