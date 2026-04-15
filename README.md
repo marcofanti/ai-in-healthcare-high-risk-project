@@ -1,9 +1,6 @@
-# Project Implementation Plan & Architecture Document
+# MedHuggingGPT (Pan-Medical Multimodal AI Agent)
 
-**Project Name:** MedHuggingGPT (Pan-Medical Multimodal AI Agent)  
-**Phase:** Minimum Viable Product (MVP) Development  
-**Duration:** 4 Weeks  
-**Team Size:** 3 Members  
+> **Quickstart:** [QUICKSTART.md](./QUICKSTART.md)
 
 ---
 
