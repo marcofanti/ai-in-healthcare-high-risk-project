@@ -1,6 +1,6 @@
 {
-  "model_load_s": 2.86,
-  "total_inference_s": 5.72,
+  "model_load_s": 6.03,
+  "total_inference_s": 4.12,
   "results": [
     {
       "sample": "IQ-OTH/NCCD \u2014 Benign",
@@ -9,8 +9,8 @@
       "top2": "lung metastasis",
       "top2_pct": 11.68,
       "similarity": null,
-      "time_s": 2.41,
-      "model_load_s": 2.86
+      "time_s": 0.17,
+      "model_load_s": 6.03
     },
     {
       "sample": "IQ-OTH/NCCD \u2014 Malignant",
@@ -19,8 +19,8 @@
       "top2": "malignant lung mass",
       "top2_pct": 28.1,
       "similarity": null,
-      "time_s": 0.16,
-      "model_load_s": 2.86
+      "time_s": 0.14,
+      "model_load_s": 6.03
     },
     {
       "sample": "IQ-OTH/NCCD \u2014 Normal",
@@ -29,8 +29,8 @@
       "top2": "emphysema",
       "top2_pct": 6.14,
       "similarity": null,
-      "time_s": 0.14,
-      "model_load_s": 2.86
+      "time_s": 0.27,
+      "model_load_s": 6.03
     },
     {
       "sample": "Spinal CT \u2014 Myel_001 (DICOM)",
@@ -39,8 +39,8 @@
       "top2": "spinal metastasis",
       "top2_pct": 1.36,
       "similarity": null,
-      "time_s": 0.14,
-      "model_load_s": 2.86
+      "time_s": 0.12,
+      "model_load_s": 6.03
     },
     {
       "sample": "Quilt1M \u2014 PubMed",
@@ -49,8 +49,8 @@
       "top2": "Cytopathology",
       "top2_pct": 23.57,
       "similarity": 0.2957,
-      "time_s": 0.77,
-      "model_load_s": 2.86
+      "time_s": 0.17,
+      "model_load_s": 6.03
     },
     {
       "sample": "Quilt1M \u2014 YouTube (quilt)",
@@ -59,8 +59,8 @@
       "top2": "Hematopathology",
       "top2_pct": 0.02,
       "similarity": 0.213,
-      "time_s": 0.21,
-      "model_load_s": 2.86
+      "time_s": 0.2,
+      "model_load_s": 6.03
     },
     {
       "sample": "Quilt1M \u2014 OpenPath (Twitter)",
@@ -69,8 +69,8 @@
       "top2": "Dermatopathology",
       "top2_pct": 7.23,
       "similarity": 0.3308,
-      "time_s": 0.26,
-      "model_load_s": 2.86
+      "time_s": 0.17,
+      "model_load_s": 6.03
     },
     {
       "sample": "Quilt1M \u2014 LAION",
@@ -80,7 +80,7 @@
       "top2_pct": 22.72,
       "similarity": 0.2368,
       "time_s": 0.17,
-      "model_load_s": 2.86
+      "model_load_s": 6.03
     },
     {
       "sample": "PKG HistologyHSI-GB \u2014 P1 Tumor",
@@ -89,8 +89,8 @@
       "top2": "low-grade glioma",
       "top2_pct": 34.38,
       "similarity": null,
-      "time_s": 1.27,
-      "model_load_s": 2.86
+      "time_s": 2.52,
+      "model_load_s": 6.03
     },
     {
       "sample": "OASIS-1 Brain MRI \u2014 OAS1_0001",
@@ -99,8 +99,8 @@
       "top2": "mild cognitive impairment",
       "top2_pct": 2.79,
       "similarity": null,
-      "time_s": 0.18,
-      "model_load_s": 2.86
+      "time_s": 0.2,
+      "model_load_s": 6.03
     }
   ]
 }
