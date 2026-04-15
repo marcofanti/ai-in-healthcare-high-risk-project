@@ -5,6 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "conch",
+    "einops",
+    "fairscale",
     "gdown>=5.2.1",
     "jupyter>=1.1.1",
     "langchain>=1.2.15",
@@ -12,11 +15,14 @@ dependencies = [
     "langchain-ollama>=0.2.0",
     "langgraph>=1.1.6",
     "matplotlib>=3.10.8",
+    "musk",
     "nibabel>=5.4.2",
+    "open-clip-torch",
     "pandas<3.0",
     "pillow<11.1",
     "pydicom>=3.0.2",
     "python-dotenv>=1.2.2",
+    "sentencepiece>=0.2.0",
     "simpleitk>=2.5.3",
     "spectral>=0.24",
     "streamlit>=1.56.0",
@@ -25,4 +31,6 @@ dependencies = [
 ]
 
 [tool.uv.sources]
+conch = { git = "https://github.com/mahmoodlab/CONCH.git" }
+musk = { git = "https://github.com/lilab-stanford/MUSK.git" }
 tissuelab-sdk = { path = "../TissueLab-SDK", editable = true }

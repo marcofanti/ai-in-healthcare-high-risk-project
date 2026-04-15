@@ -59,11 +59,37 @@ def load_image(path: Path) -> Image.Image:
     return Image.open(path).convert("RGB")
 
 
+def _serialize(obj: Any) -> Any:
+    """Recursively convert numpy scalars/arrays to Python-native types so the
+    LangGraph msgpack checkpointer can serialize the model output dicts."""
+    if isinstance(obj, dict):
+        return {k: _serialize(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_serialize(v) for v in obj]
+    if isinstance(obj, np.integer):
+        return int(obj)
+    if isinstance(obj, (np.floating, np.float64)):
+        return float(obj)
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    return obj
+
+
 def parse_labels(prompt: str, default: List[str]) -> List[str]:
-    """Parse comma-separated labels from prompt, or return default if empty."""
+    """Parse comma-separated labels from prompt, or return default if empty.
+
+    A clinical question (contains a verb like 'identify', 'detect', 'analyze',
+    'describe', 'perform', 'segment') is not a label list — fall back to defaults.
+    """
     if not prompt or not prompt.strip():
         return default
-    return [l.strip() for l in prompt.split(",") if l.strip()]
+    _question_verbs = ("identify", "detect", "analyze", "analyse", "describe",
+                       "perform", "segment", "report", "look for", "classify")
+    low = prompt.lower()
+    if any(v in low for v in _question_verbs):
+        return default
+    parts = [l.strip() for l in prompt.split(",") if l.strip()]
+    return parts if len(parts) > 1 else default
 
 
 # ---------------------------------------------------------------------------
@@ -89,7 +115,7 @@ def get_conch():
         model, preprocess = create_model_from_pretrained(
             "conch_ViT-B-16", "hf_hub:MahmoodLab/conch", hf_auth_token=HF_TOKEN
         )
-        tokenizer = get_tokenizer("conch_ViT-B-16")
+        tokenizer = get_tokenizer()
         model = model.to(DEVICE).eval()
         _MODELS["conch"] = (model, preprocess, tokenizer)
     return _MODELS["conch"]
@@ -212,17 +238,25 @@ def run_biomedclip(image_path: str, prompt: str = "") -> dict:
     probs = (100.0 * img_emb @ txt_embs.T).softmax(dim=-1)[0].cpu().float().numpy()
     top5 = sorted(zip(labels, probs.tolist()), key=lambda x: x[1], reverse=True)[:5]
 
-    return {
+    return _serialize({
         "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
         "image_path": image_path,
         "top1": top5[0][0],
         "top1_prob": round(top5[0][1], 4),
         "top5": [{"label": l, "prob": round(p, 4)} for l, p in top5],
-    }
+    })
+
+def _conch_tokenize(tokenizer: Any, texts: List[str]) -> torch.Tensor:
+    """Replicate conch.open_clip_custom.tokenize using __call__ (transformers v4+v5 compat)."""
+    import torch.nn.functional as F
+    out = tokenizer(texts, max_length=127, add_special_tokens=True,
+                    return_token_type_ids=False, truncation=True,
+                    padding="max_length", return_tensors="pt")
+    return F.pad(out["input_ids"], (0, 1), value=tokenizer.pad_token_id)
+
 
 def run_conch(image_path: str, prompt: str = "") -> dict:
     model, preprocess, tokenizer = get_conch()
-    from conch.open_clip_custom import tokenize as conch_tokenize
     pil_img = load_image(Path(image_path))
     labels = parse_labels(prompt, _CONCH_DEFAULTS)
 
@@ -231,20 +265,20 @@ def run_conch(image_path: str, prompt: str = "") -> dict:
         img_emb = model.encode_image(img_tensor, normalize=True)
 
     template = "an H&E stained histopathology image of {}"
-    text_tokens = conch_tokenize(tokenizer, [template.format(l) for l in labels]).to(DEVICE)
+    text_tokens = _conch_tokenize(tokenizer, [template.format(l) for l in labels]).to(DEVICE)
     with torch.inference_mode():
         txt_embs = model.encode_text(text_tokens, normalize=True)
 
     probs = (100.0 * img_emb @ txt_embs.T).softmax(dim=-1)[0].cpu().float().numpy()
     top5 = sorted(zip(labels, probs.tolist()), key=lambda x: x[1], reverse=True)[:5]
 
-    return {
+    return _serialize({
         "model": "MahmoodLab/conch",
         "image_path": image_path,
         "top1": top5[0][0],
         "top1_prob": round(top5[0][1], 4),
         "top5": [{"label": l, "prob": round(p, 4)} for l, p in top5],
-    }
+    })
 
 def run_musk(image_path: str, prompt: str = "") -> dict:
     model, tokenizer, transform, dtype, musk_utils = get_musk()
@@ -274,13 +308,13 @@ def run_musk(image_path: str, prompt: str = "") -> dict:
     probs = (100.0 * img_emb.float() @ txt_embs.float().T).softmax(dim=-1)[0].cpu().numpy()
     top5 = sorted(zip(labels, probs.tolist()), key=lambda x: x[1], reverse=True)[:5]
 
-    return {
+    return _serialize({
         "model": "xiangjx/musk",
         "image_path": image_path,
         "top1": top5[0][0],
         "top1_prob": round(top5[0][1], 4),
         "top5": [{"label": l, "prob": round(p, 4)} for l, p in top5],
-    }
+    })
 
 def run_medgemma(image_path: str, prompt: str = "") -> dict:
     model, processor, dtype = get_medgemma()
@@ -309,12 +343,12 @@ def run_medgemma(image_path: str, prompt: str = "") -> dict:
     generated = output_ids[0][input_len:]
     prediction = processor.decode(generated, skip_special_tokens=True).strip()
 
-    return {
+    return _serialize({
         "model": "google/medgemma-4b-it",
         "image_path": image_path,
         "prompt": question,
         "prediction": prediction,
-    }
+    })
 
 def run_vit_alzheimer(image_path: str, prompt: str = "") -> dict:
     import torch.nn.functional as F
@@ -327,7 +361,7 @@ def run_vit_alzheimer(image_path: str, prompt: str = "") -> dict:
     pred_idx = int(np.argmax(probs))
     entropy = float(-np.sum(probs * np.log(probs + 1e-9)))
 
-    return {
+    return _serialize({
         "model": "dhritic99/vit-base-brain-alzheimer-detection",
         "image_path": image_path,
         "prediction": class_names[pred_idx],
@@ -335,4 +369,4 @@ def run_vit_alzheimer(image_path: str, prompt: str = "") -> dict:
         "entropy": round(entropy, 4),
         "entropy_pct_max": round(entropy / np.log(4) * 100, 1),
         "probabilities": {cls: round(float(p), 4) for cls, p in zip(class_names, probs)},
-    }
+    })
