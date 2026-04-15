@@ -95,3 +95,24 @@
 
 **Pathology vs. Radiology Application:**
 **Radiology.** This dataset houses the raw, rigorous files behind spinal spectral CT scans. This includes hundreds of thousands of standard medical DICOM slices from a clinical scanner, combined with highly processed `.nii.gz` and `DICOM-SEG` annotation masks. Because this targets deep internal anatomy (the human spine), it belongs in **Radiology**. This imagery answers questions surrounding multiple myeloma lesion detection, segmentation, and tumor burden assessment by mapping voxel densities. The `TissueLab-SDK` `DicomImageWrapper` and `NiftiImageWrapper` will be extremely relevant here, alongside tools to parse the accompanying `.tsv` tables.
+
+---
+
+## 6. Model Compatibility: `CheXagent-2-3b` (Chest X-ray Foundation Model)
+
+**Model Overview:**
+`CheXagent-2-3b` is an instruction-tuned foundation model specifically designed for analyzing Chest X-ray (CXR) images. It is built on the InternVL2 architecture (~3B parameters) and is optimized for radiology tasks such as finding generation, disease identification, and anatomical description.
+
+**Compatibility with Project Datasets:**
+
+| Dataset | Compatibility | Rationale |
+| :--- | :--- | :--- |
+| **IQ-OTH:NCCD** | **High** | Contains Chest CT slices. While the model is trained on X-rays (projection), Chest CT (cross-section) shares the same anatomical domain and pathological features (lung nodules, masses). |
+| **Spinal** | **Medium** | Contains Spinal CT scans. Although the primary domain is different (Spine vs. Chest), the model's general radiology knowledge can assist in identifying bone structures and density abnormalities in CT slices. |
+| **Oasis1** | **Low** | Brain MRI. Significant domain shift (different modality and anatomy). Included primarily for testing model robustness across modalities. |
+| **Quilt-1M** | **None** | Pathology (microscopy). Out-of-domain. The model is not designed for cell-level tissue analysis. |
+| **PKG HSI** | **None** | Pathology (hyperspectral). Out-of-domain. Requires specialized spectral parsing and tissue-level analysis. |
+
+**Implementation in `week2_gemini/test_CheXagent-8b.ipynb`:**
+Local samples from `IQ-OTH:NCCD` and `Spinal` are analyzed by extracting 2D slices and passing them to the model with standard clinical prompts. Non-standard formats (DICOM) are automatically converted to temporary JPEGs for inference.
+
