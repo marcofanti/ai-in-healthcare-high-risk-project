@@ -11,7 +11,13 @@ Before starting, ensure you have the following:
 - **Python 3.11 or higher**
 - **Environment Variables:**
   - `OPENAI_API_KEY`: Required for the LangGraph agent logic.
+  - `GEMINI_API_KEY` or `GOOGLE_API_KEY`: Required for the Gemini 1.5 Pro consensus model.
   - `HF_TOKEN`: (Optional) Required for downloading gated models like `MahmoodLab/conch` or `google/medgemma-4b-it`.
+  - `LOCAL_STAGING_DIR`: (Optional) The initial path for the UI "Local Staging Directory" input.
+  - `LLM_PROVIDER`: (Optional) Either `google` (default) or `ollama`.
+  - `GOOGLE_MODEL_NAME`: (Optional) The Gemini model to use for synthesis (defaults to `gemini-1.5-flash`).
+  - `OLLAMA_MODEL`: (Optional) The Ollama model to use (e.g., `llama3`).
+  - `OLLAMA_BASE_URL`: (Optional) The base URL for the Ollama API (defaults to `http://localhost:11434`).
 - **System Dependencies:**
   - `gdown`: For downloading the medical datasets from Google Drive.
 
@@ -73,6 +79,8 @@ uv run streamlit run app.py
 1. **Ingestion:** Scan local directories for medical datasets.
 2. **Ensemble Configuration:** Select a file, pick multiple AI "Expert" models, and provide a clinical prompt.
 3. **Consensus Analysis:** The agent orchestrates the ensemble and synthesizes a final clinical report.
+
+> **Note on Model Weights:** The first time you run a model (e.g., `biomedclip`, `medgemma`), the system will download several gigabytes of model weights from Hugging Face. Subsequent runs will be much faster. Ensure you have a stable internet connection and sufficient disk space.
 
 ---
 

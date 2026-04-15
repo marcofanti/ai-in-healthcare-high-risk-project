@@ -2,12 +2,33 @@ import streamlit as st
 import json
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
+
+# --- DIAGNOSTIC CHECK ---
+if os.getenv("STREAMLIT_SERVER_HEADLESS") != "true":
+    print(f"\n[DIAGNOSTIC] Python Executable: {sys.executable}")
+    print(f"[DIAGNOSTIC] Python Version: {sys.version}")
+    print(f"[DIAGNOSTIC] Current Directory: {os.getcwd()}")
+    try:
+        import nibabel
+        print(f"[DIAGNOSTIC] nibabel found at: {nibabel.__file__}")
+    except ImportError:
+        print("[DIAGNOSTIC] nibabel NOT FOUND in this environment")
+# ------------------------
+
+# Ensure GOOGLE_API_KEY is defined for the agent (Gemini SDK uses GOOGLE_API_KEY)
+if not os.getenv("GOOGLE_API_KEY") and os.getenv("GEMINI_API_KEY"):
+    os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY")
 
 # Ensure local imports work
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 from utils.manifest_generator import generate_manifest
 from agent.graph import create_agent_graph
+from utils.viz_utils import create_medical_viz, get_image_metadata
 
 # Initialize LangGraph app globally so memory checkpointer persists across Streamlit reruns
 if "agent_app" not in st.session_state:
@@ -50,7 +71,8 @@ def init_app():
     # Sidebar for File Selection & Manifest
     with st.sidebar:
         st.header("1. Ingestion")
-        workspace_dir = st.text_input("Local Staging Directory", value="./workspace/mock_oasis")
+        default_dir = os.getenv("LOCAL_STAGING_DIR", "./workspace/mock_oasis")
+        workspace_dir = st.text_input("Local Staging Directory", value=default_dir)
         
         if st.button("Scan Directory", type="primary"):
              if not os.path.exists(workspace_dir):
@@ -62,8 +84,6 @@ def init_app():
                  st.success("Manifest generated!")
 
     # Main Panel: Interactive Setup
-    st.header("2. Ensemble Configuration")
-    
     if "manifest_data" in st.session_state:
         manifest_data = st.session_state.manifest_data
         file_options = [f"{item['file_path']} ({item['type']})" for item in manifest_data]
@@ -74,6 +94,27 @@ def init_app():
         selected_item = manifest_data[selected_index]
         file_path = selected_item["file_path"]
         modality = selected_item["type"]
+        
+        # --- MEDIA GALLERY (PREVIEW) ---
+        st.header("2. Media Gallery")
+        with st.container(border=True):
+            col_viz, col_meta = st.columns([3, 1])
+            
+            with col_viz:
+                viz_buf = create_medical_viz(file_path, modality)
+                if viz_buf:
+                    st.image(viz_buf, width=512, caption=f"Visualization for {file_path}")
+                else:
+                    st.warning("Could not generate visualization for this format.")
+            
+            with col_meta:
+                st.subheader("Technical Metadata")
+                metadata = get_image_metadata(file_path, modality)
+                for k, v in metadata.items():
+                    st.markdown(f"**{k}:** `{v}`")
+
+        # --- ENSEMBLE CONFIGURATION ---
+        st.header("3. Ensemble Configuration")
         
         col1, col2 = st.columns(2)
         
