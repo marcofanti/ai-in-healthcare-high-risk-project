@@ -2,167 +2,108 @@ import sys
 import os
 import json
 from pathlib import Path
+from typing import Dict, Any, List
 
 # Make sure tools are importable
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from typing import Dict, Any
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 from agent.state import AgentState
+from tools.tool_model_executor import run_model
 
-# Import newly developed tools natively
-from tools.tool_oasis_parser import parse_oasis_data
-from tools.tool_dicom_parser import parse_dicom, parse_nifti
-from tools.tool_quilt_parser import parse_wsi
-from tools.tool_hsi_parser import parse_hsi
-from tools.tool_iq_oth_parser import parse_ct_jpeg
+# Initialize the LLM (Gemini 3.1 Pro via LangChain)
+# Note: Ensure GOOGLE_API_KEY is set in your environment
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
 
-def planner_node(state: AgentState) -> Dict:
+def reviewer_node(state: AgentState) -> Dict:
     """
-    Ingests the JSON Manifest and dynamically routes modalities 
-    strictly matching to the corresponding executor actions.
+    Reviewer node: Validates user selections and prepares the execution manifest.
+    In v1.1, it reviews the ensemble selection and ensures modality compatibility.
     """
-    manifest_data = json.loads(state.get("manifest", "[]"))
+    selections = state.get("user_manual_selections", {})
+    file_path = selections.get("file_path", "")
+    models = selections.get("models", [])
+    prompt = selections.get("prompt", "Analyze this medical image and report clinical findings.")
     
-    plan = {
-        "analysis_steps": []
-    }
-    
-    for item in manifest_data:
-        mtype = item.get("type", "")
-        file_path = item.get("file_path", "")
-        
-        # Dynamically map the modality to the corresponding action string
-        action = None
-        desc = ""
-        target = file_path # default injection target
-        
-        if mtype == "Legacy MRI":
-            action = "execute_oasis"
-            desc = "Extracting demographics/metadata from OASIS scan."
-            target = os.path.dirname(file_path)
-            
-        elif mtype == "DICOM CT":
-            action = "execute_dicom"
-            desc = "Parsing standard DICOM volumetric headers."
-            target = os.path.dirname(file_path)
-            
-        elif mtype == "NIfTI":
-            action = "execute_nifti"
-            desc = "Retrieving 3D spatial properties from NIfTI masks."
-            
-        elif mtype == "WSI Pathology":
-            action = "execute_wsi"
-            desc = "Ingesting gigapixel pathology dimensional hierarchies."
-            
-        elif mtype == "HSI Pathology":
-            action = "execute_hsi"
-            desc = "Consuming deep hyperspectral sensor channels/bands."
-            
-        elif mtype == "CT Image":
-            action = "execute_ct_jpeg"
-            desc = "Reading local JPEG clinical snapshot properties."
-            
-        else:
-            action = "execute_fallback"
-            desc = f"Unknown modality '{mtype}' bypass route."
+    if not file_path:
+        return {"status": "error", "clinical_report": "Error: No file path provided."}
+    if not models:
+        return {"status": "error", "clinical_report": "Error: No models selected for ensemble."}
 
-        plan["analysis_steps"].append({
-            "action": action,
-            "target": target,
-            "description": desc,
-            "modality": mtype
+    # Prepare the formal execution manifest
+    manifest = []
+    for model_name in models:
+        manifest.append({
+            "model": model_name,
+            "image_path": file_path,
+            "prompt": prompt
         })
 
-
     return {
-        "agent_plan": json.dumps(plan, indent=2),
-        "status": "awaiting_approval"
+        "execution_manifest": manifest,
+        "status": "planning_complete"
     }
 
 def executor_node(state: AgentState) -> Dict:
     """
-    Iterates dynamically through the universally mapped graph.
+    Executor node: Dispatches inference jobs for each model in the manifest.
+    Handles parallel execution for in-process models (though sequential here for simplicity).
     """
-    agent_plan = json.loads(state.get("agent_plan", "{}"))
-    execution_steps = []
+    manifest = state.get("execution_manifest", [])
+    model_outputs = []
     
-    for step in agent_plan.get("analysis_steps", []):
-        action = step["action"]
-        target = step["target"]
+    for job in manifest:
+        model_name = job["model"]
+        image_path = job["image_path"]
+        prompt = job["prompt"]
         
-        result = {}
-        # Dynamic Dispatch Mapping
-        if action == "execute_oasis":
-            result = parse_oasis_data(target)
-        elif action == "execute_dicom":
-            result = parse_dicom(target)
-        elif action == "execute_nifti":
-            result = parse_nifti(target)
-        elif action == "execute_wsi":
-            result = parse_wsi(target)
-        elif action == "execute_hsi":
-            result = parse_hsi(target)
-        elif action == "execute_ct_jpeg":
-            result = parse_ct_jpeg(target)
-        else:
-            result = {"error": f"No native handler for bypass action {action}"}
-            
-        execution_steps.append({
-            "action": action,
-            "modality": step.get("modality", "Unknown"),
-            "target": target,
-            "result": result
-        })
+        # Invoke the unified tool wrapper
+        result = run_model(model_name, image_path, prompt)
+        model_outputs.append(result)
             
     return {
-        "execution_steps": execution_steps,
+        "model_outputs": model_outputs,
         "status": "executed"
     }
 
 def synthesizer_node(state: AgentState) -> Dict:
     """
-    Universally aggregates variable JSON dictionaries strictly mapping back 
-    to cohesive unified clinical syntax blocks!
+    Synthesizer node: Uses Gemini 3.1 Pro to compare all model outputs.
+    Identifies Consensus Findings and Model Discrepancies.
     """
-    steps = state.get("execution_steps", [])
+    outputs = state.get("model_outputs", [])
+    selections = state.get("user_manual_selections", {})
     
-    report = "### Synthesized Clinical Report\n\n"
-    report += "*Multi-modality dataset aggregation mapping verified automatically.*\n\n"
+    # Construct a synthesis prompt for the ensemble
+    synthesis_prompt = f"""
+    You are a senior clinical AI architect. Synthesize a unified clinical report from the following ensemble outputs.
     
-    if not steps:
-        report += "No analysis steps were physically executed."
+    User Selections:
+    - Target File: {selections.get('file_path')}
+    - Original Question: {selections.get('prompt')}
     
-    for step in steps:
-        modality = step["modality"]
-        res = step["result"]
-        
-        report += f"**Processed Dataset [{modality}]:**\n"
-        
-        # Check for explicitly thrown errors
-        if "error" in res:
-            report += f"- ❌ Execution Fault: {res['error']}\n\n"
-            continue
-            
-        # Dynamically loop and prettify all the resulting payload outputs dynamically
-        # Ignore extremely heavy payloads like "metadata_keys" directly
-        for key, value in res.items():
-            if key == "metadata_keys":
-                val_str = f"{len(value)} unique structural tags retrieved."
-            else:
-                val_str = str(value)
-            
-            clean_key = key.replace("_", " ").title()
-            report += f"- **{clean_key}:** {val_str}\n"
-            
-        report += "\n"
-            
-    report += "\n**Final Interpretation:** All modalities mapped above have officially completed parsing evaluation checks effectively! The universal execution pipeline mapping succeeded natively."
+    Model Raw Outputs (JSON):
+    {json.dumps(outputs, indent=2)}
+    
+    REQUIRED REPORT STRUCTURE:
+    1. ### CONSENSUS FINDINGS: Points agreed upon by multiple models.
+    2. ### MODEL DISCREPANCIES / FLAGS: Highlight any contradictions or low-confidence outliers.
+    3. ### CLINICAL INTERPRETATION: Final summary and recommendation for human review.
+    
+    Keep the tone professional, objective, and clinical.
+    """
+    
+    try:
+        response = llm.invoke(synthesis_prompt)
+        report = response.content
+    except Exception as e:
+        report = f"### Synthesis Error\n\nFailed to generate consensus report: {str(e)}"
     
     return {
-        "report_summary": report,
+        "clinical_report": report,
         "status": "completed"
     }
 
@@ -171,23 +112,22 @@ def create_agent_graph():
     workflow = StateGraph(AgentState)
 
     # Add nodes
-    workflow.add_node("Planner", planner_node)
+    workflow.add_node("Reviewer", reviewer_node)
     workflow.add_node("Executor", executor_node)
     workflow.add_node("Synthesizer", synthesizer_node)
 
     # Define edges
-    workflow.set_entry_point("Planner")
-    workflow.add_edge("Planner", "Executor")
+    workflow.set_entry_point("Reviewer")
+    workflow.add_edge("Reviewer", "Executor")
     workflow.add_edge("Executor", "Synthesizer")
     workflow.add_edge("Synthesizer", END)
 
-    # Checkpointer for state persistence and HITL gateway
+    # Checkpointer for state persistence
     memory = MemorySaver()
     
-    # Compile graph with HITL gateway before Executor
-    app = workflow.compile(
-        checkpointer=memory,
-        interrupt_before=["Executor"]
-    )
+    # Compile graph with HITL gateway before Executor if specified
+    # For now, we follow the "Conditional Gate" logic in the UI layer (app.py)
+    # but the graph itself is fully executable once triggered.
+    app = workflow.compile(checkpointer=memory)
     
     return app
