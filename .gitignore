@@ -117,3 +117,8 @@ uv.lock
 # Dataset paths
 week1/data/*
 !week1/data/quilt_1M_lookup.csv
+
+delete/
+data/
+PDFs/
+images/
