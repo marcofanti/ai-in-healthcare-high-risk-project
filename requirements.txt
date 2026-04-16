@@ -1,26 +1,23 @@
-streamlit
-langgraph
-langchain
-langchain-openai
-nibabel
-python-dotenv
-pillow
-spectral
-pydicom
-SimpleITK
-pandas
-matplotlib
-# CheXagent-2-3b dependencies (from model README)
-torch
-torchvision
-transformers==4.40.0  # CheXagent-2-3b remote code asserts this exact version
-accelerate
-tensorflow-macos      # tokenizer dynamic import check requires tf to be present
-opencv-python
-albumentations
-einops
-sentencepiece
-protobuf>=3.20.0,<4.0.0  # protobuf 4.x removed MessageFactory.GetPrototype used by tensorflow-macos
--e /Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/TissueLab-SDK
-gdown
 conch @ git+https://github.com/mahmoodlab/CONCH.git
+einops
+fairscale
+gdown>=5.2.1
+jupyter>=1.1.1
+langchain>=1.2.15
+langchain-google-genai>=1.1.1
+langchain-ollama>=0.2.0
+langgraph>=1.1.6
+matplotlib>=3.10.8
+musk @ git+https://github.com/lilab-stanford/MUSK.git
+nibabel>=5.4.2
+open-clip-torch
+pandas<3.0
+pillow<11.1
+pydicom>=3.0.2
+python-dotenv>=1.2.2
+sentencepiece>=0.2.0
+simpleitk>=2.5.3
+spectral>=0.24
+streamlit>=1.56.0
+-e /Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/TissueLab-SDK
+watchdog>=6.0.0
