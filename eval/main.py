@@ -54,6 +54,48 @@ from utils.eval_utils import evaluate
 from eval.adapters import ALL_MODELS, predict
 from eval.parse import parse_prediction
 
+# ---------------------------------------------------------------------------
+# PathMMU category → MedHuggingGPT modality mapping
+# Mirrors the modality detection the UI would apply if these images were loaded
+# via datasets_config.json. Used to look up the default model suggestions.
+# ---------------------------------------------------------------------------
+PATHMMU_CAT_MODALITY: dict[str, str] = {
+    "PubMed_test_tiny":       "2D Histopathology",
+    "PubMed_test":            "2D Histopathology",
+    "PubMed_val":             "2D Histopathology",
+    "PathCLS_test_tiny":      "2D Histopathology",
+    "PathCLS_test":           "2D Histopathology",
+    "PathCLS_val":            "2D Histopathology",
+    "Atlas_test_tiny":        "2D Histopathology",
+    "Atlas_test":             "2D Histopathology",
+    "Atlas_val":              "2D Histopathology",
+    "EduContent_test_tiny":   "2D Histopathology",
+    "EduContent_test":        "2D Histopathology",
+    "EduContent_val":         "2D Histopathology",
+    "SocialPath_test_tiny":   "Unknown",
+    "SocialPath_test":        "Unknown",
+    "SocialPath_val":         "Unknown",
+}
+
+# Same mapping as app.py MODALITY_MODEL_MAPPING — default top-2 per modality
+MODALITY_MODEL_MAPPING: dict[str, list[str]] = {
+    "Legacy MRI":       ["vit_alzheimer", "biomedclip", "medgemma", "llava_med"],
+    "2D Histopathology":["conch", "musk", "biomedclip", "llava_med"],
+    "3D Volumetric":    ["biomedclip", "medgemma", "llava_med", "chexagent"],
+    "Hyperspectral":    ["biomedclip", "musk"],
+    "CT Image":         ["chexagent", "biomedclip", "medgemma", "llava_med"],
+    "DICOM CT":         ["chexagent", "biomedclip", "medgemma", "llava_med"],
+    "NIfTI":            ["biomedclip", "medgemma", "llava_med"],
+    "WSI Pathology":    ["conch", "musk", "biomedclip"],
+    "HSI Pathology":    ["biomedclip", "musk"],
+    "Unknown":          ["biomedclip", "llava_med", "medgemma"],
+}
+
+def default_models_for_category(category: str, n: int = 2) -> list[str]:
+    """Return the top-n UI-suggested models for a PathMMU category."""
+    modality = PATHMMU_CAT_MODALITY.get(category, "Unknown")
+    return MODALITY_MODEL_MAPPING.get(modality, MODALITY_MODEL_MAPPING["Unknown"])[:n]
+
 
 # ---------------------------------------------------------------------------
 # LLM setup (same as agent/graph.py)
@@ -143,9 +185,17 @@ def main() -> None:
         epilog=__doc__,
     )
     parser.add_argument(
-        "--models", nargs="+", required=True,
+        "--models", nargs="+", default=None,
         choices=sorted(ALL_MODELS),
-        help="One or more models to include in the ensemble",
+        help=(
+            "Models to include in the ensemble. "
+            "If omitted, uses the same top-2 defaults the UI suggests per category "
+            "based on MODALITY_MODEL_MAPPING."
+        ),
+    )
+    parser.add_argument(
+        "--n_models", type=int, default=2,
+        help="Number of top-suggested models to use when --models is not set (default: 2)",
     )
     parser.add_argument(
         "--categories", nargs="+", required=True,
@@ -169,14 +219,21 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    exp_name = args.exp_name or f"{'_'.join(sorted(args.models))}_pathmmu"
-    config   = _load_config(Path(args.config_path))
-    llm      = _build_llm()
+    exp_name = args.exp_name or (
+        f"{'_'.join(sorted(args.models))}_pathmmu" if args.models
+        else f"ui_default_top{args.n_models}_pathmmu"
+    )
+    config = _load_config(Path(args.config_path))
+    llm    = _build_llm()
 
-    print(f"\nEnsemble:   {args.models}")
-    print(f"Experiment: {exp_name}")
+    print(f"\nExperiment: {exp_name}")
     print(f"Data path:  {args.data_path}")
-    print(f"Categories: {args.categories}\n")
+    print(f"Categories: {args.categories}")
+    if args.models:
+        print(f"Ensemble:   {args.models} (fixed for all categories)")
+    else:
+        print(f"Ensemble:   UI default top-{args.n_models} per category (modality-aware)")
+    print()
 
     all_results: dict[str, dict] = {}
 
@@ -186,8 +243,13 @@ def main() -> None:
             continue
 
         category = CAT_SHORT2LONG[cat_short]
+        # Resolve models: explicit override, or UI default for this category's modality
+        models = args.models or default_models_for_category(category, args.n_models)
+        modality = PATHMMU_CAT_MODALITY.get(category, "Unknown")
+
         print("#" * 60)
-        print(f"  Category: {category}")
+        print(f"  Category: {category}  [{modality}]")
+        print(f"  Models:   {models}")
         print("#" * 60)
 
         raw_samples = get_pathmmu_data(args.data_path, category)
@@ -210,7 +272,7 @@ def main() -> None:
             # --- Step 1: run all models (Executor) ---
             model_outputs = []
             per_model_responses = {}
-            for model_name in args.models:
+            for model_name in models:
                 try:
                     raw_response, _ = predict(model_name, sample)
                 except Exception as exc:
@@ -286,11 +348,12 @@ def main() -> None:
         print("=" * 60)
 
         save_json(str(OUTPUT_BASE / exp_name / "summary.json"), {
-            "exp_name":      exp_name,
-            "models":        args.models,
-            "categories":    all_results,
-            "overall_acc":   total_correct / total_samples if total_samples else 0.0,
-            "total_samples": total_samples,
+            "exp_name":        exp_name,
+            "models_override": args.models,
+            "n_models":        args.n_models,
+            "categories":      all_results,
+            "overall_acc":     total_correct / total_samples if total_samples else 0.0,
+            "total_samples":   total_samples,
         })
         print(f"\n  Summary → {OUTPUT_BASE / exp_name / 'summary.json'}")
 
