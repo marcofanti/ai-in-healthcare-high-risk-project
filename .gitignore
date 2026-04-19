@@ -111,7 +111,7 @@ gemini.md
 .gemini/
 
 # Design documents
-docs/
+#docs/
 
 # Eval outputs (results written at runtime)
 eval/outputs/
