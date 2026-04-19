@@ -29,7 +29,11 @@ sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 from utils.manifest_generator import generate_manifest
 from agent.graph import create_agent_graph
 from utils.viz_utils import create_medical_viz, get_image_metadata
-from utils.query_generator import generate_clinical_questions, improve_clinical_prompt
+from utils.query_generator import (
+    generate_clinical_questions,
+    improve_clinical_prompt,
+    validate_query_compatibility,
+)
 from utils.file_picker import pick_directory
 
 # Initialize LangGraph app globally so memory checkpointer persists across Streamlit reruns
@@ -258,24 +262,91 @@ def init_app():
                     del st.session_state._improve_warning
             
         # Analysis Trigger with Conditional Approval
-        if st.button("Run Ensemble Analysis 🚀", use_container_width=True):
+        run_triggered = st.button("Run Ensemble Analysis 🚀", use_container_width=True)
+        override_engaged = bool(st.session_state.pop("_force_run_override", False))
+
+        if run_triggered or override_engaged:
             if not selected_models:
                 st.error("Please select at least one model.")
+                st.stop()
+            if not user_prompt.strip():
+                st.error("Please enter or select a clinical query before running.")
+                st.stop()
+
+            if not override_engaged:
+                # Normal path: pre-flight query/model compatibility validation
+                validation = None
+                with st.status("Validating Query...", expanded=True) as status:
+                    try:
+                        validation = validate_query_compatibility(
+                            user_prompt, selected_models, modality, file_path
+                        )
+                        if validation.is_valid:
+                            status.update(label="✅ Query Valid", state="complete", expanded=False)
+                        else:
+                            status.update(label="❌ Query Not Valid", state="error", expanded=True)
+                            st.markdown(f"**Reason:** {validation.reasoning}")
+                            if validation.incompatible_models:
+                                st.markdown(
+                                    "**Selected models unsuitable for this query:** "
+                                    + ", ".join(f"`{m}`" for m in validation.incompatible_models)
+                                )
+                            if validation.recommended_models:
+                                st.markdown(
+                                    "**Recommended models from the available pool:** "
+                                    + ", ".join(f"`{m}`" for m in validation.recommended_models)
+                                )
+                            st.info(
+                                "Update your query or change the selected models, then click "
+                                "**Run Ensemble Analysis** again — or override this check with "
+                                "**Proceed Anyway** below."
+                            )
+                    except Exception as e:
+                        status.update(label=f"Validation failed: {e}", state="error", expanded=True)
+
+                if validation is None:
+                    st.stop()
+
+                if not validation.is_valid:
+                    # Offer override — click sets a session flag and reruns so
+                    # the next pass enters the override branch above and skips
+                    # validation entirely.
+                    if st.button(
+                        "⚠️ Proceed Anyway",
+                        key="proceed_anyway_btn",
+                        use_container_width=True,
+                    ):
+                        st.session_state._force_run_override = True
+                        st.rerun()
+                    st.stop()
+
+                # Soft warning for compatible-but-imperfect selections
+                if validation.incompatible_models:
+                    st.warning(
+                        "Some selected models may be a weak fit: "
+                        + ", ".join(f"`{m}`" for m in validation.incompatible_models)
+                        + ". Running anyway because at least one selected model is capable."
+                    )
             else:
-                # Conditional Gate
-                is_heavy = modality == "Hyperspectral" or len(selected_models) > 3
-                if is_heavy:
-                    st.warning("⚠️ High Latency Warning: This ensemble may take >30 seconds to execute.")
-                
-                # Setup selections for the agent
-                st.session_state.user_manual_selections = {
-                    "file_path": file_path,
-                    "models": selected_models,
-                    "prompt": user_prompt
-                }
-                
-                # Invoke LangGraph
-                run_langgraph(st.session_state.user_manual_selections)
+                st.info(
+                    "⚠️ Validation bypassed — running ensemble with **Proceed Anyway** override. "
+                    "Results may be unreliable for the selected model set."
+                )
+
+            # Conditional Gate (runs on both normal-valid and override paths)
+            is_heavy = modality == "Hyperspectral" or len(selected_models) > 3
+            if is_heavy:
+                st.warning("⚠️ High Latency Warning: This ensemble may take >30 seconds to execute.")
+
+            # Setup selections for the agent
+            st.session_state.user_manual_selections = {
+                "file_path": file_path,
+                "models": selected_models,
+                "prompt": user_prompt
+            }
+
+            # Invoke LangGraph
+            run_langgraph(st.session_state.user_manual_selections)
 
     # Result Display
     if "agent_state" in st.session_state:
