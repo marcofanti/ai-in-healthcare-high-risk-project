@@ -165,6 +165,75 @@ Reply with ONLY the answer letter ({"/".join(all_choices)}) on the first line, t
 
 
 # ---------------------------------------------------------------------------
+# Multi-view scoring
+# ---------------------------------------------------------------------------
+
+def _extract_model_pred(model_output: dict, all_choices: list, index2ans: dict) -> str:
+    """Parse a single model output dict into an answer text string."""
+    if "error" in model_output:
+        return ""
+    raw = model_output.get("top1") or model_output.get("prediction") or model_output.get("response", "")
+    return parse_prediction(raw, all_choices, index2ans)
+
+
+def _max_prob_output(model_outputs: list) -> dict | None:
+    """Return the model output with the highest reported confidence."""
+    if not model_outputs:
+        return None
+    return max(model_outputs, key=lambda o: o.get("top1_prob", 1.0))
+
+
+def compute_detailed_accuracy(out_samples: list) -> dict:
+    """
+    Returns per-model accuracy, max-prob ensemble accuracy, and judge accuracy.
+    All computed from fields already stored in out_samples (no extra model calls).
+    """
+    model_correct: dict[str, int] = {}
+    model_total: dict[str, int] = {}
+    max_prob_correct = judge_correct = 0
+
+    for s in out_samples:
+        gt           = s["gt_content"]
+        all_choices  = s["all_choices"]
+        index2ans    = s["index2ans"]
+        model_outputs = s.get("model_outputs", [])
+
+        if s.get("pred_ans") == gt:
+            judge_correct += 1
+
+        for mo in model_outputs:
+            name = mo.get("model", "unknown")
+            pred = _extract_model_pred(mo, all_choices, index2ans)
+            model_correct[name] = model_correct.get(name, 0) + (1 if pred == gt else 0)
+            model_total[name]   = model_total.get(name, 0) + 1
+
+        best = _max_prob_output(model_outputs)
+        if best and _extract_model_pred(best, all_choices, index2ans) == gt:
+            max_prob_correct += 1
+
+    n = len(out_samples)
+    return {
+        "total":        n,
+        "judge_acc":    judge_correct    / n if n else 0.0,
+        "max_prob_acc": max_prob_correct / n if n else 0.0,
+        "per_model":    {
+            name: model_correct[name] / model_total[name] if model_total[name] else 0.0
+            for name in model_correct
+        },
+    }
+
+
+def _print_detailed(detailed: dict) -> None:
+    n = detailed["total"]
+    print(f"\n  Breakdown ({n} samples):")
+    for model_name, acc in detailed["per_model"].items():
+        short = model_name.split("/")[-1]
+        print(f"    {short:<35} {acc*100:5.1f}%  (per-model)")
+    print(f"    {'max-prob ensemble':<35} {detailed['max_prob_acc']*100:5.1f}%")
+    print(f"    {'judge (LLM synthesizer)':<35} {detailed['judge_acc']*100:5.1f}%")
+
+
+# ---------------------------------------------------------------------------
 # Config loader
 # ---------------------------------------------------------------------------
 
@@ -323,28 +392,51 @@ def main() -> None:
         else:
             judge_dict, metric_dict = {}, {"acc": 0.0, "num_example": 0}
 
+        detailed = compute_detailed_accuracy(out_samples)
         acc_pct = metric_dict["acc"] * 100
-        print(f"  Accuracy: {acc_pct:.1f}%  ({metric_dict['num_example']} samples)\n")
-        all_results[category] = metric_dict
+        print(f"  Accuracy: {acc_pct:.1f}%  ({metric_dict['num_example']} samples)")
+        _print_detailed(detailed)
+        print()
+        all_results[category] = {**metric_dict, "detailed": detailed}
 
         # --- Save (PathMMU-compatible schema) ---
         out_dir = OUTPUT_BASE / exp_name / category
         out_dir.mkdir(parents=True, exist_ok=True)
         save_json(str(out_dir / "output.json"), out_samples)
-        save_json(str(out_dir / "result.json"), metric_dict)
+        save_json(str(out_dir / "result.json"), {**metric_dict, "detailed": detailed})
         print(f"  Saved → {out_dir}")
 
     # --- Summary ---
     if all_results:
         print("\n" + "=" * 60)
-        print(f"  SUMMARY — {exp_name}  [{', '.join(args.models)}]")
+        print(f"  SUMMARY — {exp_name}  [{', '.join(args.models or [])}]")
         print("=" * 60)
-        total_correct = sum(r["acc"] * r["num_example"] for r in all_results.values())
-        total_samples = sum(r["num_example"] for r in all_results.values())
+        total_correct    = sum(r["acc"] * r["num_example"] for r in all_results.values())
+        total_samples    = sum(r["num_example"] for r in all_results.values())
+        total_judge      = sum(r["detailed"]["judge_acc"]    * r["num_example"] for r in all_results.values())
+        total_max_prob   = sum(r["detailed"]["max_prob_acc"] * r["num_example"] for r in all_results.values())
+
+        # Aggregate per-model counts across categories
+        agg_model_correct: dict[str, float] = {}
+        agg_model_total:   dict[str, int]   = {}
+        for r in all_results.values():
+            n = r["num_example"]
+            for m, acc in r["detailed"]["per_model"].items():
+                agg_model_correct[m] = agg_model_correct.get(m, 0.0) + acc * n
+                agg_model_total[m]   = agg_model_total.get(m, 0) + n
+
         for cat, metrics in all_results.items():
             print(f"  {cat:<35} {metrics['acc']*100:5.1f}%  (n={metrics['num_example']})")
         if total_samples:
-            print(f"  {'OVERALL':<35} {total_correct/total_samples*100:5.1f}%  (n={total_samples})")
+            print(f"\n  {'Scoring view':<35} {'Overall':>8}")
+            print(f"  {'-'*44}")
+            for m, tot in agg_model_total.items():
+                short = m.split("/")[-1]
+                acc = agg_model_correct[m] / tot if tot else 0.0
+                print(f"  {short:<35} {acc*100:5.1f}%  per-model")
+            print(f"  {'max-prob ensemble':<35} {total_max_prob/total_samples*100:5.1f}%")
+            print(f"  {'judge (LLM synthesizer)':<35} {total_judge/total_samples*100:5.1f}%")
+            print(f"  {'OVERALL (judge)':<35} {total_correct/total_samples*100:5.1f}%  (n={total_samples})")
         print("=" * 60)
 
         save_json(str(OUTPUT_BASE / exp_name / "summary.json"), {
@@ -352,7 +444,10 @@ def main() -> None:
             "models_override": args.models,
             "n_models":        args.n_models,
             "categories":      all_results,
-            "overall_acc":     total_correct / total_samples if total_samples else 0.0,
+            "overall_acc":     total_correct    / total_samples if total_samples else 0.0,
+            "judge_acc":       total_judge      / total_samples if total_samples else 0.0,
+            "max_prob_acc":    total_max_prob   / total_samples if total_samples else 0.0,
+            "per_model_acc":   {m: agg_model_correct[m] / agg_model_total[m] for m in agg_model_total},
             "total_samples":   total_samples,
         })
         print(f"\n  Summary → {OUTPUT_BASE / exp_name / 'summary.json'}")
