@@ -190,7 +190,15 @@ Respond with JSON only, no markdown fences:
         text = parts[1] if len(parts) > 1 else parts[0]
         if text.startswith("json"):
             text = text[4:]
-    return json.loads(text.strip())
+    text = text.strip()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        import re
+        m = re.search(r'\{.*\}', text, re.DOTALL)
+        if m:
+            return json.loads(m.group())
+        raise
 
 
 def identify_dataset(directory: Path, files: list[dict], llm=None) -> dict:
@@ -223,7 +231,9 @@ def identify_dataset(directory: Path, files: list[dict], llm=None) -> dict:
 def load_config() -> dict:
     if DATASETS_CONFIG_PATH.exists():
         with open(DATASETS_CONFIG_PATH) as f:
-            return json.load(f)
+            content = f.read().strip()
+            if content:
+                return json.loads(content)
     return {}
 
 

@@ -1,31 +1,199 @@
 {
-  "OASIS_MRI": {
+  "IQ_OTHNCCD_LUNG_CANCER": {
+    "modality": "NIfTI",
+    "files": [
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Malignant cases/Malignant case (257).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Normal cases/Normal case (198).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Malignant cases/Malignant case (484).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Malignant cases/Malignant case (312).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Malignant cases/Malignant case (191).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Bengin cases/Bengin case (85).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Bengin cases/Bengin case (50).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Normal cases/Normal case (120).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Normal cases/Normal case (209).jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/IQ-OTH:NCCD - Lung Cancer Dataset/archive/The IQ-OTHNCCD lung cancer dataset/The IQ-OTHNCCD lung cancer dataset/Bengin cases/Bengin case (109).jpg",
+        "type": "jpg"
+      }
+    ]
+  },
+  "OASIS1_MRI": {
     "modality": "Legacy MRI",
     "files": [
-      {"path": "./workspace/mock_oasis/OAS1_0001_MR1/OAS1_0001_MR1_mpr-1_anon.img", "type": "img"},
-      {"path": "./workspace/mock_oasis/OAS1_0001_MR1/OAS1_0001_MR1_mpr-1_anon.hdr", "type": "hdr"},
-      {"path": "./workspace/mock_oasis/OAS1_0001_MR1/OAS1_0001_MR1_mpr-1_anon.xml", "type": "xml"}
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/FSL_SEG/OAS1_0016_MR1_mpr_n3_anon_111_t88_masked_gfc_fseg.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/FSL_SEG/OAS1_0016_MR1_mpr_n3_anon_111_t88_masked_gfc_fseg.img",
+        "type": "img"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/PROCESSED/MPRAGE/SUBJ_111/OAS1_0016_MR1_mpr_n3_anon_sbj_111.img",
+        "type": "img"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/PROCESSED/MPRAGE/SUBJ_111/OAS1_0016_MR1_mpr_n3_anon_sbj_111.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/PROCESSED/MPRAGE/T88_111/OAS1_0016_MR1_mpr_n3_anon_111_t88_gfc.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/PROCESSED/MPRAGE/T88_111/OAS1_0016_MR1_mpr_n3_anon_111_t88_masked_gfc.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/PROCESSED/MPRAGE/T88_111/OAS1_0016_MR1_mpr_n3_anon_111_t88_masked_gfc.img",
+        "type": "img"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Oasis1/disc1/OAS1_0016_MR1/PROCESSED/MPRAGE/T88_111/OAS1_0016_MR1_mpr_n3_anon_111_t88_gfc.img",
+        "type": "img"
+      }
     ]
   },
-  "Histopathology_TCGA": {
-    "modality": "2D Histopathology",
+  "HISTOLOGY_HSI_GB": {
+    "modality": "HSI Pathology",
     "files": [
-      {"path": "./workspace/pathology/TCGA-sample-01.tif", "type": "tif"},
-      {"path": "./workspace/pathology/TCGA-sample-02.jpg", "type": "jpg"}
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/P1.png",
+        "type": "png"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C12_NT/whiteReference.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C12_NT/rgb.png",
+        "type": "png"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C12_NT/raw.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C12_NT/darkReference.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C02_NT/whiteReference.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C02_NT/rgb.png",
+        "type": "png"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C02_NT/raw.hdr",
+        "type": "hdr"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/PKG - HistologyHSI-GB/P1/ROI_02_C02_NT/darkReference.hdr",
+        "type": "hdr"
+      }
     ]
   },
-  "NIfTI_Volumetric": {
-    "modality": "3D Volumetric",
+  "QUILT_1M": {
+    "modality": "Unknown",
     "files": [
-      {"path": "./workspace/nifti/brain_001.nii.gz", "type": "nii.gz"},
-      {"path": "./workspace/nifti/brain_002.nii", "type": "nii"}
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Quilt1M/quilt_1m/FLKQYKzf1Cg_image_5a311fa8-66a6-4db1-bcb8-e933e2e6a4a2.jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Quilt1M/quilt_1m/BDWEnPilfIQ_image_09661eba-287a-40c5-bf7a-0762c04a97e7.jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Quilt1M/quilt_1m/XoB7AkWisgY_image_e90cbf2c-4d74-40d0-b4b0-4782bd8e9fa1.jpg",
+        "type": "jpg"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Quilt1M/quilt_1m/1526236915925667840_0.png",
+        "type": "png"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Quilt1M/quilt_1m/1498567101782827008_3.png",
+        "type": "png"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Quilt1M/quilt_1m/1318570005911474178_3.png",
+        "type": "png"
+      }
     ]
   },
-  "HSI_Skin_001": {
-    "modality": "Hyperspectral",
+  "SPINAL_MYELOMA_SEG": {
+    "modality": "DICOM CT",
     "files": [
-      {"path": "./workspace/hsi/skin_001.raw", "type": "raw"},
-      {"path": "./workspace/hsi/skin_001.hdr", "type": "hdr"}
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_001/01-06-2015-8006-NA-94443/20730.000000-Calcium Suppression 50 IndexHU-60123/1-0726.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_002/02-10-2015-8496-NA-31518/20485.000000-Calcium Suppression 100 IndexHU-86295/1-562.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_002/02-10-2015-8496-NA-31518/20485.000000-Calcium Suppression 100 IndexHU-86295/1-364.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_001/01-06-2015-8006-NA-94443/20730.000000-Calcium Suppression 50 IndexHU-60123/1-0492.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_002/02-10-2015-8496-NA-31518/20485.000000-Calcium Suppression 100 IndexHU-86295/1-166.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_002/02-10-2015-8496-NA-31518/20485.000000-Calcium Suppression 100 IndexHU-86295/1-199.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_002/02-10-2015-8496-NA-31518/20485.000000-Calcium Suppression 100 IndexHU-86295/1-402.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_001/01-06-2015-8006-NA-94443/20730.000000-Calcium Suppression 50 IndexHU-60123/1-0337.dcm",
+        "type": "dcm"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/MM_NIfTI_Segmentation/Myel_023_a/Myel_023_a_spine_segmentation.nii.gz",
+        "type": "nii.gz"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_002/02-10-2015-8496-NA-31518/20485.000000-Calcium Suppression 100 IndexHU-86295/1-414.dcm",
+        "type": "dcm"
+      }
     ]
   }
 }
