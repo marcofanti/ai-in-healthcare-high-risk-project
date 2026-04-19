@@ -113,6 +113,9 @@ gemini.md
 # Design documents
 docs/
 
+# Eval outputs (results written at runtime)
+eval/outputs/
+
 # Package managers / uv
 uv.lock
 .python-version
