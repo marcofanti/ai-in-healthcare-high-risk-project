@@ -30,6 +30,7 @@ from utils.manifest_generator import generate_manifest
 from agent.graph import create_agent_graph
 from utils.viz_utils import create_medical_viz, get_image_metadata
 from utils.query_generator import generate_clinical_questions, improve_clinical_prompt
+from utils.file_picker import pick_directory
 
 # Initialize LangGraph app globally so memory checkpointer persists across Streamlit reruns
 if "agent_app" not in st.session_state:
@@ -73,15 +74,32 @@ def init_app():
     with st.sidebar:
         st.header("1. Ingestion")
         default_dir = os.getenv("LOCAL_STAGING_DIR", "./workspace/mock_oasis")
-        workspace_dir = st.text_input("Local Staging Directory", value=default_dir)
-        
-        if st.button("Scan Directory", type="primary"):
+
+        # Apply any pending update from the Browse button BEFORE the
+        # text_input widget is instantiated this run.
+        if "_pending_staging_dir" in st.session_state:
+            st.session_state.staging_dir_input = st.session_state._pending_staging_dir
+            del st.session_state._pending_staging_dir
+
+        if "staging_dir_input" not in st.session_state:
+            st.session_state.staging_dir_input = default_dir
+
+        workspace_dir = st.text_input("Local Staging Directory", key="staging_dir_input")
+
+        if st.button("📁 Browse for Directory", use_container_width=True):
+            picked = pick_directory()
+            if picked:
+                st.session_state._pending_staging_dir = picked
+                st.rerun()
+            else:
+                st.info("No directory selected.")
+
+        if st.button("Scan Directory", type="primary", use_container_width=True):
              if not os.path.exists(workspace_dir):
                  st.error(f"Directory not found: {workspace_dir}")
              else:
                  manifest_str = generate_manifest(workspace_dir)
                  st.session_state.manifest_data = json.loads(manifest_str)
-                 st.session_state.workspace_dir = workspace_dir
                  st.success("Manifest generated!")
 
     # Main Panel: Interactive Setup
