@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from agent.state import AgentState
-from tools.tool_model_executor import run_model
+from tools.tool_model_executor import run_model, SUPPORTED_MODELS
 
 # Initialize the LLM (Gemini or Ollama via LangChain)
 llm_provider = os.getenv("LLM_PROVIDER", "google").lower()
@@ -48,6 +48,17 @@ def reviewer_node(state: AgentState) -> Dict:
         return {"status": "error", "clinical_report": "Error: No file path provided."}
     if not models:
         return {"status": "error", "clinical_report": "Error: No models selected for ensemble."}
+
+    # Validate all model names against the registry before execution
+    invalid = [m for m in models if m not in SUPPORTED_MODELS]
+    if invalid:
+        return {
+            "status": "error",
+            "clinical_report": (
+                f"Error: Unknown model(s): {invalid}.\n\n"
+                f"Valid models: {SUPPORTED_MODELS}"
+            ),
+        }
 
     # Prepare the formal execution manifest
     manifest = []

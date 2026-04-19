@@ -26,9 +26,16 @@ if not os.getenv("GOOGLE_API_KEY") and os.getenv("GEMINI_API_KEY"):
 # Ensure local imports work
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from utils.manifest_generator import generate_manifest
 from agent.graph import create_agent_graph
 from utils.viz_utils import create_medical_viz, get_image_metadata
+
+DATASETS_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "datasets_config.json")
+
+def load_datasets_config() -> dict:
+    if os.path.exists(DATASETS_CONFIG_PATH):
+        with open(DATASETS_CONFIG_PATH) as f:
+            return json.load(f)
+    return {}
 
 # Initialize LangGraph app globally so memory checkpointer persists across Streamlit reruns
 if "agent_app" not in st.session_state:
@@ -68,52 +75,78 @@ def init_app():
     if "thread_id" not in st.session_state:
          st.session_state.thread_id = "sess_" + str(os.urandom(4).hex())
 
-    # Sidebar for File Selection & Manifest
+    # Sidebar: Dataset selection from config
+    file_path = None
+    modality = None
+
     with st.sidebar:
-        st.header("1. Ingestion")
-        default_dir = os.getenv("LOCAL_STAGING_DIR", "./workspace/mock_oasis")
-        workspace_dir = st.text_input("Local Staging Directory", value=default_dir)
-        
-        if st.button("Scan Directory", type="primary"):
-             if not os.path.exists(workspace_dir):
-                 st.error(f"Directory not found: {workspace_dir}")
-             else:
-                 manifest_str = generate_manifest(workspace_dir)
-                 st.session_state.manifest_data = json.loads(manifest_str)
-                 st.session_state.workspace_dir = workspace_dir
-                 st.success("Manifest generated!")
+        st.header("1. Dataset Selection")
+        datasets = load_datasets_config()
+
+        if not datasets:
+            st.warning("No datasets configured. Add entries to `datasets_config.json`.")
+        else:
+            selected_datasets = []
+            for ds_name, ds_info in datasets.items():
+                if st.checkbox(f"{ds_name}  —  *{ds_info['modality']}*", key=f"ds_{ds_name}"):
+                    selected_datasets.append(ds_name)
+
+            # Flatten files from all checked datasets into a single selectbox
+            file_options = []
+            for ds_name in selected_datasets:
+                ds = datasets[ds_name]
+                for f in ds["files"]:
+                    file_options.append({
+                        "label": f"{ds_name} / {os.path.basename(f['path'])}  ({f['type']})",
+                        "path": f["path"],
+                        "modality": ds["modality"],
+                    })
+
+            if file_options:
+                labels = [o["label"] for o in file_options]
+                chosen_label = st.selectbox("Select File for Analysis", options=labels)
+                chosen = next(o for o in file_options if o["label"] == chosen_label)
+                file_path = chosen["path"]
+                modality = chosen["modality"]
+
+                # Clear visualization immediately when file selection changes
+                if file_path != st.session_state.get("visualized_file"):
+                    st.session_state.pop("visualized_file", None)
+
+                if st.button("Visualize", type="primary", use_container_width=True):
+                    st.session_state.visualized_file = file_path
+
+            elif selected_datasets:
+                st.info("No files found in selected datasets.")
+
+    is_visualized = file_path and st.session_state.get("visualized_file") == file_path
 
     # Main Panel: Interactive Setup
-    if "manifest_data" in st.session_state:
-        manifest_data = st.session_state.manifest_data
-        file_options = [f"{item['file_path']} ({item['type']})" for item in manifest_data]
-        selected_file_str = st.selectbox("Select File for Analysis", options=file_options)
-        
-        # Extract file path and type
-        selected_index = file_options.index(selected_file_str)
-        selected_item = manifest_data[selected_index]
-        file_path = selected_item["file_path"]
-        modality = selected_item["type"]
-        
+    if file_path and modality:
+
         # --- MEDIA GALLERY (PREVIEW) ---
         st.header("2. Media Gallery")
         with st.container(border=True):
             col_viz, col_meta = st.columns([3, 1])
-            
-            with col_viz:
-                viz_buf = create_medical_viz(file_path, modality)
-                if viz_buf:
-                    st.image(viz_buf, width=512, caption=f"Visualization for {file_path}")
-                else:
-                    st.warning("Could not generate visualization for this format.")
-            
+
             with col_meta:
                 st.subheader("Technical Metadata")
                 metadata = get_image_metadata(file_path, modality)
                 for k, v in metadata.items():
                     st.markdown(f"**{k}:** `{v}`")
 
-        # --- ENSEMBLE CONFIGURATION ---
+            with col_viz:
+                if is_visualized:
+                    viz_buf = create_medical_viz(file_path, modality)
+                    if viz_buf:
+                        st.image(viz_buf, width=512, caption=f"Visualization for {file_path}")
+                    else:
+                        st.warning("Could not generate visualization for this format.")
+                else:
+                    st.info("Click **Visualize** in the sidebar to load the image preview.")
+
+    # --- ENSEMBLE CONFIGURATION (only after visualization) ---
+    if is_visualized:
         st.header("3. Ensemble Configuration")
         
         col1, col2 = st.columns(2)
