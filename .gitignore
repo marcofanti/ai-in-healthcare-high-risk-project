@@ -110,6 +110,9 @@ gemini.md
 .claude/
 .gemini/
 
+# Design documents
+docs/
+
 # Package managers / uv
 uv.lock
 .python-version

@@ -19,7 +19,7 @@ SCRIPT_LLAVA = PROJECT_ROOT / "utils" / "run_llava_med.py"
 def run_model(model_name: str, image_path: str, prompt: str) -> Dict[str, Any]:
     """Unified wrapper for all 7 medical AI models."""
     if model_name not in SUPPORTED_MODELS:
-        raise ValueError(f"Unsupported model: {model_name}")
+        return {"error": f"Unsupported model: '{model_name}'. Valid models: {SUPPORTED_MODELS}", "model": model_name}
 
     # Subprocess models (isolated venvs)
     if model_name in ["chexagent", "llava_med"]:

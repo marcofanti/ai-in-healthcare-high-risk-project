@@ -1,0 +1,31 @@
+{
+  "OASIS_MRI": {
+    "modality": "Legacy MRI",
+    "files": [
+      {"path": "./workspace/mock_oasis/OAS1_0001_MR1/OAS1_0001_MR1_mpr-1_anon.img", "type": "img"},
+      {"path": "./workspace/mock_oasis/OAS1_0001_MR1/OAS1_0001_MR1_mpr-1_anon.hdr", "type": "hdr"},
+      {"path": "./workspace/mock_oasis/OAS1_0001_MR1/OAS1_0001_MR1_mpr-1_anon.xml", "type": "xml"}
+    ]
+  },
+  "Histopathology_TCGA": {
+    "modality": "2D Histopathology",
+    "files": [
+      {"path": "./workspace/pathology/TCGA-sample-01.tif", "type": "tif"},
+      {"path": "./workspace/pathology/TCGA-sample-02.jpg", "type": "jpg"}
+    ]
+  },
+  "NIfTI_Volumetric": {
+    "modality": "3D Volumetric",
+    "files": [
+      {"path": "./workspace/nifti/brain_001.nii.gz", "type": "nii.gz"},
+      {"path": "./workspace/nifti/brain_002.nii", "type": "nii"}
+    ]
+  },
+  "HSI_Skin_001": {
+    "modality": "Hyperspectral",
+    "files": [
+      {"path": "./workspace/hsi/skin_001.raw", "type": "raw"},
+      {"path": "./workspace/hsi/skin_001.hdr", "type": "hdr"}
+    ]
+  }
+}
