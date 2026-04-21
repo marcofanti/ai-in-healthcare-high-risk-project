@@ -1,0 +1,13 @@
+{
+    "acc": 0.6,
+    "num_example": 20,
+    "detailed": {
+        "total": 20,
+        "judge_acc": 0.6,
+        "max_prob_acc": 0.25,
+        "per_model": {
+            "MahmoodLab/conch": 0.35,
+            "xiangjx/musk": 0.3
+        }
+    }
+}

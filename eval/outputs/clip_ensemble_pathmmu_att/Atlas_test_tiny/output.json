@@ -1,0 +1,1544 @@
+[
+    {
+        "No": 13,
+        "img_path": "../PathMMU/data/images/f8ac0c713940bbfdb8d7994fa911d3569e9f7454b2728cfceb9a6150df3b9e34.png",
+        "question": "Which cellular component is prominently mixed with the myofibroblasts in this pathological image?",
+        "gt_content": "Lymphocytes",
+        "response": "C\nMultiple model outputs, particularly MahmoodLab/conch, strongly predict 'Neutrophils' with extremely high confidence, suggesting this cell type is the predominant component mixed with the myofibroblasts.",
+        "answer": "D) Lymphocytes",
+        "pred_ans": "Neutrophils",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Eosinophils",
+            "B": "Plasma cells",
+            "C": "Neutrophils",
+            "D": "Lymphocytes"
+        },
+        "prompt": "Question: Which cellular component is prominently mixed with the myofibroblasts in this pathological image?\nOptions:\n(A) Eosinophils\n(B) Plasma cells\n(C) Neutrophils\n(D) Lymphocytes\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/f8ac0c713940bbfdb8d7994fa911d3569e9f7454b2728cfceb9a6150df3b9e34.png",
+                "top1": "Plasma cells",
+                "top1_prob": 0.9995,
+                "top5": [
+                    {
+                        "label": "Plasma cells",
+                        "prob": 0.9995
+                    },
+                    {
+                        "label": "Eosinophils",
+                        "prob": 0.0004
+                    },
+                    {
+                        "label": "Lymphocytes",
+                        "prob": 0.0001
+                    },
+                    {
+                        "label": "Neutrophils",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/f8ac0c713940bbfdb8d7994fa911d3569e9f7454b2728cfceb9a6150df3b9e34.png",
+                "top1": "Neutrophils",
+                "top1_prob": 0.9997,
+                "top5": [
+                    {
+                        "label": "Neutrophils",
+                        "prob": 0.9997
+                    },
+                    {
+                        "label": "Eosinophils",
+                        "prob": 0.0003
+                    },
+                    {
+                        "label": "Lymphocytes",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Plasma cells",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/f8ac0c713940bbfdb8d7994fa911d3569e9f7454b2728cfceb9a6150df3b9e34.png",
+                "top1": "Neutrophils",
+                "top1_prob": 0.4939,
+                "top5": [
+                    {
+                        "label": "Neutrophils",
+                        "prob": 0.4939
+                    },
+                    {
+                        "label": "Plasma cells",
+                        "prob": 0.2466
+                    },
+                    {
+                        "label": "Lymphocytes",
+                        "prob": 0.1858
+                    },
+                    {
+                        "label": "Eosinophils",
+                        "prob": 0.0736
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Plasma cells",
+            "conch": "Neutrophils",
+            "musk": "Neutrophils"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 14,
+        "img_path": "../PathMMU/data/images/e5a28078f49a5879912f4ba25663acd9c1f7db8fb774702d113986e2dafbe118.png",
+        "question": "Which type of cellular abnormality is present within the epidermis?",
+        "gt_content": "Atypical lymphocytes",
+        "response": "C\nThe two models with the highest confidence predicted 'Keratinocyte atypia,' indicating a strong consensus among the AI evaluators.",
+        "answer": "D) Atypical lymphocytes",
+        "pred_ans": "Keratinocyte atypia",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Giant cell formation",
+            "B": "Melanocyte hyperplasia",
+            "C": "Keratinocyte atypia",
+            "D": "Atypical lymphocytes"
+        },
+        "prompt": "Question: Which type of cellular abnormality is present within the epidermis?\nOptions:\n(A) Giant cell formation\n(B) Melanocyte hyperplasia\n(C) Keratinocyte atypia\n(D) Atypical lymphocytes\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/e5a28078f49a5879912f4ba25663acd9c1f7db8fb774702d113986e2dafbe118.png",
+                "top1": "Keratinocyte atypia",
+                "top1_prob": 0.9999,
+                "top5": [
+                    {
+                        "label": "Keratinocyte atypia",
+                        "prob": 0.9999
+                    },
+                    {
+                        "label": "Atypical lymphocytes",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Melanocyte hyperplasia",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Giant cell formation",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/e5a28078f49a5879912f4ba25663acd9c1f7db8fb774702d113986e2dafbe118.png",
+                "top1": "Keratinocyte atypia",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Keratinocyte atypia",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Atypical lymphocytes",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Melanocyte hyperplasia",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Giant cell formation",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/e5a28078f49a5879912f4ba25663acd9c1f7db8fb774702d113986e2dafbe118.png",
+                "top1": "Giant cell formation",
+                "top1_prob": 0.3759,
+                "top5": [
+                    {
+                        "label": "Giant cell formation",
+                        "prob": 0.3759
+                    },
+                    {
+                        "label": "Atypical lymphocytes",
+                        "prob": 0.3366
+                    },
+                    {
+                        "label": "Melanocyte hyperplasia",
+                        "prob": 0.2481
+                    },
+                    {
+                        "label": "Keratinocyte atypia",
+                        "prob": 0.0394
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Keratinocyte atypia",
+            "conch": "Keratinocyte atypia",
+            "musk": "Giant cell formation"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 16,
+        "img_path": "../PathMMU/data/images/a1710bcf4a75ae4a78202932cbaad0c4952b05fa2bda03d95a018a425309e78e.png",
+        "question": "What is the most characteristic feature observed in the tumor cell nests in the image?",
+        "gt_content": "Abundant psammoma bodies",
+        "response": "D\nTwo out of the three models show extremely high confidence in identifying \"Abundant psammoma bodies,\" indicating a strong consensus on this characteristic feature.",
+        "answer": "D) Abundant psammoma bodies",
+        "pred_ans": "Abundant psammoma bodies",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Uniform cellular architecture",
+            "B": "Extensive necrosis",
+            "C": "Large areas of hemorrhage",
+            "D": "Abundant psammoma bodies"
+        },
+        "prompt": "Question: What is the most characteristic feature observed in the tumor cell nests in the image?\nOptions:\n(A) Uniform cellular architecture\n(B) Extensive necrosis\n(C) Large areas of hemorrhage\n(D) Abundant psammoma bodies\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/a1710bcf4a75ae4a78202932cbaad0c4952b05fa2bda03d95a018a425309e78e.png",
+                "top1": "Abundant psammoma bodies",
+                "top1_prob": 0.9994,
+                "top5": [
+                    {
+                        "label": "Abundant psammoma bodies",
+                        "prob": 0.9994
+                    },
+                    {
+                        "label": "Uniform cellular architecture",
+                        "prob": 0.0003
+                    },
+                    {
+                        "label": "Extensive necrosis",
+                        "prob": 0.0002
+                    },
+                    {
+                        "label": "Large areas of hemorrhage",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/a1710bcf4a75ae4a78202932cbaad0c4952b05fa2bda03d95a018a425309e78e.png",
+                "top1": "Abundant psammoma bodies",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Abundant psammoma bodies",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Large areas of hemorrhage",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Extensive necrosis",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Uniform cellular architecture",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/a1710bcf4a75ae4a78202932cbaad0c4952b05fa2bda03d95a018a425309e78e.png",
+                "top1": "Extensive necrosis",
+                "top1_prob": 0.6539,
+                "top5": [
+                    {
+                        "label": "Extensive necrosis",
+                        "prob": 0.6539
+                    },
+                    {
+                        "label": "Abundant psammoma bodies",
+                        "prob": 0.197
+                    },
+                    {
+                        "label": "Uniform cellular architecture",
+                        "prob": 0.1347
+                    },
+                    {
+                        "label": "Large areas of hemorrhage",
+                        "prob": 0.0145
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Abundant psammoma bodies",
+            "conch": "Abundant psammoma bodies",
+            "musk": "Extensive necrosis"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 27,
+        "img_path": "../PathMMU/data/images/57cc641dc32fbd28ea9ceea295b5831df22a3edc6327a39861a16b7812cfde66.png",
+        "question": "What is the primary arrangement pattern observed in the cells of this tissue section?",
+        "gt_content": "Fascicular pattern",
+        "response": "C\nThe majority of the models assigned the highest confidence scores to 'Fascicular pattern', indicating strong agreement on this architectural arrangement.",
+        "answer": "C) Fascicular pattern",
+        "pred_ans": "Fascicular pattern",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Solid sheet pattern",
+            "B": "Papillary pattern",
+            "C": "Fascicular pattern",
+            "D": "Glandular pattern"
+        },
+        "prompt": "Question: What is the primary arrangement pattern observed in the cells of this tissue section?\nOptions:\n(A) Solid sheet pattern\n(B) Papillary pattern\n(C) Fascicular pattern\n(D) Glandular pattern\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/57cc641dc32fbd28ea9ceea295b5831df22a3edc6327a39861a16b7812cfde66.png",
+                "top1": "Fascicular pattern",
+                "top1_prob": 0.9974,
+                "top5": [
+                    {
+                        "label": "Fascicular pattern",
+                        "prob": 0.9974
+                    },
+                    {
+                        "label": "Solid sheet pattern",
+                        "prob": 0.0022
+                    },
+                    {
+                        "label": "Glandular pattern",
+                        "prob": 0.0003
+                    },
+                    {
+                        "label": "Papillary pattern",
+                        "prob": 0.0001
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/57cc641dc32fbd28ea9ceea295b5831df22a3edc6327a39861a16b7812cfde66.png",
+                "top1": "Fascicular pattern",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Fascicular pattern",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Glandular pattern",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Solid sheet pattern",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Papillary pattern",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/57cc641dc32fbd28ea9ceea295b5831df22a3edc6327a39861a16b7812cfde66.png",
+                "top1": "Solid sheet pattern",
+                "top1_prob": 0.5014,
+                "top5": [
+                    {
+                        "label": "Solid sheet pattern",
+                        "prob": 0.5014
+                    },
+                    {
+                        "label": "Papillary pattern",
+                        "prob": 0.2564
+                    },
+                    {
+                        "label": "Fascicular pattern",
+                        "prob": 0.2149
+                    },
+                    {
+                        "label": "Glandular pattern",
+                        "prob": 0.0272
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Fascicular pattern",
+            "conch": "Fascicular pattern",
+            "musk": "Solid sheet pattern"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 38,
+        "img_path": "../PathMMU/data/images/b686e99f5e78b81604ee5e203bb84d65b8957f4049a7688241d0e7c183f95d64.png",
+        "question": "What type of blister formation is observed in this image?",
+        "gt_content": "Subepidermal blister",
+        "response": "(A) The most reliable prediction comes from the MahmoodLab/conch model, which classified the blister as 'Intradermal blister' with the highest confidence (0.9911), supported by general model consensus.",
+        "answer": "B) Subepidermal blister",
+        "pred_ans": "Intradermal blister",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Intradermal blister",
+            "B": "Subepidermal blister",
+            "C": "Intraepidermal blister",
+            "D": "Subcorneal blister"
+        },
+        "prompt": "Question: What type of blister formation is observed in this image?\nOptions:\n(A) Intradermal blister\n(B) Subepidermal blister\n(C) Intraepidermal blister\n(D) Subcorneal blister\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/b686e99f5e78b81604ee5e203bb84d65b8957f4049a7688241d0e7c183f95d64.png",
+                "top1": "Subcorneal blister",
+                "top1_prob": 0.9312,
+                "top5": [
+                    {
+                        "label": "Subcorneal blister",
+                        "prob": 0.9312
+                    },
+                    {
+                        "label": "Intraepidermal blister",
+                        "prob": 0.0394
+                    },
+                    {
+                        "label": "Subepidermal blister",
+                        "prob": 0.0294
+                    },
+                    {
+                        "label": "Intradermal blister",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/b686e99f5e78b81604ee5e203bb84d65b8957f4049a7688241d0e7c183f95d64.png",
+                "top1": "Intradermal blister",
+                "top1_prob": 0.9911,
+                "top5": [
+                    {
+                        "label": "Intradermal blister",
+                        "prob": 0.9911
+                    },
+                    {
+                        "label": "Intraepidermal blister",
+                        "prob": 0.0088
+                    },
+                    {
+                        "label": "Subepidermal blister",
+                        "prob": 0.0001
+                    },
+                    {
+                        "label": "Subcorneal blister",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/b686e99f5e78b81604ee5e203bb84d65b8957f4049a7688241d0e7c183f95d64.png",
+                "top1": "Intradermal blister",
+                "top1_prob": 0.4495,
+                "top5": [
+                    {
+                        "label": "Intradermal blister",
+                        "prob": 0.4495
+                    },
+                    {
+                        "label": "Intraepidermal blister",
+                        "prob": 0.2787
+                    },
+                    {
+                        "label": "Subcorneal blister",
+                        "prob": 0.1992
+                    },
+                    {
+                        "label": "Subepidermal blister",
+                        "prob": 0.0726
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Subcorneal blister",
+            "conch": "Intradermal blister",
+            "musk": "Intradermal blister"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 42,
+        "img_path": "../PathMMU/data/images/9ec45e3520ffc0ab5513fc80c6382878ed252a3198ef8af6f8717c06dce23dc6.png",
+        "question": "What cellular morphology is most consistent with the cells in the image?",
+        "gt_content": "Polygonal cells with round to oval nuclei and fine granular chromatin",
+        "response": "B\nAll three AI models consistently predicted 'Spindle-shaped cells with elongated nuclei,' leading to the selection of option (B).",
+        "answer": "C) Polygonal cells with round to oval nuclei and fine granular chromatin",
+        "pred_ans": "Spindle-shaped cells with elongated nuclei",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Squamous cells with pyknotic nuclei",
+            "B": "Spindle-shaped cells with elongated nuclei",
+            "C": "Polygonal cells with round to oval nuclei and fine granular chromatin",
+            "D": "Columnar cells with basal nuclei and dense chromatin"
+        },
+        "prompt": "Question: What cellular morphology is most consistent with the cells in the image?\nOptions:\n(A) Squamous cells with pyknotic nuclei\n(B) Spindle-shaped cells with elongated nuclei\n(C) Polygonal cells with round to oval nuclei and fine granular chromatin\n(D) Columnar cells with basal nuclei and dense chromatin\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/9ec45e3520ffc0ab5513fc80c6382878ed252a3198ef8af6f8717c06dce23dc6.png",
+                "top1": "Spindle-shaped cells with elongated nuclei",
+                "top1_prob": 0.9895,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells with elongated nuclei",
+                        "prob": 0.9895
+                    },
+                    {
+                        "label": "Polygonal cells with round to oval nuclei and fine granular chromatin",
+                        "prob": 0.0105
+                    },
+                    {
+                        "label": "Squamous cells with pyknotic nuclei",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Columnar cells with basal nuclei and dense chromatin",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/9ec45e3520ffc0ab5513fc80c6382878ed252a3198ef8af6f8717c06dce23dc6.png",
+                "top1": "Spindle-shaped cells with elongated nuclei",
+                "top1_prob": 0.995,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells with elongated nuclei",
+                        "prob": 0.995
+                    },
+                    {
+                        "label": "Polygonal cells with round to oval nuclei and fine granular chromatin",
+                        "prob": 0.0043
+                    },
+                    {
+                        "label": "Squamous cells with pyknotic nuclei",
+                        "prob": 0.0007
+                    },
+                    {
+                        "label": "Columnar cells with basal nuclei and dense chromatin",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/9ec45e3520ffc0ab5513fc80c6382878ed252a3198ef8af6f8717c06dce23dc6.png",
+                "top1": "Spindle-shaped cells with elongated nuclei",
+                "top1_prob": 0.7951,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells with elongated nuclei",
+                        "prob": 0.7951
+                    },
+                    {
+                        "label": "Columnar cells with basal nuclei and dense chromatin",
+                        "prob": 0.1138
+                    },
+                    {
+                        "label": "Polygonal cells with round to oval nuclei and fine granular chromatin",
+                        "prob": 0.0658
+                    },
+                    {
+                        "label": "Squamous cells with pyknotic nuclei",
+                        "prob": 0.0252
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Spindle-shaped cells with elongated nuclei",
+            "conch": "Spindle-shaped cells with elongated nuclei",
+            "musk": "Spindle-shaped cells with elongated nuclei"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 43,
+        "img_path": "../PathMMU/data/images/2a62de0089406d79b1122bc890e95eb2de60622663874c2e1808599380e07909.png",
+        "question": "Which feature is notably absent in the stromal tissue surrounding the epithelial fragments?",
+        "gt_content": "Desmoplastic response",
+        "response": "D\nThe provided models strongly predict the presence of increased vascularity, inflammatory infiltration, and edema formation, while the desmoplastic response was not predicted, suggesting its notable absence.",
+        "answer": "D) Desmoplastic response",
+        "pred_ans": "Desmoplastic response",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Increased vascularity",
+            "B": "Inflammatory infiltration",
+            "C": "Edema formation",
+            "D": "Desmoplastic response"
+        },
+        "prompt": "Question: Which feature is notably absent in the stromal tissue surrounding the epithelial fragments?\nOptions:\n(A) Increased vascularity\n(B) Inflammatory infiltration\n(C) Edema formation\n(D) Desmoplastic response\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/2a62de0089406d79b1122bc890e95eb2de60622663874c2e1808599380e07909.png",
+                "top1": "Increased vascularity",
+                "top1_prob": 0.9972,
+                "top5": [
+                    {
+                        "label": "Increased vascularity",
+                        "prob": 0.9972
+                    },
+                    {
+                        "label": "Desmoplastic response",
+                        "prob": 0.0028
+                    },
+                    {
+                        "label": "Edema formation",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Inflammatory infiltration",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/2a62de0089406d79b1122bc890e95eb2de60622663874c2e1808599380e07909.png",
+                "top1": "Inflammatory infiltration",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Inflammatory infiltration",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Desmoplastic response",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Edema formation",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Increased vascularity",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/2a62de0089406d79b1122bc890e95eb2de60622663874c2e1808599380e07909.png",
+                "top1": "Edema formation",
+                "top1_prob": 0.6989,
+                "top5": [
+                    {
+                        "label": "Edema formation",
+                        "prob": 0.6989
+                    },
+                    {
+                        "label": "Inflammatory infiltration",
+                        "prob": 0.2428
+                    },
+                    {
+                        "label": "Desmoplastic response",
+                        "prob": 0.0489
+                    },
+                    {
+                        "label": "Increased vascularity",
+                        "prob": 0.0093
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Increased vascularity",
+            "conch": "Inflammatory infiltration",
+            "musk": "Edema formation"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 57,
+        "img_path": "../PathMMU/data/images/19e0574f40f2d62b7bb5f81af0421c6a1003a85a9a3c7f610f34d3efcef3e324.png",
+        "question": "What is the characteristic nuclear feature observed in the cells of this tissue sample?",
+        "gt_content": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+        "response": "A\nThe consensus among the two highest-confidence models strongly indicates that the characteristic feature is hyperchromatic and spindling shaped nuclei with finely dispersed chromatin.",
+        "answer": "A) Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+        "pred_ans": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+            "B": "Multinucleation with coarse chromatin",
+            "C": "Vesicular nuclei with prominent nucleoli",
+            "D": "Clear nuclei with abundant cytoplasm"
+        },
+        "prompt": "Question: What is the characteristic nuclear feature observed in the cells of this tissue sample?\nOptions:\n(A) Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin\n(B) Multinucleation with coarse chromatin\n(C) Vesicular nuclei with prominent nucleoli\n(D) Clear nuclei with abundant cytoplasm\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/19e0574f40f2d62b7bb5f81af0421c6a1003a85a9a3c7f610f34d3efcef3e324.png",
+                "top1": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+                "top1_prob": 0.8515,
+                "top5": [
+                    {
+                        "label": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+                        "prob": 0.8515
+                    },
+                    {
+                        "label": "Clear nuclei with abundant cytoplasm",
+                        "prob": 0.1083
+                    },
+                    {
+                        "label": "Multinucleation with coarse chromatin",
+                        "prob": 0.0398
+                    },
+                    {
+                        "label": "Vesicular nuclei with prominent nucleoli",
+                        "prob": 0.0004
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/19e0574f40f2d62b7bb5f81af0421c6a1003a85a9a3c7f610f34d3efcef3e324.png",
+                "top1": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Vesicular nuclei with prominent nucleoli",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Multinucleation with coarse chromatin",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Clear nuclei with abundant cytoplasm",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/19e0574f40f2d62b7bb5f81af0421c6a1003a85a9a3c7f610f34d3efcef3e324.png",
+                "top1": "Vesicular nuclei with prominent nucleoli",
+                "top1_prob": 0.6213,
+                "top5": [
+                    {
+                        "label": "Vesicular nuclei with prominent nucleoli",
+                        "prob": 0.6213
+                    },
+                    {
+                        "label": "Clear nuclei with abundant cytoplasm",
+                        "prob": 0.3348
+                    },
+                    {
+                        "label": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+                        "prob": 0.0438
+                    },
+                    {
+                        "label": "Multinucleation with coarse chromatin",
+                        "prob": 0.0001
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+            "conch": "Hyperchromatic and spindling shaped nuclei with finely dispersed chromatin",
+            "musk": "Vesicular nuclei with prominent nucleoli"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 116,
+        "img_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+        "question": "What type of inflammatory infiltration is observed in the dermis beneath the papillary region?",
+        "gt_content": "Neutrophilic infiltration",
+        "response": "A\nThe majority of the submitted models (2 out of 3) predicted 'Neutrophilic infiltration', and one model provided a perfect confidence score (1.0), indicating strong consensus.",
+        "answer": "A) Neutrophilic infiltration",
+        "pred_ans": "Neutrophilic infiltration",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Neutrophilic infiltration",
+            "B": "Basophilic infiltration",
+            "C": "Eosinophilic infiltration",
+            "D": "Lymphocytic infiltration"
+        },
+        "prompt": "Question: What type of inflammatory infiltration is observed in the dermis beneath the papillary region?\nOptions:\n(A) Neutrophilic infiltration\n(B) Basophilic infiltration\n(C) Eosinophilic infiltration\n(D) Lymphocytic infiltration\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+                "top1": "Neutrophilic infiltration",
+                "top1_prob": 0.612,
+                "top5": [
+                    {
+                        "label": "Neutrophilic infiltration",
+                        "prob": 0.612
+                    },
+                    {
+                        "label": "Lymphocytic infiltration",
+                        "prob": 0.2792
+                    },
+                    {
+                        "label": "Eosinophilic infiltration",
+                        "prob": 0.0957
+                    },
+                    {
+                        "label": "Basophilic infiltration",
+                        "prob": 0.0131
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+                "top1": "Neutrophilic infiltration",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Neutrophilic infiltration",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Eosinophilic infiltration",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Basophilic infiltration",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Lymphocytic infiltration",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+                "top1": "Basophilic infiltration",
+                "top1_prob": 0.9494,
+                "top5": [
+                    {
+                        "label": "Basophilic infiltration",
+                        "prob": 0.9494
+                    },
+                    {
+                        "label": "Neutrophilic infiltration",
+                        "prob": 0.0444
+                    },
+                    {
+                        "label": "Lymphocytic infiltration",
+                        "prob": 0.0045
+                    },
+                    {
+                        "label": "Eosinophilic infiltration",
+                        "prob": 0.0017
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Neutrophilic infiltration",
+            "conch": "Neutrophilic infiltration",
+            "musk": "Basophilic infiltration"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 117,
+        "img_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+        "question": "Which feature predominantly characterizes the observed dermal papillae in this image?",
+        "gt_content": "Neutrophilic microabscesses",
+        "response": "B\nThe two models with the highest reported confidence (0.9924 and 1.0) both predict 'Neutrophilic microabscesses', indicating a strong consensus on this feature.",
+        "answer": "B) Neutrophilic microabscesses",
+        "pred_ans": "Neutrophilic microabscesses",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Eosinophilic infiltration",
+            "B": "Neutrophilic microabscesses",
+            "C": "Lymphocytic infiltration",
+            "D": "Plasma cell infiltration"
+        },
+        "prompt": "Question: Which feature predominantly characterizes the observed dermal papillae in this image?\nOptions:\n(A) Eosinophilic infiltration\n(B) Neutrophilic microabscesses\n(C) Lymphocytic infiltration\n(D) Plasma cell infiltration\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+                "top1": "Neutrophilic microabscesses",
+                "top1_prob": 0.9924,
+                "top5": [
+                    {
+                        "label": "Neutrophilic microabscesses",
+                        "prob": 0.9924
+                    },
+                    {
+                        "label": "Plasma cell infiltration",
+                        "prob": 0.0043
+                    },
+                    {
+                        "label": "Lymphocytic infiltration",
+                        "prob": 0.0025
+                    },
+                    {
+                        "label": "Eosinophilic infiltration",
+                        "prob": 0.0009
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+                "top1": "Neutrophilic microabscesses",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Neutrophilic microabscesses",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Eosinophilic infiltration",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Plasma cell infiltration",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Lymphocytic infiltration",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/b8c2ef9dbaacf1f763a62d9847ea90d332b6d7f7e2472546ae39eabd895ac59b.png",
+                "top1": "Plasma cell infiltration",
+                "top1_prob": 0.9604,
+                "top5": [
+                    {
+                        "label": "Plasma cell infiltration",
+                        "prob": 0.9604
+                    },
+                    {
+                        "label": "Neutrophilic microabscesses",
+                        "prob": 0.0362
+                    },
+                    {
+                        "label": "Lymphocytic infiltration",
+                        "prob": 0.0025
+                    },
+                    {
+                        "label": "Eosinophilic infiltration",
+                        "prob": 0.0009
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Neutrophilic microabscesses",
+            "conch": "Neutrophilic microabscesses",
+            "musk": "Plasma cell infiltration"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 146,
+        "img_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+        "question": "What type of extracellular matrix formation is observed in the image?",
+        "gt_content": "Osteoid matrix",
+        "response": "D\nThe strongest consensus among the model outputs, with two models predicting 'Osteoid matrix' at very high confidence (0.99 and 1.0), suggests this is the correct classification.",
+        "answer": "D) Osteoid matrix",
+        "pred_ans": "Osteoid matrix",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Chondroid matrix",
+            "B": "Collagenous matrix",
+            "C": "Myxoid matrix",
+            "D": "Osteoid matrix"
+        },
+        "prompt": "Question: What type of extracellular matrix formation is observed in the image?\nOptions:\n(A) Chondroid matrix\n(B) Collagenous matrix\n(C) Myxoid matrix\n(D) Osteoid matrix\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+                "top1": "Osteoid matrix",
+                "top1_prob": 0.9902,
+                "top5": [
+                    {
+                        "label": "Osteoid matrix",
+                        "prob": 0.9902
+                    },
+                    {
+                        "label": "Myxoid matrix",
+                        "prob": 0.009
+                    },
+                    {
+                        "label": "Chondroid matrix",
+                        "prob": 0.0008
+                    },
+                    {
+                        "label": "Collagenous matrix",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+                "top1": "Osteoid matrix",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Osteoid matrix",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Chondroid matrix",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Myxoid matrix",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Collagenous matrix",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+                "top1": "Myxoid matrix",
+                "top1_prob": 0.7537,
+                "top5": [
+                    {
+                        "label": "Myxoid matrix",
+                        "prob": 0.7537
+                    },
+                    {
+                        "label": "Chondroid matrix",
+                        "prob": 0.1495
+                    },
+                    {
+                        "label": "Osteoid matrix",
+                        "prob": 0.0879
+                    },
+                    {
+                        "label": "Collagenous matrix",
+                        "prob": 0.0089
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Osteoid matrix",
+            "conch": "Osteoid matrix",
+            "musk": "Myxoid matrix"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 147,
+        "img_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+        "question": "What is the primary cell type observed in this neoplastic process?",
+        "gt_content": "Spindle-shaped cells",
+        "response": "B\nAll models strongly predicted 'Spindle-shaped cells,' indicating a consistent consensus on the primary cell type observed in the neoplastic process.",
+        "answer": "B) Spindle-shaped cells",
+        "pred_ans": "Spindle-shaped cells",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Squamous cells",
+            "B": "Spindle-shaped cells",
+            "C": "Cuboidal cells",
+            "D": "Round cells"
+        },
+        "prompt": "Question: What is the primary cell type observed in this neoplastic process?\nOptions:\n(A) Squamous cells\n(B) Spindle-shaped cells\n(C) Cuboidal cells\n(D) Round cells\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+                "top1": "Spindle-shaped cells",
+                "top1_prob": 0.9973,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells",
+                        "prob": 0.9973
+                    },
+                    {
+                        "label": "Squamous cells",
+                        "prob": 0.0016
+                    },
+                    {
+                        "label": "Cuboidal cells",
+                        "prob": 0.0007
+                    },
+                    {
+                        "label": "Round cells",
+                        "prob": 0.0004
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+                "top1": "Spindle-shaped cells",
+                "top1_prob": 0.9999,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells",
+                        "prob": 0.9999
+                    },
+                    {
+                        "label": "Round cells",
+                        "prob": 0.0001
+                    },
+                    {
+                        "label": "Squamous cells",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Cuboidal cells",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/5e7b2535220d7559453adf8256cd20ecac3cd3566420f9860fed61789a29d037.png",
+                "top1": "Spindle-shaped cells",
+                "top1_prob": 0.8391,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells",
+                        "prob": 0.8391
+                    },
+                    {
+                        "label": "Cuboidal cells",
+                        "prob": 0.0983
+                    },
+                    {
+                        "label": "Squamous cells",
+                        "prob": 0.0428
+                    },
+                    {
+                        "label": "Round cells",
+                        "prob": 0.0198
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Spindle-shaped cells",
+            "conch": "Spindle-shaped cells",
+            "musk": "Spindle-shaped cells"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 178,
+        "img_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+        "question": "What pattern observed in the cytoplasm of cells in the image can be noted?",
+        "gt_content": "Clear cytoplasmic vacuoles adjacent to nuclei",
+        "response": "A\nThe prediction of 'Prominent perinuclear halo' is supported by the model output with the highest confidence score (0.9985).",
+        "answer": "D) Clear cytoplasmic vacuoles adjacent to nuclei",
+        "pred_ans": "Prominent perinuclear halo",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Prominent perinuclear halo",
+            "B": "Dense eosinophilic granules",
+            "C": "Foamy cytoplasm with numerous lipid droplets",
+            "D": "Clear cytoplasmic vacuoles adjacent to nuclei"
+        },
+        "prompt": "Question: What pattern observed in the cytoplasm of cells in the image can be noted?\nOptions:\n(A) Prominent perinuclear halo\n(B) Dense eosinophilic granules\n(C) Foamy cytoplasm with numerous lipid droplets\n(D) Clear cytoplasmic vacuoles adjacent to nuclei\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Dense eosinophilic granules",
+                "top1_prob": 0.4831,
+                "top5": [
+                    {
+                        "label": "Dense eosinophilic granules",
+                        "prob": 0.4831
+                    },
+                    {
+                        "label": "Clear cytoplasmic vacuoles adjacent to nuclei",
+                        "prob": 0.3991
+                    },
+                    {
+                        "label": "Foamy cytoplasm with numerous lipid droplets",
+                        "prob": 0.1162
+                    },
+                    {
+                        "label": "Prominent perinuclear halo",
+                        "prob": 0.0016
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Prominent perinuclear halo",
+                "top1_prob": 0.9985,
+                "top5": [
+                    {
+                        "label": "Prominent perinuclear halo",
+                        "prob": 0.9985
+                    },
+                    {
+                        "label": "Dense eosinophilic granules",
+                        "prob": 0.0014
+                    },
+                    {
+                        "label": "Clear cytoplasmic vacuoles adjacent to nuclei",
+                        "prob": 0.0001
+                    },
+                    {
+                        "label": "Foamy cytoplasm with numerous lipid droplets",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Foamy cytoplasm with numerous lipid droplets",
+                "top1_prob": 0.7586,
+                "top5": [
+                    {
+                        "label": "Foamy cytoplasm with numerous lipid droplets",
+                        "prob": 0.7586
+                    },
+                    {
+                        "label": "Prominent perinuclear halo",
+                        "prob": 0.1387
+                    },
+                    {
+                        "label": "Clear cytoplasmic vacuoles adjacent to nuclei",
+                        "prob": 0.0859
+                    },
+                    {
+                        "label": "Dense eosinophilic granules",
+                        "prob": 0.0169
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Dense eosinophilic granules",
+            "conch": "Prominent perinuclear halo",
+            "musk": "Foamy cytoplasm with numerous lipid droplets"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 179,
+        "img_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+        "question": "Which of the following best describes the nuclear morphology observed in the image?",
+        "gt_content": "Bland with elongated, tapering nuclei",
+        "response": "A\nThe prediction from the microsoft/BiomedCLIP-PubMedBERT model exhibits the highest confidence (0.7991), leading to the selection of 'Round with central prominent nucleoli'.",
+        "answer": "B) Bland with elongated, tapering nuclei",
+        "pred_ans": "Round with central prominent nucleoli",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Round with central prominent nucleoli",
+            "B": "Bland with elongated, tapering nuclei",
+            "C": "Highly pleomorphic with irregular shapes",
+            "D": "Lobulated and hyperchromatic"
+        },
+        "prompt": "Question: Which of the following best describes the nuclear morphology observed in the image?\nOptions:\n(A) Round with central prominent nucleoli\n(B) Bland with elongated, tapering nuclei\n(C) Highly pleomorphic with irregular shapes\n(D) Lobulated and hyperchromatic\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Round with central prominent nucleoli",
+                "top1_prob": 0.7991,
+                "top5": [
+                    {
+                        "label": "Round with central prominent nucleoli",
+                        "prob": 0.7991
+                    },
+                    {
+                        "label": "Lobulated and hyperchromatic",
+                        "prob": 0.1808
+                    },
+                    {
+                        "label": "tapering nuclei",
+                        "prob": 0.0195
+                    },
+                    {
+                        "label": "Bland with elongated",
+                        "prob": 0.0005
+                    },
+                    {
+                        "label": "Highly pleomorphic with irregular shapes",
+                        "prob": 0.0001
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Highly pleomorphic with irregular shapes",
+                "top1_prob": 0.7277,
+                "top5": [
+                    {
+                        "label": "Highly pleomorphic with irregular shapes",
+                        "prob": 0.7277
+                    },
+                    {
+                        "label": "Bland with elongated",
+                        "prob": 0.2193
+                    },
+                    {
+                        "label": "Lobulated and hyperchromatic",
+                        "prob": 0.053
+                    },
+                    {
+                        "label": "Round with central prominent nucleoli",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "tapering nuclei",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Highly pleomorphic with irregular shapes",
+                "top1_prob": 0.5171,
+                "top5": [
+                    {
+                        "label": "Highly pleomorphic with irregular shapes",
+                        "prob": 0.5171
+                    },
+                    {
+                        "label": "Lobulated and hyperchromatic",
+                        "prob": 0.3959
+                    },
+                    {
+                        "label": "Round with central prominent nucleoli",
+                        "prob": 0.0525
+                    },
+                    {
+                        "label": "tapering nuclei",
+                        "prob": 0.0195
+                    },
+                    {
+                        "label": "Bland with elongated",
+                        "prob": 0.015
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Round with central prominent nucleoli",
+            "conch": "Highly pleomorphic with irregular shapes",
+            "musk": "Highly pleomorphic with irregular shapes"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 180,
+        "img_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+        "question": "What cellular feature is most prominently observed in the given microscopic image?",
+        "gt_content": "Spindle-shaped cells arranged in fascicles",
+        "response": "D\nThe specialized model MahmoodLab/conch provides an extremely high confidence score (0.9999) for 'Spindle-shaped cells arranged in fascicles,' making it the most reliable prediction.",
+        "answer": "D) Spindle-shaped cells arranged in fascicles",
+        "pred_ans": "Spindle-shaped cells arranged in fascicles",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Round cells with prominent nucleoli",
+            "B": "Nuclear pleomorphism and high mitotic activity",
+            "C": "Cells with granular cytoplasm and scattered distribution",
+            "D": "Spindle-shaped cells arranged in fascicles"
+        },
+        "prompt": "Question: What cellular feature is most prominently observed in the given microscopic image?\nOptions:\n(A) Round cells with prominent nucleoli\n(B) Nuclear pleomorphism and high mitotic activity\n(C) Cells with granular cytoplasm and scattered distribution\n(D) Spindle-shaped cells arranged in fascicles\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Nuclear pleomorphism and high mitotic activity",
+                "top1_prob": 0.5011,
+                "top5": [
+                    {
+                        "label": "Nuclear pleomorphism and high mitotic activity",
+                        "prob": 0.5011
+                    },
+                    {
+                        "label": "Spindle-shaped cells arranged in fascicles",
+                        "prob": 0.4988
+                    },
+                    {
+                        "label": "Round cells with prominent nucleoli",
+                        "prob": 0.0001
+                    },
+                    {
+                        "label": "Cells with granular cytoplasm and scattered distribution",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Spindle-shaped cells arranged in fascicles",
+                "top1_prob": 0.9999,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells arranged in fascicles",
+                        "prob": 0.9999
+                    },
+                    {
+                        "label": "Round cells with prominent nucleoli",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Nuclear pleomorphism and high mitotic activity",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Cells with granular cytoplasm and scattered distribution",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "../PathMMU/data/images/13196810537ec61d324d91dc79ae5be249140b419dfa2452f66dd2d057211258.png",
+                "top1": "Nuclear pleomorphism and high mitotic activity",
+                "top1_prob": 0.4848,
+                "top5": [
+                    {
+                        "label": "Nuclear pleomorphism and high mitotic activity",
+                        "prob": 0.4848
+                    },
+                    {
+                        "label": "Spindle-shaped cells arranged in fascicles",
+                        "prob": 0.4107
+                    },
+                    {
+                        "label": "Cells with granular cytoplasm and scattered distribution",
+                        "prob": 0.0943
+                    },
+                    {
+                        "label": "Round cells with prominent nucleoli",
+                        "prob": 0.0102
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "biomedclip": "Nuclear pleomorphism and high mitotic activity",
+            "conch": "Spindle-shaped cells arranged in fascicles",
+            "musk": "Nuclear pleomorphism and high mitotic activity"
+        },
+        "judge": "Correct"
+    }
+]
