@@ -114,7 +114,7 @@ gemini.md
 #docs/
 
 # Eval outputs (results written at runtime)
-eval/outputs/
+#eval/outputs/
 
 # Package managers / uv
 uv.lock
