@@ -124,12 +124,6 @@ def validate_query_compatibility(
     modality: str,
     file_path: str,
 ) -> QueryValidationResult:
-    """
-    Judge whether the user's selected ensemble is capable of answering the
-    query for the detected modality. Uses the model capability catalog as
-    ground truth. Returns a structured verdict with reasoning and
-    recommendations.
-    """
     hint = _file_hint(file_path)
     mod_ctx = _modality_context(modality)
     all_models = list(MODEL_CAPABILITIES.keys())
@@ -158,7 +152,6 @@ Produce a verdict. When is_valid=false, recommended_models must be drawn from th
     structured_llm = llm.with_structured_output(QueryValidationResult, method="json_schema")
     result: QueryValidationResult = structured_llm.invoke(prompt)
 
-    # Defensive filtering: drop any hallucinated names the LLM might invent
     available = set(all_models)
     result.incompatible_models = [m for m in result.incompatible_models if m in available]
     result.recommended_models = [m for m in result.recommended_models if m in available]
