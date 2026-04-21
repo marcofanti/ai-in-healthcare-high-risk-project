@@ -1,0 +1,332 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Evaluation Summaries Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body { background-color: #f8f9fa; }
+            .card { transition: transform 0.2s; border: none; }
+            .card:hover { transform: translateY(-5px); }
+            .metric-label { font-size: 0.85rem; color: #6c757d; text-transform: uppercase; letter-spacing: 0.5px; }
+            .metric-value { font-size: 1.25rem; font-weight: bold; color: #212529; }
+            .model-acc-item { font-size: 0.9rem; padding: 4px 0; border-bottom: 1px solid #eee; }
+            .model-acc-item:last-child { border-bottom: none; }
+            .viz-link { text-decoration: none; font-size: 0.9rem; }
+            .viz-link:hover { text-decoration: underline; }
+            .badge-acc { font-size: 1rem; }
+        </style>
+    </head>
+    <body class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h1 class="fw-bold">Evaluation Dashboard</h1>
+                    <p class="text-muted">Aggregated summaries from all pathology ensemble experiments.</p>
+                </div>
+                <div class="text-end">
+                    <span class="badge bg-dark">Total Experiments: 5</span>
+                    <br>
+                    <small class="text-muted">Last updated: 2026-04-21 09:36:25</small>
+                </div>
+            </div>
+
+            <div class="row">
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fw-bold text-primary">clip_ensemble_pathmmu_edutt</h5>
+                            <span class="text-muted small">2026-04-21 07:38:39</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center mb-4">
+                                <div class="col-md-4">
+                                    <div class="metric-label">Overall Acc</div>
+                                    <div class="metric-value text-success">44.71%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Judge Acc</div>
+                                    <div class="metric-value text-info">44.71%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Samples</div>
+                                    <div class="metric-value">255</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h6 class="fw-bold mb-3">Model Accuracy Breakdown</h6>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224">BiomedCLIP-PubMedBERT_256-vit_base_patch16_224</span>
+                                        <span class="fw-bold">28.63%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="MahmoodLab/conch">conch</span>
+                                        <span class="fw-bold">27.84%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="xiangjx/musk">musk</span>
+                                        <span class="fw-bold">17.65%</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6 ps-4">
+                                    <h6 class="fw-bold mb-3">Interactive Visual Audits</h6>
+                                    
+                                        <div class="list-group list-group-flush">
+                                        
+                                            <a href="outputs/clip_ensemble_pathmmu_edutt/EduContent_test_tiny/output_viz.html" class="list-group-item list-group-item-action viz-link py-2">
+                                                🔍 EduContent_test_tiny
+                                            </a>
+                                        
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fw-bold text-primary">clip_ensemble_pathmmu_att</h5>
+                            <span class="text-muted small">2026-04-21 07:09:13</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center mb-4">
+                                <div class="col-md-4">
+                                    <div class="metric-label">Overall Acc</div>
+                                    <div class="metric-value text-success">60.00%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Judge Acc</div>
+                                    <div class="metric-value text-info">60.00%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Samples</div>
+                                    <div class="metric-value">15</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h6 class="fw-bold mb-3">Model Accuracy Breakdown</h6>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224">BiomedCLIP-PubMedBERT_256-vit_base_patch16_224</span>
+                                        <span class="fw-bold">20.00%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="MahmoodLab/conch">conch</span>
+                                        <span class="fw-bold">46.67%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="xiangjx/musk">musk</span>
+                                        <span class="fw-bold">40.00%</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6 ps-4">
+                                    <h6 class="fw-bold mb-3">Interactive Visual Audits</h6>
+                                    
+                                        <div class="list-group list-group-flush">
+                                        
+                                            <a href="outputs/clip_ensemble_pathmmu_att/Atlas_test_tiny/output_viz.html" class="list-group-item list-group-item-action viz-link py-2">
+                                                🔍 Atlas_test_tiny
+                                            </a>
+                                        
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fw-bold text-primary">clip_ensemble_pathmmu_clstt</h5>
+                            <span class="text-muted small">2026-04-21 07:03:59</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center mb-4">
+                                <div class="col-md-4">
+                                    <div class="metric-label">Overall Acc</div>
+                                    <div class="metric-value text-success">51.24%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Judge Acc</div>
+                                    <div class="metric-value text-info">51.24%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Samples</div>
+                                    <div class="metric-value">121</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h6 class="fw-bold mb-3">Model Accuracy Breakdown</h6>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224">BiomedCLIP-PubMedBERT_256-vit_base_patch16_224</span>
+                                        <span class="fw-bold">15.70%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="MahmoodLab/conch">conch</span>
+                                        <span class="fw-bold">14.05%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="xiangjx/musk">musk</span>
+                                        <span class="fw-bold">8.26%</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6 ps-4">
+                                    <h6 class="fw-bold mb-3">Interactive Visual Audits</h6>
+                                    
+                                        <div class="list-group list-group-flush">
+                                        
+                                            <a href="outputs/clip_ensemble_pathmmu_clstt/PathCLS_test_tiny/output_viz.html" class="list-group-item list-group-item-action viz-link py-2">
+                                                🔍 PathCLS_test_tiny
+                                            </a>
+                                        
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fw-bold text-primary">clip_ensemble_pathmmu_mac</h5>
+                            <span class="text-muted small">2026-04-20 23:44:43</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center mb-4">
+                                <div class="col-md-4">
+                                    <div class="metric-label">Overall Acc</div>
+                                    <div class="metric-value text-success">41.64%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Judge Acc</div>
+                                    <div class="metric-value text-info">41.64%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Samples</div>
+                                    <div class="metric-value">281</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h6 class="fw-bold mb-3">Model Accuracy Breakdown</h6>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224">BiomedCLIP-PubMedBERT_256-vit_base_patch16_224</span>
+                                        <span class="fw-bold">30.25%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="MahmoodLab/conch">conch</span>
+                                        <span class="fw-bold">28.11%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="xiangjx/musk">musk</span>
+                                        <span class="fw-bold">25.62%</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6 ps-4">
+                                    <h6 class="fw-bold mb-3">Interactive Visual Audits</h6>
+                                    
+                                        <div class="list-group list-group-flush">
+                                        
+                                            <a href="outputs/clip_ensemble_pathmmu_mac/PubMed_test_tiny/output_viz.html" class="list-group-item list-group-item-action viz-link py-2">
+                                                🔍 PubMed_test_tiny
+                                            </a>
+                                        
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fw-bold text-primary">ui_default_top2_pathmmu</h5>
+                            <span class="text-muted small">2026-04-19 18:12:02</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center mb-4">
+                                <div class="col-md-4">
+                                    <div class="metric-label">Overall Acc</div>
+                                    <div class="metric-value text-success">60.00%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Judge Acc</div>
+                                    <div class="metric-value text-info">60.00%</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="metric-label">Samples</div>
+                                    <div class="metric-value">20</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 border-end">
+                                    <h6 class="fw-bold mb-3">Model Accuracy Breakdown</h6>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="MahmoodLab/conch">conch</span>
+                                        <span class="fw-bold">35.00%</span>
+                                    </div>
+                                    
+                                    <div class="model_acc_item d-flex justify-content-between">
+                                        <span class="text-truncate me-2" title="xiangjx/musk">musk</span>
+                                        <span class="fw-bold">30.00%</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-6 ps-4">
+                                    <h6 class="fw-bold mb-3">Interactive Visual Audits</h6>
+                                    
+                                        <div class="list-group list-group-flush">
+                                        
+                                            <a href="outputs/ui_default_top2_pathmmu/PubMed_test_tiny/output_viz.html" class="list-group-item list-group-item-action viz-link py-2">
+                                                🔍 PubMed_test_tiny
+                                            </a>
+                                        
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+    </html>
+    
