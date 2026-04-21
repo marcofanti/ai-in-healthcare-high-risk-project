@@ -117,12 +117,15 @@ def init_app():
                 file_path = chosen["path"]
                 modality = chosen["modality"]
 
-                # Clear visualization immediately when file selection changes
+                # Clear visualization and analysis when file selection changes
                 if file_path != st.session_state.get("visualized_file"):
                     st.session_state.pop("visualized_file", None)
+                    st.session_state.pop("agent_state", None)
 
                 if st.button("Visualize", type="primary", use_container_width=True):
                     st.session_state.visualized_file = file_path
+                    st.session_state.pop("agent_state", None)
+                    st.session_state.thread_id = "sess_" + str(os.urandom(4).hex())
 
             elif selected_datasets:
                 st.info("No files found in selected datasets.")
