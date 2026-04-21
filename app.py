@@ -165,18 +165,19 @@ def init_app():
         with col2:
             st.subheader("Clinical Query")
 
-            # Reset query state whenever the user picks a different file
+            default_prompt = MODALITY_PROMPT_MAPPING.get(modality, MODALITY_PROMPT_MAPPING["Unknown"])
+
+            # Reset to default question whenever the user picks a different file
             if st.session_state.get("_last_selected_file") != file_path:
                 st.session_state._last_selected_file = file_path
-                st.session_state.query_mode = None
                 st.session_state.generated_questions = []
                 st.session_state.generated_questions_for_file = None
-                st.session_state.clinical_query_widget = ""
+                st.session_state.clinical_query_widget = default_prompt
                 st.session_state.pop("generated_question_select", None)
 
-            # Callbacks (run pre-widget-render on the next rerun, so they can
-            # safely mutate clinical_query_widget even when fired from a
-            # widget that sits below the text area).
+            if "clinical_query_widget" not in st.session_state:
+                st.session_state.clinical_query_widget = default_prompt
+
             def _on_select_generated():
                 st.session_state.clinical_query_widget = st.session_state.generated_question_select
 
@@ -191,18 +192,24 @@ def init_app():
                 except Exception as e:
                     st.session_state._improve_warning = f"Failed to improve prompt: {e}"
 
-            # Mode toggle buttons (rendered above the text area so direct
-            # session_state mutation in their handlers takes effect this run).
+            user_prompt = st.text_area("Your Question", key="clinical_query_widget", height=140)
+
             btn_cols = st.columns(2)
             gen_clicked = btn_cols[0].button(
-                "✨ Pre-generated Questions", use_container_width=True, key="mode_generated_btn"
+                "✨ Generate More Questions", use_container_width=True, key="gen_questions_btn"
             )
-            custom_clicked = btn_cols[1].button(
-                "✍️ Custom Question", use_container_width=True, key="mode_custom_btn"
+            btn_cols[1].button(
+                "🤖 Improve with AI",
+                on_click=_improve_current,
+                use_container_width=True,
+                key="improve_prompt_btn",
             )
 
-            if gen_clicked and st.session_state.query_mode != "generated":
-                st.session_state.query_mode = "generated"
+            if "_improve_warning" in st.session_state:
+                st.warning(st.session_state._improve_warning)
+                del st.session_state._improve_warning
+
+            if gen_clicked:
                 if st.session_state.generated_questions_for_file != file_path:
                     try:
                         with st.spinner("Generating clinical questions..."):
@@ -214,31 +221,17 @@ def init_app():
                     except Exception as e:
                         st.error(f"Failed to generate questions: {e}")
                         st.session_state.generated_questions = []
-                if st.session_state.generated_questions:
-                    st.session_state.clinical_query_widget = st.session_state.generated_questions[0]
 
-            if custom_clicked and st.session_state.query_mode != "custom":
-                st.session_state.query_mode = "custom"
-                st.session_state.clinical_query_widget = ""
-
-            # Generated mode: dropdown renders above the text area so its
-            # on_change callback can update the text area this run.
-            if st.session_state.query_mode == "generated" and st.session_state.generated_questions:
-                # Expand each dropdown option on hover so long questions are
-                # fully readable before selecting. Targets BaseWeb's popover
-                # markup that Streamlit's selectbox renders into.
+            if st.session_state.get("generated_questions"):
                 st.markdown(
                     """
                     <style>
-                    /* Default: truncate each option and its inner text wrapper */
                     div[data-baseweb="popover"] [role="option"],
                     div[data-baseweb="popover"] [role="option"] * {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-                    /* Hover: expand the option AND every nested child so the
-                       full question is visible before selection */
                     div[data-baseweb="popover"] [role="option"]:hover,
                     div[data-baseweb="popover"] [role="option"]:hover * {
                         white-space: normal !important;
@@ -254,26 +247,11 @@ def init_app():
                     unsafe_allow_html=True,
                 )
                 st.selectbox(
-                    "Select a generated question",
+                    "Select a generated question to use",
                     options=st.session_state.generated_questions,
                     key="generated_question_select",
                     on_change=_on_select_generated,
                 )
-
-            user_prompt = st.text_area("Your Question", key="clinical_query_widget", height=140)
-
-            # Custom mode: Improve button sits below the text area; callback
-            # fires on the next rerun, pre-widget, so mutation is safe.
-            if st.session_state.query_mode == "custom":
-                st.button(
-                    "🤖 Improve with AI",
-                    on_click=_improve_current,
-                    use_container_width=True,
-                    key="improve_prompt_btn",
-                )
-                if "_improve_warning" in st.session_state:
-                    st.warning(st.session_state._improve_warning)
-                    del st.session_state._improve_warning
             
         # Analysis Trigger with Conditional Approval
         if st.button("Run Ensemble Analysis 🚀", use_container_width=True):
