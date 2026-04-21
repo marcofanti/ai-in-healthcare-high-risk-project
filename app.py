@@ -31,6 +31,7 @@ sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 from agent.graph import create_agent_graph
 from utils.viz_utils import create_medical_viz, get_image_metadata
+from utils.query_generator import generate_clinical_questions, improve_clinical_prompt
 
 DATASETS_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "datasets_config.json")
 
@@ -163,8 +164,94 @@ def init_app():
             
         with col2:
             st.subheader("Clinical Query")
+
             default_prompt = MODALITY_PROMPT_MAPPING.get(modality, MODALITY_PROMPT_MAPPING["Unknown"])
-            user_prompt = st.text_area("Your Question", value=default_prompt)
+
+            # Reset to default question whenever the user picks a different file
+            if st.session_state.get("_last_selected_file") != file_path:
+                st.session_state._last_selected_file = file_path
+                st.session_state.generated_questions = []
+                st.session_state.generated_questions_for_file = None
+                st.session_state.clinical_query_widget = default_prompt
+                st.session_state.pop("generated_question_select", None)
+
+            if "clinical_query_widget" not in st.session_state:
+                st.session_state.clinical_query_widget = default_prompt
+
+            def _on_select_generated():
+                st.session_state.clinical_query_widget = st.session_state.generated_question_select
+
+            def _improve_current():
+                draft = st.session_state.get("clinical_query_widget", "")
+                if not draft.strip():
+                    st.session_state._improve_warning = "Write a question first, then click Improve."
+                    return
+                try:
+                    improved = improve_clinical_prompt(draft, file_path, modality)
+                    st.session_state.clinical_query_widget = improved
+                except Exception as e:
+                    st.session_state._improve_warning = f"Failed to improve prompt: {e}"
+
+            user_prompt = st.text_area("Your Question", key="clinical_query_widget", height=140)
+
+            btn_cols = st.columns(2)
+            gen_clicked = btn_cols[0].button(
+                "✨ Generate More Questions", use_container_width=True, key="gen_questions_btn"
+            )
+            btn_cols[1].button(
+                "🤖 Improve with AI",
+                on_click=_improve_current,
+                use_container_width=True,
+                key="improve_prompt_btn",
+            )
+
+            if "_improve_warning" in st.session_state:
+                st.warning(st.session_state._improve_warning)
+                del st.session_state._improve_warning
+
+            if gen_clicked:
+                if st.session_state.generated_questions_for_file != file_path:
+                    try:
+                        with st.spinner("Generating clinical questions..."):
+                            st.session_state.generated_questions = generate_clinical_questions(
+                                file_path, modality
+                            )
+                        st.session_state.generated_questions_for_file = file_path
+                        st.session_state.pop("generated_question_select", None)
+                    except Exception as e:
+                        st.error(f"Failed to generate questions: {e}")
+                        st.session_state.generated_questions = []
+
+            if st.session_state.get("generated_questions"):
+                st.markdown(
+                    """
+                    <style>
+                    div[data-baseweb="popover"] [role="option"],
+                    div[data-baseweb="popover"] [role="option"] * {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    div[data-baseweb="popover"] [role="option"]:hover,
+                    div[data-baseweb="popover"] [role="option"]:hover * {
+                        white-space: normal !important;
+                        word-break: break-word !important;
+                        overflow: visible !important;
+                        text-overflow: clip !important;
+                        height: auto !important;
+                        max-height: none !important;
+                        min-height: fit-content !important;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True,
+                )
+                st.selectbox(
+                    "Select a generated question to use",
+                    options=st.session_state.generated_questions,
+                    key="generated_question_select",
+                    on_change=_on_select_generated,
+                )
             
         # Analysis Trigger with Conditional Approval
         if st.button("Run Ensemble Analysis 🚀", use_container_width=True):
