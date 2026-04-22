@@ -7,6 +7,6 @@ PATHMMU_DATA="${PATHMMU_DATA:-../PathMMU/data}"
 
 uv run eval/main.py \
   --models biomedclip conch musk \
-  --exp_name clip_ensemble_pathmmu_at \
+  --exp_name Atlas_All \
   --data_path "${PATHMMU_DATA}" \
   --categories at 

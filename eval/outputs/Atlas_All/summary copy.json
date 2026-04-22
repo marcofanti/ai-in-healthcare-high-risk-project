@@ -1,0 +1,34 @@
+{
+    "exp_name": "Atlas_All",
+    "models_override": [
+        "biomedclip",
+        "conch",
+        "musk"
+    ],
+    "n_models": 2,
+    "categories": {
+        "Atlas_All": {
+            "acc": 0.4583333333333333,
+            "num_example": 48,
+            "detailed": {
+                "total": 48,
+                "judge_acc": 0.4583333333333333,
+                "max_prob_acc": 0.2916666666666667,
+                "per_model": {
+                    "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.375,
+                    "MahmoodLab/conch": 0.3125,
+                    "xiangjx/musk": 0.20833333333333334
+                }
+            }
+        }
+    },
+    "overall_acc": 0.4583333333333333,
+    "judge_acc": 0.4583333333333333,
+    "max_prob_acc": 0.2916666666666667,
+    "per_model_acc": {
+        "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.375,
+        "MahmoodLab/conch": 0.3125,
+        "xiangjx/musk": 0.20833333333333334
+    },
+    "total_samples": 48
+}
