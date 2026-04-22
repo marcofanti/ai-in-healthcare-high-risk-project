@@ -1,0 +1,1550 @@
+[
+    {
+        "No": 0,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/8935e72f6218f48485fad3a392a39b2acb2669b44bd8972ff7552aa967537571.png",
+        "question": "What pattern is primarily exhibited by the spindle cells in this microscopic image?",
+        "gt_content": "Storiform pattern",
+        "response": "C\nBoth models predict a 'Storiform pattern', indicating a strong consensus regarding the architectural organization of the spindle cells.",
+        "answer": "C) Storiform pattern",
+        "pred_ans": "Storiform pattern",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Rosette pattern",
+            "B": "Alveolar pattern",
+            "C": "Storiform pattern",
+            "D": "Fascicular pattern"
+        },
+        "prompt": "Question: What pattern is primarily exhibited by the spindle cells in this microscopic image?\nOptions:\n(A) Rosette pattern\n(B) Alveolar pattern\n(C) Storiform pattern\n(D) Fascicular pattern\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/8935e72f6218f48485fad3a392a39b2acb2669b44bd8972ff7552aa967537571.png",
+                "top1": "Storiform pattern",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Storiform pattern",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Fascicular pattern",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Rosette pattern",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Alveolar pattern",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/8935e72f6218f48485fad3a392a39b2acb2669b44bd8972ff7552aa967537571.png",
+                "top1": "Storiform pattern",
+                "top1_prob": 0.6638,
+                "top5": [
+                    {
+                        "label": "Storiform pattern",
+                        "prob": 0.6638
+                    },
+                    {
+                        "label": "Fascicular pattern",
+                        "prob": 0.2729
+                    },
+                    {
+                        "label": "Alveolar pattern",
+                        "prob": 0.0598
+                    },
+                    {
+                        "label": "Rosette pattern",
+                        "prob": 0.0034
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Storiform pattern",
+            "musk": "Storiform pattern"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 1,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png",
+        "question": "In the top left image (a), what does the arrow specifically indicate within the histological features present?",
+        "gt_content": "Fibrin deposition",
+        "response": "D\nThe prediction 'Synovial lining hyperplasia' received the highest confidence score (1.0), making it the most likely intended diagnosis for the indicated area.",
+        "answer": "A) Fibrin deposition",
+        "pred_ans": "Synovial lining hyperplasia",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Fibrin deposition",
+            "B": "Neutrophil infiltration",
+            "C": "Eosinophilic cytoplasmic staining",
+            "D": "Synovial lining hyperplasia"
+        },
+        "prompt": "Question: In the top left image (a), what does the arrow specifically indicate within the histological features present?\nOptions:\n(A) Fibrin deposition\n(B) Neutrophil infiltration\n(C) Eosinophilic cytoplasmic staining\n(D) Synovial lining hyperplasia\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png",
+                "top1": "Synovial lining hyperplasia",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Synovial lining hyperplasia",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Neutrophil infiltration",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Eosinophilic cytoplasmic staining",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Fibrin deposition",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png",
+                "top1": "Fibrin deposition",
+                "top1_prob": 0.4824,
+                "top5": [
+                    {
+                        "label": "Fibrin deposition",
+                        "prob": 0.4824
+                    },
+                    {
+                        "label": "Synovial lining hyperplasia",
+                        "prob": 0.3842
+                    },
+                    {
+                        "label": "Eosinophilic cytoplasmic staining",
+                        "prob": 0.0862
+                    },
+                    {
+                        "label": "Neutrophil infiltration",
+                        "prob": 0.0472
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Synovial lining hyperplasia",
+            "musk": "Fibrin deposition"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 2,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png",
+        "question": "In the bottom images (c and d), what do the areas of brown staining within cells indicate?",
+        "gt_content": "Presence of FCV antigens",
+        "response": "C\nThe brown staining is characteristic of a positive result from an immunohistochemical stain, which specifically targets and visualizes the presence of a specific antigen.",
+        "answer": "C) Presence of FCV antigens",
+        "pred_ans": "Cell necrosis",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Cell necrosis",
+            "B": "Presence of nucleic acids",
+            "C": "Presence of FCV antigens",
+            "D": "Connective tissue fibers"
+        },
+        "prompt": "Question: In the bottom images (c and d), what do the areas of brown staining within cells indicate?\nOptions:\n(A) Cell necrosis\n(B) Presence of nucleic acids\n(C) Presence of FCV antigens\n(D) Connective tissue fibers\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png",
+                "top1": "Presence of FCV antigens",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Presence of FCV antigens",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Presence of nucleic acids",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Connective tissue fibers",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Cell necrosis",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png",
+                "top1": "Cell necrosis",
+                "top1_prob": 0.6504,
+                "top5": [
+                    {
+                        "label": "Cell necrosis",
+                        "prob": 0.6504
+                    },
+                    {
+                        "label": "Presence of nucleic acids",
+                        "prob": 0.1867
+                    },
+                    {
+                        "label": "Presence of FCV antigens",
+                        "prob": 0.0939
+                    },
+                    {
+                        "label": "Connective tissue fibers",
+                        "prob": 0.0689
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Presence of FCV antigens",
+            "musk": "Cell necrosis"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 3,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/9668f3e40395b5802259634aee6db36c3aa6e4f08b0489d08bb41cb99677e1b5.png",
+        "question": "Considering the cells' shapes and arrangement, how would you describe the morphology of these cells?",
+        "gt_content": "Spindle-shaped cells densely packed together",
+        "response": "D\nThe model outputs both predict 'Spindle-shaped cells densely packed together,' indicating a strong consensus on this morphology description.",
+        "answer": "D) Spindle-shaped cells densely packed together",
+        "pred_ans": "Spindle-shaped cells densely packed together",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Cuboidal cells with ample cytoplasm",
+            "B": "Round cells with abundant extracellular matrix",
+            "C": "Columnar cells with basal nuclei",
+            "D": "Spindle-shaped cells densely packed together"
+        },
+        "prompt": "Question: Considering the cells' shapes and arrangement, how would you describe the morphology of these cells?\nOptions:\n(A) Cuboidal cells with ample cytoplasm\n(B) Round cells with abundant extracellular matrix\n(C) Columnar cells with basal nuclei\n(D) Spindle-shaped cells densely packed together\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/9668f3e40395b5802259634aee6db36c3aa6e4f08b0489d08bb41cb99677e1b5.png",
+                "top1": "Spindle-shaped cells densely packed together",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells densely packed together",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Cuboidal cells with ample cytoplasm",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Round cells with abundant extracellular matrix",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Columnar cells with basal nuclei",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/9668f3e40395b5802259634aee6db36c3aa6e4f08b0489d08bb41cb99677e1b5.png",
+                "top1": "Spindle-shaped cells densely packed together",
+                "top1_prob": 0.8612,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped cells densely packed together",
+                        "prob": 0.8612
+                    },
+                    {
+                        "label": "Columnar cells with basal nuclei",
+                        "prob": 0.0837
+                    },
+                    {
+                        "label": "Cuboidal cells with ample cytoplasm",
+                        "prob": 0.0492
+                    },
+                    {
+                        "label": "Round cells with abundant extracellular matrix",
+                        "prob": 0.0059
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Spindle-shaped cells densely packed together",
+            "musk": "Spindle-shaped cells densely packed together"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 4,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/7dfdc41f816faa10f4494a4e3815d39f603276bc8d847588578c7183f368232f.png",
+        "question": "What does the presence of darker staining, densely packed clusters of cells within the connective tissue stroma imply?",
+        "gt_content": "Possible neuroendocrine cells due to dense-core secretory granules",
+        "response": "A\nThe phrase \"darker staining\" strongly suggests the presence of dense-core secretory granules, which is the hallmark feature of neuroendocrine cells.",
+        "answer": "A) Possible neuroendocrine cells due to dense-core secretory granules",
+        "pred_ans": "Possible neuroendocrine cells due to dense-core secretory granules",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Possible neuroendocrine cells due to dense-core secretory granules",
+            "B": "Possible adipose cells due to large lipid droplets",
+            "C": "Possible neoplastic proliferation due to uncontrolled growth",
+            "D": "Possible inflammatory infiltrate due to infection"
+        },
+        "prompt": "Question: What does the presence of darker staining, densely packed clusters of cells within the connective tissue stroma imply?\nOptions:\n(A) Possible neuroendocrine cells due to dense-core secretory granules\n(B) Possible adipose cells due to large lipid droplets\n(C) Possible neoplastic proliferation due to uncontrolled growth\n(D) Possible inflammatory infiltrate due to infection\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/7dfdc41f816faa10f4494a4e3815d39f603276bc8d847588578c7183f368232f.png",
+                "top1": "Possible neuroendocrine cells due to dense-core secretory granules",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Possible neuroendocrine cells due to dense-core secretory granules",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Possible neoplastic proliferation due to uncontrolled growth",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Possible adipose cells due to large lipid droplets",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Possible inflammatory infiltrate due to infection",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/7dfdc41f816faa10f4494a4e3815d39f603276bc8d847588578c7183f368232f.png",
+                "top1": "Possible neoplastic proliferation due to uncontrolled growth",
+                "top1_prob": 0.4446,
+                "top5": [
+                    {
+                        "label": "Possible neoplastic proliferation due to uncontrolled growth",
+                        "prob": 0.4446
+                    },
+                    {
+                        "label": "Possible inflammatory infiltrate due to infection",
+                        "prob": 0.2293
+                    },
+                    {
+                        "label": "Possible neuroendocrine cells due to dense-core secretory granules",
+                        "prob": 0.1711
+                    },
+                    {
+                        "label": "Possible adipose cells due to large lipid droplets",
+                        "prob": 0.155
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Possible neuroendocrine cells due to dense-core secretory granules",
+            "musk": "Possible neoplastic proliferation due to uncontrolled growth"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 5,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png",
+        "question": "What is the predominant cell shape observed in this tissue section?",
+        "gt_content": "Spindle-shaped",
+        "response": "B\nBoth models predict distinct shapes, but MahmoodLab/conch provides a perfect confidence score (1.0) for 'Spindle-shaped', indicating high certainty.",
+        "answer": "B) Spindle-shaped",
+        "pred_ans": "Spindle-shaped",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Cuboidal",
+            "B": "Spindle-shaped",
+            "C": "Columnar",
+            "D": "Spherical"
+        },
+        "prompt": "Question: What is the predominant cell shape observed in this tissue section?\nOptions:\n(A) Cuboidal\n(B) Spindle-shaped\n(C) Columnar\n(D) Spherical\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png",
+                "top1": "Spindle-shaped",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Spindle-shaped",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Cuboidal",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Columnar",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Spherical",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png",
+                "top1": "Columnar",
+                "top1_prob": 0.7581,
+                "top5": [
+                    {
+                        "label": "Columnar",
+                        "prob": 0.7581
+                    },
+                    {
+                        "label": "Spherical",
+                        "prob": 0.1147
+                    },
+                    {
+                        "label": "Cuboidal",
+                        "prob": 0.1072
+                    },
+                    {
+                        "label": "Spindle-shaped",
+                        "prob": 0.02
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Spindle-shaped",
+            "musk": "Columnar"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 6,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png",
+        "question": "How would you describe the nuclear characteristics of the cells in this image?",
+        "gt_content": "Elongated and hyperchromatic",
+        "response": "D\nThe model MahmoodLab/conch provided the highest confidence prediction (1.0) for 'Elongated and hyperchromatic', suggesting this is the most accurate description of the nuclear morphology.",
+        "answer": "D) Elongated and hyperchromatic",
+        "pred_ans": "Elongated and hyperchromatic",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Large and multinucleated",
+            "B": "Round and vesicular",
+            "C": "Small and hypochromatic",
+            "D": "Elongated and hyperchromatic"
+        },
+        "prompt": "Question: How would you describe the nuclear characteristics of the cells in this image?\nOptions:\n(A) Large and multinucleated\n(B) Round and vesicular\n(C) Small and hypochromatic\n(D) Elongated and hyperchromatic\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png",
+                "top1": "Elongated and hyperchromatic",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Elongated and hyperchromatic",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Large and multinucleated",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Small and hypochromatic",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Round and vesicular",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png",
+                "top1": "Large and multinucleated",
+                "top1_prob": 0.8863,
+                "top5": [
+                    {
+                        "label": "Large and multinucleated",
+                        "prob": 0.8863
+                    },
+                    {
+                        "label": "Small and hypochromatic",
+                        "prob": 0.0826
+                    },
+                    {
+                        "label": "Elongated and hyperchromatic",
+                        "prob": 0.0188
+                    },
+                    {
+                        "label": "Round and vesicular",
+                        "prob": 0.0122
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Elongated and hyperchromatic",
+            "musk": "Large and multinucleated"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 7,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png",
+        "question": "What pattern is predominantly observed in the tissue organization?",
+        "gt_content": "Storiform pattern",
+        "response": "A\nThe prediction from MahmoodLab/conch, which reports a perfect confidence score of 1.0, strongly suggests the Storiform pattern as the predominant organization.",
+        "answer": "A) Storiform pattern",
+        "pred_ans": "Storiform pattern",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Storiform pattern",
+            "B": "Palisading pattern",
+            "C": "Alveolar pattern",
+            "D": "Nesting pattern"
+        },
+        "prompt": "Question: What pattern is predominantly observed in the tissue organization?\nOptions:\n(A) Storiform pattern\n(B) Palisading pattern\n(C) Alveolar pattern\n(D) Nesting pattern\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png",
+                "top1": "Storiform pattern",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Storiform pattern",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Palisading pattern",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Alveolar pattern",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Nesting pattern",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png",
+                "top1": "Alveolar pattern",
+                "top1_prob": 0.4578,
+                "top5": [
+                    {
+                        "label": "Alveolar pattern",
+                        "prob": 0.4578
+                    },
+                    {
+                        "label": "Nesting pattern",
+                        "prob": 0.2926
+                    },
+                    {
+                        "label": "Storiform pattern",
+                        "prob": 0.1374
+                    },
+                    {
+                        "label": "Palisading pattern",
+                        "prob": 0.1122
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Storiform pattern",
+            "musk": "Alveolar pattern"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 8,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png",
+        "question": "Assessing cellular morphology, what feature is noticeably absent in this field of view?",
+        "gt_content": "Nuclear pleomorphism",
+        "response": "D\nThe prediction of \"Uniform spindle-shaped cells\" suggests a lack of variation in cell morphology, which indicates the noticeable absence of nuclear pleomorphism.",
+        "answer": "D) Nuclear pleomorphism",
+        "pred_ans": "Nuclear pleomorphism",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Eosinophilic extracellular matrix",
+            "B": "Mitotic figures",
+            "C": "Uniform spindle-shaped cells",
+            "D": "Nuclear pleomorphism"
+        },
+        "prompt": "Question: Assessing cellular morphology, what feature is noticeably absent in this field of view?\nOptions:\n(A) Eosinophilic extracellular matrix\n(B) Mitotic figures\n(C) Uniform spindle-shaped cells\n(D) Nuclear pleomorphism\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png",
+                "top1": "Uniform spindle-shaped cells",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Uniform spindle-shaped cells",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Nuclear pleomorphism",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Mitotic figures",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Eosinophilic extracellular matrix",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png",
+                "top1": "Mitotic figures",
+                "top1_prob": 0.6142,
+                "top5": [
+                    {
+                        "label": "Mitotic figures",
+                        "prob": 0.6142
+                    },
+                    {
+                        "label": "Nuclear pleomorphism",
+                        "prob": 0.2112
+                    },
+                    {
+                        "label": "Uniform spindle-shaped cells",
+                        "prob": 0.1149
+                    },
+                    {
+                        "label": "Eosinophilic extracellular matrix",
+                        "prob": 0.0597
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Uniform spindle-shaped cells",
+            "musk": "Mitotic figures"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 9,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/dd0ab5aa38f77a539742d72251263ba153cdf2cfb9b8afc748d82e833aa139a8.png",
+        "question": "Based on the high magnification of this H&E stained skin section, what morphological change is seen in the epidermis that suggests pathology?",
+        "gt_content": "Spongiosis",
+        "response": "B\nSpongiosis, characterized by intercellular edema, is a specific and highly recognizable epidermal change that was predicted with the highest confidence (1.0) by the model output.",
+        "answer": "B) Spongiosis",
+        "pred_ans": "Spongiosis",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Acantholysis",
+            "B": "Spongiosis",
+            "C": "Hyperkeratosis",
+            "D": "Psoriasiform hyperplasia"
+        },
+        "prompt": "Question: Based on the high magnification of this H&E stained skin section, what morphological change is seen in the epidermis that suggests pathology?\nOptions:\n(A) Acantholysis\n(B) Spongiosis\n(C) Hyperkeratosis\n(D) Psoriasiform hyperplasia\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/dd0ab5aa38f77a539742d72251263ba153cdf2cfb9b8afc748d82e833aa139a8.png",
+                "top1": "Spongiosis",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Spongiosis",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Psoriasiform hyperplasia",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Hyperkeratosis",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Acantholysis",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/dd0ab5aa38f77a539742d72251263ba153cdf2cfb9b8afc748d82e833aa139a8.png",
+                "top1": "Psoriasiform hyperplasia",
+                "top1_prob": 0.5791,
+                "top5": [
+                    {
+                        "label": "Psoriasiform hyperplasia",
+                        "prob": 0.5791
+                    },
+                    {
+                        "label": "Acantholysis",
+                        "prob": 0.155
+                    },
+                    {
+                        "label": "Spongiosis",
+                        "prob": 0.1386
+                    },
+                    {
+                        "label": "Hyperkeratosis",
+                        "prob": 0.1274
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Spongiosis",
+            "musk": "Psoriasiform hyperplasia"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 10,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/5e1b7714894c5204a574f55d73a8f7190b046d773f2f75195c204b5a6c021ede.png",
+        "question": "How would you describe the cytoplasm of the hepatocytes as observed in this section of hepatic tissue?",
+        "gt_content": "Eosinophilic with a smooth appearance",
+        "response": "C\nThe prediction from MahmoodLab/conch, which has the highest confidence score (0.9855), strongly suggests that the cytoplasm is best described as eosinophilic with dense granules.",
+        "answer": "B) Eosinophilic with a smooth appearance",
+        "pred_ans": "Eosinophilic with dense granules",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Basophilic with dense granules",
+            "B": "Eosinophilic with a smooth appearance",
+            "C": "Eosinophilic with dense granules",
+            "D": "Basophilic with vacuolated structures"
+        },
+        "prompt": "Question: How would you describe the cytoplasm of the hepatocytes as observed in this section of hepatic tissue?\nOptions:\n(A) Basophilic with dense granules\n(B) Eosinophilic with a smooth appearance\n(C) Eosinophilic with dense granules\n(D) Basophilic with vacuolated structures\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/5e1b7714894c5204a574f55d73a8f7190b046d773f2f75195c204b5a6c021ede.png",
+                "top1": "Eosinophilic with dense granules",
+                "top1_prob": 0.9855,
+                "top5": [
+                    {
+                        "label": "Eosinophilic with dense granules",
+                        "prob": 0.9855
+                    },
+                    {
+                        "label": "Eosinophilic with a smooth appearance",
+                        "prob": 0.0145
+                    },
+                    {
+                        "label": "Basophilic with vacuolated structures",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Basophilic with dense granules",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/5e1b7714894c5204a574f55d73a8f7190b046d773f2f75195c204b5a6c021ede.png",
+                "top1": "Basophilic with dense granules",
+                "top1_prob": 0.6537,
+                "top5": [
+                    {
+                        "label": "Basophilic with dense granules",
+                        "prob": 0.6537
+                    },
+                    {
+                        "label": "Eosinophilic with dense granules",
+                        "prob": 0.2639
+                    },
+                    {
+                        "label": "Basophilic with vacuolated structures",
+                        "prob": 0.0796
+                    },
+                    {
+                        "label": "Eosinophilic with a smooth appearance",
+                        "prob": 0.0028
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Eosinophilic with dense granules",
+            "musk": "Basophilic with dense granules"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 11,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png",
+        "question": "What is the predominant nuclear staining pattern observed in the majority of cells in this histological section?",
+        "gt_content": "Dark blue nuclei with scattered brown staining",
+        "response": "D\nThe selection aligns with the highest confidence prediction from the MahmoodLab/conch model (0.9962), indicating the primary staining feature is brown nuclei with irregular distribution.",
+        "answer": "A) Dark blue nuclei with scattered brown staining",
+        "pred_ans": "Predominantly brown-stained nuclei with irregular distribution",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Dark blue nuclei with scattered brown staining",
+            "B": "Uniformly light blue nuclei with no visible brown staining",
+            "C": "Homogeneous pink staining throughout the tissue",
+            "D": "Predominantly brown-stained nuclei with irregular distribution"
+        },
+        "prompt": "Question: What is the predominant nuclear staining pattern observed in the majority of cells in this histological section?\nOptions:\n(A) Dark blue nuclei with scattered brown staining\n(B) Uniformly light blue nuclei with no visible brown staining\n(C) Homogeneous pink staining throughout the tissue\n(D) Predominantly brown-stained nuclei with irregular distribution\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png",
+                "top1": "Predominantly brown-stained nuclei with irregular distribution",
+                "top1_prob": 0.9962,
+                "top5": [
+                    {
+                        "label": "Predominantly brown-stained nuclei with irregular distribution",
+                        "prob": 0.9962
+                    },
+                    {
+                        "label": "Dark blue nuclei with scattered brown staining",
+                        "prob": 0.0038
+                    },
+                    {
+                        "label": "Homogeneous pink staining throughout the tissue",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Uniformly light blue nuclei with no visible brown staining",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png",
+                "top1": "Uniformly light blue nuclei with no visible brown staining",
+                "top1_prob": 0.6066,
+                "top5": [
+                    {
+                        "label": "Uniformly light blue nuclei with no visible brown staining",
+                        "prob": 0.6066
+                    },
+                    {
+                        "label": "Predominantly brown-stained nuclei with irregular distribution",
+                        "prob": 0.2753
+                    },
+                    {
+                        "label": "Homogeneous pink staining throughout the tissue",
+                        "prob": 0.0767
+                    },
+                    {
+                        "label": "Dark blue nuclei with scattered brown staining",
+                        "prob": 0.0414
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Predominantly brown-stained nuclei with irregular distribution",
+            "musk": "Uniformly light blue nuclei with no visible brown staining"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 12,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png",
+        "question": "Judging by the heterogeneous morphology of the brown-stained nuclei, which description best matches the observed size and shape variation?",
+        "gt_content": "Round to oval nuclei exhibiting some variation in size and shape",
+        "response": "D\nThe model output from MahmoodLab/conch has an exceptionally high confidence (0.9867) and accurately describes the severe variation implied by \"heterogeneous morphology\" as extreme pleomorphism.",
+        "answer": "C) Round to oval nuclei exhibiting some variation in size and shape",
+        "pred_ans": "Round to oval nuclei exhibiting some variation in size and shape",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Uniform round nuclei with consistent size",
+            "B": "Oval nuclei with minimal size variation",
+            "C": "Round to oval nuclei exhibiting some variation in size and shape",
+            "D": "Highly irregular nuclei with extreme pleomorphism"
+        },
+        "prompt": "Question: Judging by the heterogeneous morphology of the brown-stained nuclei, which description best matches the observed size and shape variation?\nOptions:\n(A) Uniform round nuclei with consistent size\n(B) Oval nuclei with minimal size variation\n(C) Round to oval nuclei exhibiting some variation in size and shape\n(D) Highly irregular nuclei with extreme pleomorphism\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png",
+                "top1": "Highly irregular nuclei with extreme pleomorphism",
+                "top1_prob": 0.9867,
+                "top5": [
+                    {
+                        "label": "Highly irregular nuclei with extreme pleomorphism",
+                        "prob": 0.9867
+                    },
+                    {
+                        "label": "Round to oval nuclei exhibiting some variation in size and shape",
+                        "prob": 0.0127
+                    },
+                    {
+                        "label": "Oval nuclei with minimal size variation",
+                        "prob": 0.0003
+                    },
+                    {
+                        "label": "Uniform round nuclei with consistent size",
+                        "prob": 0.0002
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png",
+                "top1": "Round to oval nuclei exhibiting some variation in size and shape",
+                "top1_prob": 0.5437,
+                "top5": [
+                    {
+                        "label": "Round to oval nuclei exhibiting some variation in size and shape",
+                        "prob": 0.5437
+                    },
+                    {
+                        "label": "Uniform round nuclei with consistent size",
+                        "prob": 0.3206
+                    },
+                    {
+                        "label": "Oval nuclei with minimal size variation",
+                        "prob": 0.1161
+                    },
+                    {
+                        "label": "Highly irregular nuclei with extreme pleomorphism",
+                        "prob": 0.0196
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Highly irregular nuclei with extreme pleomorphism",
+            "musk": "Round to oval nuclei exhibiting some variation in size and shape"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 13,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/0c2927614e8ec2fa6a92d449415cf3ddba5c39dc9023fb1134d178432206229e.png",
+        "question": "Based on the staining characteristics and nuclear morphology observed in this image, what type of cellular alteration can be inferred?",
+        "gt_content": "Uniform nuclear staining and slight variation in cell size",
+        "response": "C\nThe model xiangjx/musk provided a significantly higher confidence score (0.9699) for 'Macronucleoli and anisocytosis', suggesting this pairing represents the most accurate description of the observed cellular alterations.",
+        "answer": "A) Uniform nuclear staining and slight variation in cell size",
+        "pred_ans": "Macronucleoli and anisocytosis",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Uniform nuclear staining and slight variation in cell size",
+            "B": "Hyperchromasia and nuclear pleomorphism",
+            "C": "Macronucleoli and anisocytosis",
+            "D": "Anisonucleosis and increased mitotic figures"
+        },
+        "prompt": "Question: Based on the staining characteristics and nuclear morphology observed in this image, what type of cellular alteration can be inferred?\nOptions:\n(A) Uniform nuclear staining and slight variation in cell size\n(B) Hyperchromasia and nuclear pleomorphism\n(C) Macronucleoli and anisocytosis\n(D) Anisonucleosis and increased mitotic figures\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/0c2927614e8ec2fa6a92d449415cf3ddba5c39dc9023fb1134d178432206229e.png",
+                "top1": "Anisonucleosis and increased mitotic figures",
+                "top1_prob": 0.7852,
+                "top5": [
+                    {
+                        "label": "Anisonucleosis and increased mitotic figures",
+                        "prob": 0.7852
+                    },
+                    {
+                        "label": "Macronucleoli and anisocytosis",
+                        "prob": 0.2116
+                    },
+                    {
+                        "label": "Uniform nuclear staining and slight variation in cell size",
+                        "prob": 0.0032
+                    },
+                    {
+                        "label": "Hyperchromasia and nuclear pleomorphism",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/0c2927614e8ec2fa6a92d449415cf3ddba5c39dc9023fb1134d178432206229e.png",
+                "top1": "Macronucleoli and anisocytosis",
+                "top1_prob": 0.9699,
+                "top5": [
+                    {
+                        "label": "Macronucleoli and anisocytosis",
+                        "prob": 0.9699
+                    },
+                    {
+                        "label": "Uniform nuclear staining and slight variation in cell size",
+                        "prob": 0.0264
+                    },
+                    {
+                        "label": "Anisonucleosis and increased mitotic figures",
+                        "prob": 0.0028
+                    },
+                    {
+                        "label": "Hyperchromasia and nuclear pleomorphism",
+                        "prob": 0.0009
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Anisonucleosis and increased mitotic figures",
+            "musk": "Macronucleoli and anisocytosis"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 14,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/d9f01d4a08516199cf736c41366ebf9685c79f2f22b3419ffb64a2e70a962a94.png",
+        "question": "Analyzing the arrangement of cells within the image, which pattern can be identified?",
+        "gt_content": "The cells form nests and display areas of a syncytial pattern.",
+        "response": "D\nThe model with the highest confidence (1.0) correctly identifies the characteristic pattern of cell arrangement as forming nests and displaying areas of a syncytial pattern.",
+        "answer": "D) The cells form nests and display areas of a syncytial pattern.",
+        "pred_ans": "The cells are arranged in well-differentiated tubular structures.",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "The cells are arranged in well-differentiated tubular structures.",
+            "B": "The cells are scattered without any distinct pattern.",
+            "C": "The cells are uniformly distributed with extensive fibrosis.",
+            "D": "The cells form nests and display areas of a syncytial pattern."
+        },
+        "prompt": "Question: Analyzing the arrangement of cells within the image, which pattern can be identified?\nOptions:\n(A) The cells are arranged in well-differentiated tubular structures.\n(B) The cells are scattered without any distinct pattern.\n(C) The cells are uniformly distributed with extensive fibrosis.\n(D) The cells form nests and display areas of a syncytial pattern.\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/d9f01d4a08516199cf736c41366ebf9685c79f2f22b3419ffb64a2e70a962a94.png",
+                "top1": "The cells form nests and display areas of a syncytial pattern.",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "The cells form nests and display areas of a syncytial pattern.",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "The cells are arranged in well-differentiated tubular structures.",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "The cells are scattered without any distinct pattern.",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "The cells are uniformly distributed with extensive fibrosis.",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/d9f01d4a08516199cf736c41366ebf9685c79f2f22b3419ffb64a2e70a962a94.png",
+                "top1": "The cells are scattered without any distinct pattern.",
+                "top1_prob": 0.4798,
+                "top5": [
+                    {
+                        "label": "The cells are scattered without any distinct pattern.",
+                        "prob": 0.4798
+                    },
+                    {
+                        "label": "The cells are arranged in well-differentiated tubular structures.",
+                        "prob": 0.2506
+                    },
+                    {
+                        "label": "The cells are uniformly distributed with extensive fibrosis.",
+                        "prob": 0.2239
+                    },
+                    {
+                        "label": "The cells form nests and display areas of a syncytial pattern.",
+                        "prob": 0.0457
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "The cells form nests and display areas of a syncytial pattern.",
+            "musk": "The cells are scattered without any distinct pattern."
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 15,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/39e80bf844de4e5c23b926f4dc421e8af7904b194ed8e4759550f70405852cd5.png",
+        "question": "What is the orientation of the elongated structures suggestive of nerve fibers in the image?",
+        "gt_content": "Well-organized, with parallel orientation",
+        "response": "C\nThe MahmoodLab/conch model provided a high-confidence prediction (1.0) with a specific anatomical orientation, making this option the most reliable answer.",
+        "answer": "D) Well-organized, with parallel orientation",
+        "pred_ans": "Well-organized, with parallel orientation",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Forming irregular, tangled networks",
+            "B": "Random without any discernible pattern",
+            "C": "Perpendicular to the surrounding adipose tissue cells",
+            "D": "Well-organized, with parallel orientation"
+        },
+        "prompt": "Question: What is the orientation of the elongated structures suggestive of nerve fibers in the image?\nOptions:\n(A) Forming irregular, tangled networks\n(B) Random without any discernible pattern\n(C) Perpendicular to the surrounding adipose tissue cells\n(D) Well-organized, with parallel orientation\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/39e80bf844de4e5c23b926f4dc421e8af7904b194ed8e4759550f70405852cd5.png",
+                "top1": "Perpendicular to the surrounding adipose tissue cells",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Perpendicular to the surrounding adipose tissue cells",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "with parallel orientation",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Forming irregular",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "tangled networks",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Random without any discernible pattern",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/39e80bf844de4e5c23b926f4dc421e8af7904b194ed8e4759550f70405852cd5.png",
+                "top1": "Forming irregular",
+                "top1_prob": 0.4779,
+                "top5": [
+                    {
+                        "label": "Forming irregular",
+                        "prob": 0.4779
+                    },
+                    {
+                        "label": "tangled networks",
+                        "prob": 0.3862
+                    },
+                    {
+                        "label": "Well-organized",
+                        "prob": 0.0589
+                    },
+                    {
+                        "label": "Random without any discernible pattern",
+                        "prob": 0.0508
+                    },
+                    {
+                        "label": "with parallel orientation",
+                        "prob": 0.0246
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Perpendicular to the surrounding adipose tissue cells",
+            "musk": "Forming irregular"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 16,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/768588e90811e5ccf1a9c9f75cdbdb1d851e2a7a9d0d92f8b055891c2561f39e.png",
+        "question": "What does the overall architecture of the myocardial tissue suggest?",
+        "gt_content": "Disarray of myocytes with neutrophilic infiltration",
+        "response": "B\nThe `MahmoodLab/conch` model predicted \"Abundant collagen deposits between myocytes\" with an exceptionally high confidence score (0.9993), indicating that fibrosis is the most probable architectural finding.",
+        "answer": "C) Disarray of myocytes with neutrophilic infiltration",
+        "pred_ans": "Abundant collagen deposits between myocytes",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Regular alignment of myocytes with uniform nuclei",
+            "B": "Abundant collagen deposits between myocytes",
+            "C": "Disarray of myocytes with neutrophilic infiltration",
+            "D": "The regular distribution of purkinje fibers"
+        },
+        "prompt": "Question: What does the overall architecture of the myocardial tissue suggest?\nOptions:\n(A) Regular alignment of myocytes with uniform nuclei\n(B) Abundant collagen deposits between myocytes\n(C) Disarray of myocytes with neutrophilic infiltration\n(D) The regular distribution of purkinje fibers\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/768588e90811e5ccf1a9c9f75cdbdb1d851e2a7a9d0d92f8b055891c2561f39e.png",
+                "top1": "Abundant collagen deposits between myocytes",
+                "top1_prob": 0.9993,
+                "top5": [
+                    {
+                        "label": "Abundant collagen deposits between myocytes",
+                        "prob": 0.9993
+                    },
+                    {
+                        "label": "Regular alignment of myocytes with uniform nuclei",
+                        "prob": 0.0004
+                    },
+                    {
+                        "label": "Disarray of myocytes with neutrophilic infiltration",
+                        "prob": 0.0003
+                    },
+                    {
+                        "label": "The regular distribution of purkinje fibers",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/768588e90811e5ccf1a9c9f75cdbdb1d851e2a7a9d0d92f8b055891c2561f39e.png",
+                "top1": "Disarray of myocytes with neutrophilic infiltration",
+                "top1_prob": 0.4111,
+                "top5": [
+                    {
+                        "label": "Disarray of myocytes with neutrophilic infiltration",
+                        "prob": 0.4111
+                    },
+                    {
+                        "label": "Abundant collagen deposits between myocytes",
+                        "prob": 0.3811
+                    },
+                    {
+                        "label": "The regular distribution of purkinje fibers",
+                        "prob": 0.1254
+                    },
+                    {
+                        "label": "Regular alignment of myocytes with uniform nuclei",
+                        "prob": 0.0824
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Abundant collagen deposits between myocytes",
+            "musk": "Disarray of myocytes with neutrophilic infiltration"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 17,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png",
+        "question": "How would you describe the nuclei of the epithelial cells lining the glandular structures?",
+        "gt_content": "Pleomorphic and hyperchromatic",
+        "response": "D\nThe model output from MahmoodLab/conch has a significantly higher confidence score (0.6889) compared to the competing model, leading to the selection of 'Pleomorphic and lightly stained.'",
+        "answer": "B) Pleomorphic and hyperchromatic",
+        "pred_ans": "Pleomorphic and lightly stained",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Monomorphic and lightly stained",
+            "B": "Pleomorphic and hyperchromatic",
+            "C": "Monomorphic and hyperchromatic",
+            "D": "Pleomorphic and lightly stained"
+        },
+        "prompt": "Question: How would you describe the nuclei of the epithelial cells lining the glandular structures?\nOptions:\n(A) Monomorphic and lightly stained\n(B) Pleomorphic and hyperchromatic\n(C) Monomorphic and hyperchromatic\n(D) Pleomorphic and lightly stained\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png",
+                "top1": "Pleomorphic and lightly stained",
+                "top1_prob": 0.6889,
+                "top5": [
+                    {
+                        "label": "Pleomorphic and lightly stained",
+                        "prob": 0.6889
+                    },
+                    {
+                        "label": "Monomorphic and lightly stained",
+                        "prob": 0.3111
+                    },
+                    {
+                        "label": "Pleomorphic and hyperchromatic",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Monomorphic and hyperchromatic",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png",
+                "top1": "Monomorphic and hyperchromatic",
+                "top1_prob": 0.5071,
+                "top5": [
+                    {
+                        "label": "Monomorphic and hyperchromatic",
+                        "prob": 0.5071
+                    },
+                    {
+                        "label": "Monomorphic and lightly stained",
+                        "prob": 0.2135
+                    },
+                    {
+                        "label": "Pleomorphic and lightly stained",
+                        "prob": 0.1445
+                    },
+                    {
+                        "label": "Pleomorphic and hyperchromatic",
+                        "prob": 0.1349
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Pleomorphic and lightly stained",
+            "musk": "Monomorphic and hyperchromatic"
+        },
+        "judge": "Wrong"
+    },
+    {
+        "No": 18,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png",
+        "question": "Regarding the stroma in this image, what is the predominant cellular infiltration observed?",
+        "gt_content": "Inflammatory cells with densely stained nuclei",
+        "response": "D\nBoth models predict that the predominant cellular infiltration in the stroma is inflammatory cells with densely stained nuclei.",
+        "answer": "D) Inflammatory cells with densely stained nuclei",
+        "pred_ans": "Inflammatory cells with densely stained nuclei",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Muscle fibers with elongated nuclei",
+            "B": "Fibroblasts with spindle-shaped nuclei",
+            "C": "Adipocytes with large clear cytoplasm",
+            "D": "Inflammatory cells with densely stained nuclei"
+        },
+        "prompt": "Question: Regarding the stroma in this image, what is the predominant cellular infiltration observed?\nOptions:\n(A) Muscle fibers with elongated nuclei\n(B) Fibroblasts with spindle-shaped nuclei\n(C) Adipocytes with large clear cytoplasm\n(D) Inflammatory cells with densely stained nuclei\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png",
+                "top1": "Inflammatory cells with densely stained nuclei",
+                "top1_prob": 1.0,
+                "top5": [
+                    {
+                        "label": "Inflammatory cells with densely stained nuclei",
+                        "prob": 1.0
+                    },
+                    {
+                        "label": "Adipocytes with large clear cytoplasm",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Fibroblasts with spindle-shaped nuclei",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Muscle fibers with elongated nuclei",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png",
+                "top1": "Inflammatory cells with densely stained nuclei",
+                "top1_prob": 0.7599,
+                "top5": [
+                    {
+                        "label": "Inflammatory cells with densely stained nuclei",
+                        "prob": 0.7599
+                    },
+                    {
+                        "label": "Muscle fibers with elongated nuclei",
+                        "prob": 0.166
+                    },
+                    {
+                        "label": "Adipocytes with large clear cytoplasm",
+                        "prob": 0.0638
+                    },
+                    {
+                        "label": "Fibroblasts with spindle-shaped nuclei",
+                        "prob": 0.0102
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Inflammatory cells with densely stained nuclei",
+            "musk": "Inflammatory cells with densely stained nuclei"
+        },
+        "judge": "Correct"
+    },
+    {
+        "No": 19,
+        "img_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/ef8595c8bf644aa7edc17f01d12c209f6ee40a3fde81c98492dab1e03b7eb401.png",
+        "question": "Upon examining the lymphocytic infiltrate in the epidermis, which feature is most indicative of epidermotropism?",
+        "gt_content": "Atypical lymphocytes with irregular nuclei",
+        "response": "C\nThe formation of a band-like infiltrate at the dermoepidermal junction is the classic histological finding that demonstrates the migration of lymphocytes into the basal layer of the epidermis (epidermotropism).",
+        "answer": "A) Atypical lymphocytes with irregular nuclei",
+        "pred_ans": "Atypical lymphocytes with irregular nuclei",
+        "all_choices": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "index2ans": {
+            "A": "Atypical lymphocytes with irregular nuclei",
+            "B": "Presence of melanocytes within the infiltrate",
+            "C": "Lymphocytes forming a band-like pattern at the dermoepidermal junction",
+            "D": "Homogeneous appearance of the lymphocytes"
+        },
+        "prompt": "Question: Upon examining the lymphocytic infiltrate in the epidermis, which feature is most indicative of epidermotropism?\nOptions:\n(A) Atypical lymphocytes with irregular nuclei\n(B) Presence of melanocytes within the infiltrate\n(C) Lymphocytes forming a band-like pattern at the dermoepidermal junction\n(D) Homogeneous appearance of the lymphocytes\nAnswer with only the letter (A, B, C, or D):",
+        "model_outputs": [
+            {
+                "model": "MahmoodLab/conch",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/ef8595c8bf644aa7edc17f01d12c209f6ee40a3fde81c98492dab1e03b7eb401.png",
+                "top1": "Lymphocytes forming a band-like pattern at the dermoepidermal junction",
+                "top1_prob": 0.9947,
+                "top5": [
+                    {
+                        "label": "Lymphocytes forming a band-like pattern at the dermoepidermal junction",
+                        "prob": 0.9947
+                    },
+                    {
+                        "label": "Presence of melanocytes within the infiltrate",
+                        "prob": 0.0053
+                    },
+                    {
+                        "label": "Atypical lymphocytes with irregular nuclei",
+                        "prob": 0.0
+                    },
+                    {
+                        "label": "Homogeneous appearance of the lymphocytes",
+                        "prob": 0.0
+                    }
+                ]
+            },
+            {
+                "model": "xiangjx/musk",
+                "image_path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/ef8595c8bf644aa7edc17f01d12c209f6ee40a3fde81c98492dab1e03b7eb401.png",
+                "top1": "Atypical lymphocytes with irregular nuclei",
+                "top1_prob": 0.6982,
+                "top5": [
+                    {
+                        "label": "Atypical lymphocytes with irregular nuclei",
+                        "prob": 0.6982
+                    },
+                    {
+                        "label": "Presence of melanocytes within the infiltrate",
+                        "prob": 0.2363
+                    },
+                    {
+                        "label": "Lymphocytes forming a band-like pattern at the dermoepidermal junction",
+                        "prob": 0.0538
+                    },
+                    {
+                        "label": "Homogeneous appearance of the lymphocytes",
+                        "prob": 0.0117
+                    }
+                ]
+            }
+        ],
+        "per_model": {
+            "conch": "Lymphocytes forming a band-like pattern at the dermoepidermal junction",
+            "musk": "Atypical lymphocytes with irregular nuclei"
+        },
+        "judge": "Correct"
+    }
+]

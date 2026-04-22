@@ -1,0 +1,28 @@
+{
+    "exp_name": "ui_default_top2_pathmmu",
+    "models_override": null,
+    "n_models": 2,
+    "categories": {
+        "PubMed_test_tiny": {
+            "acc": 0.6,
+            "num_example": 20,
+            "detailed": {
+                "total": 20,
+                "judge_acc": 0.6,
+                "max_prob_acc": 0.25,
+                "per_model": {
+                    "MahmoodLab/conch": 0.35,
+                    "xiangjx/musk": 0.3
+                }
+            }
+        }
+    },
+    "overall_acc": 0.6,
+    "judge_acc": 0.6,
+    "max_prob_acc": 0.25,
+    "per_model_acc": {
+        "MahmoodLab/conch": 0.35,
+        "xiangjx/musk": 0.3
+    },
+    "total_samples": 20
+}

@@ -1,0 +1,1921 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Pathology Ensemble Audit</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+        <style>
+            .sparkline-container { width: 100px; height: 15px; background: #eee; border-radius: 3px; position: relative; }
+            .sparkline-bar { height: 100%; background: #4CAF50; border-radius: 3px; }
+            .prob-val { font-size: 0.75rem; color: #666; }
+            .correct-cell { background-color: #d1e7dd !important; }
+            .wrong-cell { background-color: #f8d7da !important; }
+            .path-img { max-width: 150px; cursor: zoom-in; border-radius: 4px; }
+            table.dataTable td { vertical-align: middle; }
+        </style>
+    </head>
+    <body class="p-4 bg-light">
+        <div class="container-fluid">
+            <h2 class="mb-4">Pathology Ensemble Results Audit</h2>
+            <div class="card shadow">
+                <div class="card-body">
+                    <table id="resultsTable" class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Status</th>
+                                <th>Image</th>
+                                <th>Question</th>
+                                <th>Correct</th>
+                                
+                                    <th>CONCH</th>
+                                    <th>CONCH Prob</th>
+                                
+                                    <th>MUSK</th>
+                                    <th>MUSK Prob</th>
+                                
+                                <th>Judge</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td><span class="badge bg-success">CONSENSUS</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/8935e72f6218f48485fad3a392a39b2acb2669b44bd8972ff7552aa967537571.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">What pattern is primarily exhibited by the spindle cells in this microscopic image?</td>
+                                <td class="text-center fw-bold">C</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.33999999999999997%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 5.9799999999999995%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.06</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 66.38%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.66</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 27.29%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.27</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    C
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-danger">MISSED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">In the top left image (a), what does the arrow specifically indicate within the histological features present?</td>
+                                <td class="text-center fw-bold">A</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 48.24%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.48</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 4.72%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.05</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 8.62%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.09</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 38.42%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.38</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-danger">MISSED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/af6475ca3b67f195223f863a3a895fd1cc7dc5f1919e927eb483645f32ae414e.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">In the bottom images (c and d), what do the areas of brown staining within cells indicate?</td>
+                                <td class="text-center fw-bold">C</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 65.03999999999999%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.65</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 18.67%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.19</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 9.39%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.09</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 6.890000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.07</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    A
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-success">CONSENSUS</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/9668f3e40395b5802259634aee6db36c3aa6e4f08b0489d08bb41cb99677e1b5.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Considering the cells' shapes and arrangement, how would you describe the morphology of these cells?</td>
+                                <td class="text-center fw-bold">D</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 4.92%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.05</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.59%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.01</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 8.37%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.08</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 86.11999999999999%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.86</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-info text-white">RECONCILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/7dfdc41f816faa10f4494a4e3815d39f603276bc8d847588578c7183f368232f.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">What does the presence of darker staining, densely packed clusters of cells within the connective tissue stroma imply?</td>
+                                <td class="text-center fw-bold">A</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 17.11%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.17</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 15.5%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.15</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 44.46%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.44</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 22.93%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.23</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    A
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-info text-white">RECONCILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">What is the predominant cell shape observed in this tissue section?</td>
+                                <td class="text-center fw-bold">B</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 10.72%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.11</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 2.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.02</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 75.81%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.76</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 11.469999999999999%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.11</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    B
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-info text-white">RECONCILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2f4807e5a657c80c062d68dd03cfab14f7efb802dd1e38f797db75f93f2de.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">How would you describe the nuclear characteristics of the cells in this image?</td>
+                                <td class="text-center fw-bold">D</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 88.63%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.89</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 1.22%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.01</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 8.260000000000002%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.08</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 1.8800000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.02</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-info text-white">RECONCILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">What pattern is predominantly observed in the tissue organization?</td>
+                                <td class="text-center fw-bold">A</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 13.74%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.14</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 11.219999999999999%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.11</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 45.78%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.46</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 29.26%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.29</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    A
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-warning text-dark">SAVED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/87c34e02196c12876734f2a9d785c3b8a8a08ea8881dc114e800d62ddd776676.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Assessing cellular morphology, what feature is noticeably absent in this field of view?</td>
+                                <td class="text-center fw-bold">D</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 5.970000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.06</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 61.419999999999995%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.61</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 11.49%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.11</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 21.12%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.21</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-info text-white">RECONCILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/dd0ab5aa38f77a539742d72251263ba153cdf2cfb9b8afc748d82e833aa139a8.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Based on the high magnification of this H&E stained skin section, what morphological change is seen in the epidermis that suggests pathology?</td>
+                                <td class="text-center fw-bold">B</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 15.5%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.15</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 13.86%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.14</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 12.740000000000002%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.13</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 57.91%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.58</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    B
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-secondary">FAILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/5e1b7714894c5204a574f55d73a8f7190b046d773f2f75195c204b5a6c021ede.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">How would you describe the cytoplasm of the hepatocytes as observed in this section of hepatic tissue?</td>
+                                <td class="text-center fw-bold">B</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 1.4500000000000002%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.01</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 98.55000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.99</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 65.36999999999999%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.65</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.27999999999999997%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 26.39%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.26</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 7.960000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.08</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    C
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-secondary">FAILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">What is the predominant nuclear staining pattern observed in the majority of cells in this histological section?</td>
+                                <td class="text-center fw-bold">A</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.38%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 99.62%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 4.14%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.04</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 60.660000000000004%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.61</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 7.670000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.08</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 27.529999999999998%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.28</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-info text-white">RECONCILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/10e2293574d133a584936c0548a97efff05a1d2ca05057006519cc60eef09483.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Judging by the heterogeneous morphology of the brown-stained nuclei, which description best matches the observed size and shape variation?</td>
+                                <td class="text-center fw-bold">C</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.02%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.03%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 1.27%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.01</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 98.67%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.99</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 32.06%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.32</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 11.61%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.12</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 54.37%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.54</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 1.96%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.02</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    C
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-secondary">FAILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/0c2927614e8ec2fa6a92d449415cf3ddba5c39dc9023fb1134d178432206229e.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Based on the staining characteristics and nuclear morphology observed in this image, what type of cellular alteration can be inferred?</td>
+                                <td class="text-center fw-bold">A</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.32%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 21.16%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.21</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 78.52%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.79</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 2.64%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.03</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.09%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 96.99%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.97</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.27999999999999997%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    C
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-danger">MISSED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/d9f01d4a08516199cf736c41366ebf9685c79f2f22b3419ffb64a2e70a962a94.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Analyzing the arrangement of cells within the image, which pattern can be identified?</td>
+                                <td class="text-center fw-bold">D</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 25.06%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.25</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 47.980000000000004%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.48</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 22.39%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.22</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 4.569999999999999%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.05</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    A
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-warning text-dark">SAVED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/39e80bf844de4e5c23b926f4dc421e8af7904b194ed8e4759550f70405852cd5.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">What is the orientation of the elongated structures suggestive of nerve fibers in the image?</td>
+                                <td class="text-center fw-bold">D</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 5.08%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.05</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-danger">MISSED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/768588e90811e5ccf1a9c9f75cdbdb1d851e2a7a9d0d92f8b055891c2561f39e.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">What does the overall architecture of the myocardial tissue suggest?</td>
+                                <td class="text-center fw-bold">C</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.04%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 99.92999999999999%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.03%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 8.24%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.08</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 38.11%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.38</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 41.11%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.41</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 12.540000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.13</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    B
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-secondary">FAILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">How would you describe the nuclei of the epithelial cells lining the glandular structures?</td>
+                                <td class="text-center fw-bold">B</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 31.11%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.31</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 68.89%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.69</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 21.349999999999998%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.21</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 13.489999999999998%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.13</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 50.71%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.51</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 14.45%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.14</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="wrong-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-success">CONSENSUS</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/e11bc5c4ac274dc52d08f3390ef014133028a47ac4741592a671770b9ba4a24f.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Regarding the stroma in this image, what is the predominant cellular infiltration observed?</td>
+                                <td class="text-center fw-bold">D</td>
+                                
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 100.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">1.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 16.6%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.17</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 1.02%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.01</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 6.38%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.06</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 75.99000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.76</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    D
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><span class="badge bg-info text-white">RECONCILED</span></td>
+                                
+                                    <td><img src="/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/PathMMU/data/images/ef8595c8bf644aa7edc17f01d12c209f6ee40a3fde81c98492dab1e03b7eb401.png" class="path-img" onerror="this.src='https://via.placeholder.com/150?text=No+Image'"></td>
+                                
+                                <td class="small">Upon examining the lymphocytic infiltrate in the epidermis, which feature is most indicative of epidermotropism?</td>
+                                <td class="text-center fw-bold">A</td>
+                                
+                                
+                                    <td class="wrong-cell text-center">
+                                        F
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.53%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.01</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 99.47%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.99</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 0.0%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.0</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                    <td class="correct-cell text-center">
+                                        T
+                                    </td>
+                                    <td>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">A:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 69.82000000000001%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.7</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">B:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 23.630000000000003%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.24</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">C:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 5.38%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.05</span>
+                                            </div>
+                                        
+                                            <div class="d-flex align-items-center mb-1">
+                                                <span class="me-1 fw-bold small">D:</span>
+                                                <div class="sparkline-container flex-grow-1">
+                                                    <div class="sparkline-bar" style="width: 1.17%"></div>
+                                                </div>
+                                                <span class="ms-1 prob-val">0.01</span>
+                                            </div>
+                                        
+                                    </td>
+                                
+                                
+                                <td class="correct-cell text-center fw-bold">
+                                    A
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#resultsTable').DataTable({
+                    pageLength: 25,
+                    order: [[0, 'asc']]
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

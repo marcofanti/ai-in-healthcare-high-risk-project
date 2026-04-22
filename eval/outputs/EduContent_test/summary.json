@@ -1,0 +1,34 @@
+{
+    "exp_name": "clip_ensemble_pathmmu_edut",
+    "models_override": [
+        "biomedclip",
+        "conch",
+        "musk"
+    ],
+    "n_models": 2,
+    "categories": {
+        "EduContent_test": {
+            "acc": 0.40344622697563876,
+            "num_example": 1683,
+            "detailed": {
+                "total": 1683,
+                "judge_acc": 0.40344622697563876,
+                "max_prob_acc": 0.32085561497326204,
+                "per_model": {
+                    "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.2828282828282828,
+                    "MahmoodLab/conch": 0.30124777183600715,
+                    "xiangjx/musk": 0.28223410576351754
+                }
+            }
+        }
+    },
+    "overall_acc": 0.40344622697563876,
+    "judge_acc": 0.40344622697563876,
+    "max_prob_acc": 0.32085561497326204,
+    "per_model_acc": {
+        "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.2828282828282828,
+        "MahmoodLab/conch": 0.30124777183600715,
+        "xiangjx/musk": 0.28223410576351754
+    },
+    "total_samples": 1683
+}

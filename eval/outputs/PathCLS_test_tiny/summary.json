@@ -1,0 +1,34 @@
+{
+    "exp_name": "clip_ensemble_pathmmu_clstt",
+    "models_override": [
+        "biomedclip",
+        "conch",
+        "musk"
+    ],
+    "n_models": 2,
+    "categories": {
+        "PathCLS_test_tiny": {
+            "acc": 0.512396694214876,
+            "num_example": 121,
+            "detailed": {
+                "total": 121,
+                "judge_acc": 0.512396694214876,
+                "max_prob_acc": 0.11570247933884298,
+                "per_model": {
+                    "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.15702479338842976,
+                    "MahmoodLab/conch": 0.14049586776859505,
+                    "xiangjx/musk": 0.08264462809917356
+                }
+            }
+        }
+    },
+    "overall_acc": 0.512396694214876,
+    "judge_acc": 0.512396694214876,
+    "max_prob_acc": 0.11570247933884298,
+    "per_model_acc": {
+        "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.15702479338842976,
+        "MahmoodLab/conch": 0.14049586776859505,
+        "xiangjx/musk": 0.08264462809917356
+    },
+    "total_samples": 121
+}
