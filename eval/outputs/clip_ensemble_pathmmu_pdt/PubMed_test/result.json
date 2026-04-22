@@ -1,14 +1,14 @@
 {
-    "acc": 0.3986365267312522,
-    "num_example": 2787,
+    "acc": 0.0,
+    "num_example": 1,
     "detailed": {
-        "total": 2787,
-        "judge_acc": 0.3986365267312522,
-        "max_prob_acc": 0.3010405453893075,
+        "total": 1,
+        "judge_acc": 0.0,
+        "max_prob_acc": 0.0,
         "per_model": {
-            "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.29350556153570145,
-            "MahmoodLab/conch": 0.3010405453893075,
-            "xiangjx/musk": 0.27054180121994975
+            "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.0,
+            "MahmoodLab/conch": 0.0,
+            "xiangjx/musk": 0.0
         }
     }
 }
