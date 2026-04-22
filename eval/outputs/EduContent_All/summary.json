@@ -1,5 +1,5 @@
 {
-    "exp_name": "clip_ensemble_pathmmu_edut",
+    "exp_name": "EduContent_All",
     "models_override": [
         "biomedclip",
         "conch",
@@ -7,7 +7,7 @@
     ],
     "n_models": 2,
     "categories": {
-        "EduContent_test": {
+        "EduContent_All": {
             "acc": 0.40344622697563876,
             "num_example": 1683,
             "detailed": {

@@ -1,5 +1,5 @@
 {
-    "exp_name": "clip_ensemble_pathmmu_clstt",
+    "exp_name": "PathCLS_Tiny",
     "models_override": [
         "biomedclip",
         "conch",
@@ -7,7 +7,7 @@
     ],
     "n_models": 2,
     "categories": {
-        "PathCLS_test_tiny": {
+        "PathCLS_Tiny": {
             "acc": 0.512396694214876,
             "num_example": 121,
             "detailed": {

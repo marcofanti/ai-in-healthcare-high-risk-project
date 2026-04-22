@@ -1,5 +1,5 @@
 {
-    "exp_name": "clip_ensemble_pathmmu_mac",
+    "exp_name": "PubMed_Tiny",
     "models_override": [
         "biomedclip",
         "conch",
@@ -7,7 +7,7 @@
     ],
     "n_models": 2,
     "categories": {
-        "PubMed_test_tiny": {
+        "PubMed_Tiny": {
             "acc": 0.41637010676156583,
             "num_example": 281,
             "detailed": {

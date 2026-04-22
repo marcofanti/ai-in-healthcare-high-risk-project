@@ -1,5 +1,5 @@
 {
-    "exp_name": "clip_ensemble_pathmmu_att",
+    "exp_name": "Atlas_Tiny",
     "models_override": [
         "biomedclip",
         "conch",
@@ -7,7 +7,7 @@
     ],
     "n_models": 2,
     "categories": {
-        "Atlas_test_tiny": {
+        "Atlas_Tiny": {
             "acc": 0.6,
             "num_example": 15,
             "detailed": {
