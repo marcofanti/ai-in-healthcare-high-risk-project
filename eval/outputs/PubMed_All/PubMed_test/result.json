@@ -1,0 +1,14 @@
+{
+    "acc": 0.4058127018299246,
+    "num_example": 2787,
+    "detailed": {
+        "total": 2787,
+        "judge_acc": 0.4058127018299246,
+        "max_prob_acc": 0.2981700753498385,
+        "per_model": {
+            "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224": 0.3064226767133118,
+            "MahmoodLab/conch": 0.2978112665949049,
+            "xiangjx/musk": 0.25439540724793686
+        }
+    }
+}
