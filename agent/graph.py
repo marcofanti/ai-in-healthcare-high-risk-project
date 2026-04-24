@@ -84,33 +84,44 @@ def synthesizer_node(state: AgentState) -> Dict:
     outputs = state.get("model_outputs", [])
     selections = state.get("user_manual_selections", {})
     
-    # Construct a synthesis prompt for the ensemble
-    synthesis_prompt = f"""
-    You are a senior clinical AI architect. Synthesize a unified clinical report from the following ensemble outputs.
-    
-    User Selections:
-    - Target File: {selections.get('file_path')}
-    - Original Question: {selections.get('prompt')}
-    
-    Model Raw Outputs (JSON):
-    {json.dumps(outputs, indent=2)}
-    
-    REQUIRED REPORT STRUCTURE:
-    1. ### CONSENSUS FINDINGS: Points agreed upon by multiple models.
-    2. ### MODEL DISCREPANCIES / FLAGS: Highlight any contradictions or low-confidence outliers.
-    3. ### CLINICAL INTERPRETATION: Final summary and recommendation for human review.
-    
-    Keep the tone professional, objective, and clinical.
-    """
-    
+    file_path = selections.get("file_path", "")
+    sample_id = Path(file_path).name if file_path else "Unknown"
+
+    synthesis_prompt = f"""You are a senior clinical AI architect. Synthesize a unified clinical report from the following ensemble outputs. Do NOT include a title or header line — the report header is provided externally.
+
+User Selections:
+- Target File: {file_path}
+- Original Question: {selections.get('prompt')}
+
+Model Raw Outputs (JSON):
+{json.dumps(outputs, indent=2)}
+
+REQUIRED REPORT STRUCTURE (use exactly these section headers):
+1. ### CONSENSUS FINDINGS
+   Points agreed upon by multiple models.
+2. ### MODEL DISCREPANCIES / FLAGS
+   Contradictions, low-confidence outliers, or errors from individual models.
+3. ### CLINICAL INTERPRETATION
+   Final summary and recommendation for human review.
+
+Keep the tone professional, objective, and clinical. Start directly with "### CONSENSUS FINDINGS"."""
+
     try:
         response = llm.invoke(synthesis_prompt)
-        report = response.content
+        body = response.content.strip()
     except Exception as e:
-        report = f"### Synthesis Error\n\nFailed to generate consensus report: {str(e)}"
-    
+        body = f"### Synthesis Error\n\nFailed to generate consensus report: {str(e)}"
+
+    header = (
+        f"# CLINICAL AI ARCHITECT — ENSEMBLE SYNTHESIS REPORT\n\n"
+        f"**Target Sample ID:** {sample_id}  \n"
+        f"**Analysis Objective:** {selections.get('prompt', 'N/A')}  \n"
+        f"**Models:** {', '.join(job.get('model', '?') for job in state.get('execution_manifest', []))}  \n\n"
+        f"---\n\n"
+    )
+
     return {
-        "clinical_report": report,
+        "clinical_report": header + body,
         "status": "completed"
     }
 

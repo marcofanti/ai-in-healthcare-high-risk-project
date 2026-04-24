@@ -137,6 +137,12 @@ DECISION RULE:
 - is_valid = false ONLY when EVERY selected model is a poor fit (e.g. a brain-MRI query sent only to chest-X-ray and pathology models).
 - When in doubt (query is generic), lean towards is_valid = true.
 
+HARD OVERRIDES (non-negotiable — do not contradict these):
+- If the modality contains "pathology", "histopathology", or "WSI" AND the selection includes conch or musk → is_valid = true, and neither conch nor musk may appear in incompatible_models.
+- biomedclip supports histopathology and WSI at tile/patch level; do NOT list it as incompatible for pathology or WSI Pathology queries.
+- chexagent is chest-X-ray only; list it as incompatible for any non-CXR query.
+- vit_alzheimer is brain MRI only; list it as incompatible for any non-brain-MRI query.
+
 ALL AVAILABLE MODELS AND CAPABILITIES:
 {catalog_md}
 

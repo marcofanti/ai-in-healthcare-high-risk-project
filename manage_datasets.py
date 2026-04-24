@@ -29,7 +29,7 @@ DATASETS_CONFIG_PATH = Path(__file__).parent / "datasets_config.json"
 RECOGNIZED_EXTENSIONS = {
     ".img", ".hdr", ".jpg", ".jpeg",
     ".tif", ".tiff", ".nii", ".raw",
-    ".dcm", ".png", ".svs", ".ndpi",
+    ".dcm", ".png", ".svs", ".ndpi", ".mrxs",
 }
 DOUBLE_EXTENSIONS = {".nii.gz"}  # must be checked before single-ext lookup
 
@@ -39,7 +39,7 @@ EXTENSION_TYPE: dict[str, str] = {
     ".tif": "tif", ".tiff": "tiff",
     ".nii": "nii", ".nii.gz": "nii.gz",
     ".raw": "raw", ".dcm": "dcm",
-    ".png": "png", ".svs": "svs", ".ndpi": "ndpi",
+    ".png": "png", ".svs": "svs", ".ndpi": "ndpi", ".mrxs": "mrxs",
 }
 
 MODALITIES = [
@@ -51,6 +51,7 @@ MODALITIES = [
     "DICOM CT",
     "NIfTI",
     "WSI Pathology",
+    "Histopathology",
     "HSI Pathology",
     "Unknown",
 ]
@@ -65,11 +66,23 @@ TEXT_EXTENSIONS = {".hdr", ".xml", ".txt", ".json"}
 # Pure functions
 # ---------------------------------------------------------------------------
 
+def _is_complete_mrxs(mrxs_path: Path) -> bool:
+    """Return True if the MRXS companion data directory exists and is fully downloaded."""
+    data_dir = mrxs_path.with_suffix("")
+    if not data_dir.is_dir():
+        return False
+    return any(data_dir.glob("*.dat")) and not any(data_dir.glob("*.partial"))
+
+
 def scan_files(directory: Path, max_n: int = 10) -> list[dict]:
     """
     Recursively scan *directory* and return up to *max_n* randomly sampled
     recognized medical imaging files as ``{"path": str, "type": str}`` dicts.
     Returns all found files when fewer than *max_n* exist.
+
+    MRXS slides: only the ``.mrxs`` entry-point file is registered (the
+    companion ``.dat`` directory is skipped).  Incomplete slides (missing
+    companion dir or still-downloading ``.partial`` files) are excluded.
     """
     found: list[dict] = []
     for root, _, files in os.walk(directory):
@@ -80,7 +93,13 @@ def scan_files(directory: Path, max_n: int = 10) -> list[dict]:
                 found.append({"path": str(fpath), "type": "nii.gz"})
                 continue
             ext = fpath.suffix.lower()
-            if ext in RECOGNIZED_EXTENSIONS:
+            if ext not in RECOGNIZED_EXTENSIONS:
+                continue
+            if ext == ".mrxs":
+                if _is_complete_mrxs(fpath):
+                    found.append({"path": str(fpath), "type": "mrxs"})
+                # skip incomplete / still-downloading slides silently
+            else:
                 found.append({"path": str(fpath), "type": EXTENSION_TYPE.get(ext, ext.lstrip("."))})
 
     if len(found) <= max_n:

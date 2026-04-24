@@ -24,7 +24,7 @@ MODEL_CAPABILITIES: dict[str, dict] = {
         ],
         "limitations": [
             "Pretrained on scientific figures from PubMed Central — academic distribution, not clinical imaging",
-            "Low input resolution (224-336) — underperforms on high-resolution pathology",
+            "Low input resolution (224-336) — tile-level histopathology is fine; whole-slide gigapixel analysis requires patch orchestration",
             "Not a report generator; produces embeddings / similarity scores, not narratives",
             "English-only; research use, not cleared for clinical deployment",
         ],

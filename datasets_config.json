@@ -123,7 +123,7 @@
     ]
   },
   "QUILT_1M": {
-    "modality": "Unknown",
+    "modality": "Histopathology",
     "files": [
       {
         "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Quilt1M/quilt_1m/FLKQYKzf1Cg_image_5a311fa8-66a6-4db1-bcb8-e933e2e6a4a2.jpg",
@@ -193,6 +193,72 @@
       {
         "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/Spinal/manifest-1774389300184/Spinal-Multiple-Myeloma-SEG/Myel_002/02-10-2015-8496-NA-31518/20485.000000-Calcium Suppression 100 IndexHU-86295/1-414.dcm",
         "type": "dcm"
+      }
+    ]
+  },
+  "WSI_DATASET": {
+    "modality": "WSI Pathology",
+    "files": [
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/WSI/Aperio-SVS/JP2K-33003-1.svs",
+        "type": "svs"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/WSI/Aperio-SVS/CMU-1-JP2K-33005.svs",
+        "type": "svs"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/WSI/Aperio-SVS/CMU-1.svs",
+        "type": "svs"
+      },
+      {
+        "path": "/Users/mfanti/Documents/Masters_UniversityOfTexas_Austin/AI_for_HealthCare/FinalProject/Datasets/WSI/Aperio-SVS/CMU-1-Small-Region.svs",
+        "type": "svs"
+      }
+    ]
+  },
+  "HISTOLOGICAL_IMAGES": {
+    "modality": "Histopathology",
+    "files": [
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/85.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/82.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/146.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/38.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/269.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/238.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/100.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/43.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/139.mrxs",
+        "type": "mrxs"
+      },
+      {
+        "path": "/Volumes/ExternalOwc/AI_For_Healthcare/Final_Project/Datasets/01_01_Histological_Images/259.mrxs",
+        "type": "mrxs"
       }
     ]
   }

@@ -1,9 +1,11 @@
+import os
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+
 import warnings
 warnings.filterwarnings("ignore")
 
 import streamlit as st
 import json
-import os
 import sys
 from dotenv import load_dotenv
 
@@ -58,7 +60,8 @@ MODALITY_MODEL_MAPPING = {
     "CT Image": ["chexagent", "biomedclip", "medgemma", "llava_med"],
     "DICOM CT": ["chexagent", "biomedclip", "medgemma", "llava_med"],
     "NIfTI": ["biomedclip", "medgemma", "llava_med"],
-    "WSI Pathology": ["conch", "musk", "biomedclip"],
+    "WSI Pathology": ["conch", "musk", "biomedclip", "llava_med"],
+    "Histopathology": ["conch", "musk", "biomedclip", "llava_med"],
     "HSI Pathology": ["biomedclip", "musk"],
     "Unknown": ["biomedclip", "llava_med", "medgemma"]
 }
@@ -71,6 +74,8 @@ MODALITY_PROMPT_MAPPING = {
     "Hyperspectral": "Analyze the spectral signatures to differentiate between tumor and non-tumor regions.",
     "CT Image": "Describe the findings in this chest CT slice, specifically looking for lung nodules or masses.",
     "DICOM CT": "Perform a comprehensive radiological analysis of this CT volume.",
+    "WSI Pathology": "Analyze the tissue architecture and identify any malignant features, grading nuclear atypia, mitotic activity, and invasion. Summarize the overall pathological findings.",
+    "Histopathology": "Describe the tissue type, staining, and key morphological features. Report any evidence of dysplasia, malignancy, or inflammation.",
     "Unknown": "Perform a general clinical analysis of this medical image."
 }
 
@@ -150,7 +155,7 @@ def init_app():
                 if is_visualized:
                     viz_buf = create_medical_viz(file_path, modality)
                     if viz_buf:
-                        st.image(viz_buf, width=512, caption=f"Visualization for {file_path}")
+                        st.image(viz_buf, use_container_width=True, caption=f"Visualization for {file_path}")
                     else:
                         st.warning("Could not generate visualization for this format.")
                 else:
@@ -165,9 +170,10 @@ def init_app():
         with col1:
             st.subheader("Select Experts")
             suggested_models = MODALITY_MODEL_MAPPING.get(modality, MODALITY_MODEL_MAPPING["Unknown"])
-            selected_models = st.multiselect("Ensemble Models", 
+            n_defaults = 3 if (modality == "WSI Pathology" or modality == "Histopathology") else 2
+            selected_models = st.multiselect("Ensemble Models",
                                             options=["biomedclip", "conch", "musk", "medgemma", "vit_alzheimer", "chexagent", "llava_med"],
-                                            default=suggested_models[:2])
+                                            default=suggested_models[:n_defaults])
             
         with col2:
             st.subheader("Clinical Query")

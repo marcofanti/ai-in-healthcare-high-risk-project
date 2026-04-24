@@ -30,6 +30,22 @@ try:
 except ImportError:
     HAS_SPECTRAL = False
 
+try:
+    import tiffslide
+    HAS_TIFFSLIDE = True
+except ImportError:
+    HAS_TIFFSLIDE = False
+
+try:
+    import openslide
+    HAS_OPENSLIDE = True
+except ImportError:
+    HAS_OPENSLIDE = False
+
+# .mrxs requires openslide; other WSI formats use tiffslide
+MRXS_SUFFIXES = {".mrxs"}
+WSI_SUFFIXES = {".svs", ".ndpi", ".scn", ".vms", ".vmu", ".bif"}
+
 def get_image_metadata(path: str, modality: str) -> Dict[str, Any]:
     """Extract technical metadata for overlay."""
     file_path = Path(path)
@@ -66,7 +82,31 @@ def get_image_metadata(path: str, modality: str) -> Dict[str, Any]:
             meta["Bands"] = img.shape[2]
             meta["Interleave"] = img.metadata.get("interleave", "N/A")
             meta["Data Type"] = img.metadata.get("data type", "N/A")
-            
+
+        elif suffix in MRXS_SUFFIXES and HAS_OPENSLIDE:
+            slide = openslide.OpenSlide(str(file_path))
+            w, h = slide.dimensions
+            meta["Dimensions"] = f"{w}x{h} px"
+            meta["Pyramid Levels"] = slide.level_count
+            meta["Objective Power"] = slide.properties.get("openslide.objective-power", "N/A")
+            mpp_x = slide.properties.get("openslide.mpp-x", None)
+            if mpp_x:
+                meta["MPP (µm/px)"] = f"{float(mpp_x):.4f}"
+            meta["Vendor"] = slide.properties.get("openslide.vendor", "N/A")
+            slide.close()
+
+        elif suffix in WSI_SUFFIXES and HAS_TIFFSLIDE:
+            slide = tiffslide.TiffSlide(str(file_path))
+            w, h = slide.dimensions
+            meta["Dimensions"] = f"{w}x{h} px"
+            meta["Pyramid Levels"] = slide.level_count
+            meta["Objective Power"] = slide.properties.get("tiffslide.objective-power", "N/A")
+            mpp_x = slide.properties.get("tiffslide.mpp-x", None)
+            if mpp_x:
+                meta["MPP (µm/px)"] = f"{float(mpp_x):.4f}"
+            meta["Vendor"] = slide.properties.get("tiffslide.vendor", "N/A")
+            slide.close()
+
         else:
             with Image.open(file_path) as img:
                 meta["Dimensions"] = f"{img.width}x{img.height}"
@@ -157,6 +197,61 @@ def create_medical_viz(path: str, modality: str) -> Optional[io.BytesIO]:
             axes[1].set_title("NIR Band (800 nm)")
             for ax in axes: ax.axis('off')
             
+        # Whole Slide Image — MRXS pyramid overview (openslide)
+        elif suffix in MRXS_SUFFIXES and HAS_OPENSLIDE:
+            TILE = 512
+            slide = openslide.OpenSlide(str(file_path))
+            n_levels = min(slide.level_count, 8)
+            mpp = slide.properties.get("openslide.mpp-x", None)
+            mpp_str = f"MPP {float(mpp):.4f} µm/px" if mpp else ""
+
+            cols = min(n_levels, 4)
+            rows = (n_levels + cols - 1) // cols
+            fig, axes = plt.subplots(rows, cols, figsize=(cols * 4.5, rows * 4.5))
+            axes = np.array(axes).flatten()
+
+            for i in range(n_levels):
+                w, h = slide.level_dimensions[i]
+                cx = max(0, w // 2 - TILE // 2)
+                cy = max(0, h // 2 - TILE // 2)
+                ds = slide.level_downsamples[i]
+                # read_region takes level-0 coordinates and returns RGBA
+                tile = slide.read_region(
+                    (int(cx * ds), int(cy * ds)), i, (TILE, TILE)
+                ).convert("RGB")
+                axes[i].imshow(tile)
+                axes[i].set_title(
+                    f"Level {i}\n{w:,}×{h:,}\n({ds:.0f}×)", fontsize=8
+                )
+                axes[i].axis("off")
+
+            for j in range(n_levels, len(axes)):
+                axes[j].set_visible(False)
+
+            slide.close()
+            plt.suptitle(
+                f"{file_path.stem} — pyramid levels  {mpp_str}", fontsize=10
+            )
+
+        # Whole Slide Image — SVS, NDPI, SCN … (tiffslide)
+        elif suffix in WSI_SUFFIXES and HAS_TIFFSLIDE:
+            slide = tiffslide.TiffSlide(str(file_path))
+            thumb = slide.get_thumbnail((1024, 1024))
+            w, h = slide.dimensions
+            obj_power = slide.properties.get("tiffslide.objective-power", "?")
+            mpp = slide.properties.get("tiffslide.mpp-x", None)
+            mpp_str = f"{float(mpp):.4f} µm/px" if mpp else "N/A"
+            slide.close()
+
+            fig, ax = plt.subplots(figsize=(10, 10))
+            ax.imshow(thumb)
+            ax.axis('off')
+            ax.set_title(
+                f"WSI Thumbnail — {file_path.name}\n"
+                f"Full res: {w}×{h} px  |  {obj_power}×  |  MPP: {mpp_str}",
+                fontsize=10,
+            )
+
         # Standard 2D Image
         else:
             pil_img = Image.open(file_path).convert("RGB")

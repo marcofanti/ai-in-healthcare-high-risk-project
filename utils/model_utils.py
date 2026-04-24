@@ -55,6 +55,21 @@ def load_image(path: Path) -> Image.Image:
 
         return Image.fromarray(np.stack([_norm(br), _norm(bg), _norm(bb)], axis=2))
 
+    if suffix == ".mrxs":
+        import openslide
+        slide = openslide.OpenSlide(str(path))
+        thumb = slide.get_thumbnail((1024, 1024))
+        slide.close()
+        return thumb.convert("RGB")
+
+    _WSI_SUFFIXES = {".svs", ".ndpi", ".scn", ".vms", ".vmu", ".bif"}
+    if suffix in _WSI_SUFFIXES:
+        import tiffslide
+        slide = tiffslide.TiffSlide(str(path))
+        thumb = slide.get_thumbnail((1024, 1024))
+        slide.close()
+        return thumb.convert("RGB")
+
     # Default: standard image formats
     return Image.open(path).convert("RGB")
 
